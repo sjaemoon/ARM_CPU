@@ -1,0 +1,638 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/sjaem/Desktop/EE469_470/Lab1_files/simulation/modelsim
+vD_FF
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1570794929
+!i10b 1
+!s100 ?I5_eJXVSE8CH68WAO81;0
+IOhV8N9ZgT2m<>f>l3Lh?=1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 D_FF_sv_unit
+S1
+R0
+Z4 w1570750084
+8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF.sv
+FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF.sv
+L0 1
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1570794929.000000
+!s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files
+Z9 tCvgOpt 0
+n@d_@f@f
+vD_FF_en
+R1
+R2
+!i10b 1
+!s100 JDQSXn@l:VkjnO0`:[7=B0
+I1BUm:<]ea`H^QE]T[FTQg0
+R3
+Z10 !s105 D_FF_en_sv_unit
+S1
+R0
+R4
+Z11 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF_en.sv
+Z12 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF_en.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z13 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF_en.sv|
+Z14 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/D_FF_en.sv|
+!i113 1
+R7
+R8
+R9
+n@d_@f@f_en
+vD_FF_en_testbench
+R1
+R2
+!i10b 1
+!s100 geh:Z[^WhM;XiEd5zH08U1
+I<E;CR>InEIBQkZ2HV5Qiz3
+R3
+R10
+S1
+R0
+R4
+R11
+R12
+Z15 L0 18
+R5
+r1
+!s85 0
+31
+R6
+R13
+R14
+!i113 1
+R7
+R8
+R9
+n@d_@f@f_en_testbench
+vde1_2
+R1
+R2
+!i10b 1
+!s100 @ogBPE7Tel1LoD[hFloh50
+IPoN3fh21eXaFn[o?N?N`[0
+R3
+Z16 !s105 de1_2_sv_unit
+S1
+R0
+Z17 w1570794802
+Z18 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de1_2.sv
+Z19 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/de1_2.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z20 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de1_2.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de1_2.sv|
+!i113 1
+R7
+R8
+R9
+vde1_2_testbench
+R1
+R2
+!i10b 1
+!s100 PhlKJ:D1Sndf>FjQNnKd21
+I09IkSFP14k5c4DHGVOii@0
+R3
+R16
+S1
+R0
+R17
+R18
+R19
+L0 17
+R5
+r1
+!s85 0
+31
+R6
+R20
+R21
+!i113 1
+R7
+R8
+R9
+vde2_4
+R1
+R2
+!i10b 1
+!s100 eHI>[9WG_6>9VfDbNI<zG3
+IhQ[eRL9eDI8MkGaFnVkZ23
+R3
+Z22 !s105 de2_4_sv_unit
+S1
+R0
+R17
+Z23 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de2_4.sv
+Z24 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/de2_4.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z25 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de2_4.sv|
+Z26 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de2_4.sv|
+!i113 1
+R7
+R8
+R9
+vde2_4_testbench
+R1
+R2
+!i10b 1
+!s100 0^9l=0`nFgHUI:1DL?:U=3
+IK6neeI`M54NRWbIKG1:OM3
+R3
+R22
+S1
+R0
+R17
+R23
+R24
+R15
+R5
+r1
+!s85 0
+31
+R6
+R25
+R26
+!i113 1
+R7
+R8
+R9
+vde4_16
+R1
+Z27 !s110 1570794930
+!i10b 1
+!s100 hhVA07diz[JF_42C66<Bd3
+IJlML?mbNFZfY>4<cUCIe[0
+R3
+Z28 !s105 de4_16_sv_unit
+S1
+R0
+R17
+Z29 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de4_16.sv
+Z30 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/de4_16.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z31 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de4_16.sv|
+Z32 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de4_16.sv|
+!i113 1
+R7
+R8
+R9
+vde4_16_testbench
+R1
+R27
+!i10b 1
+!s100 eKIAl;FEHFJ:VeT<1kAce2
+INm?gW4@P98Q0kOj;A1`c31
+R3
+R28
+S1
+R0
+R17
+R29
+R30
+R15
+R5
+r1
+!s85 0
+31
+R6
+R31
+R32
+!i113 1
+R7
+R8
+R9
+vde5_32
+R1
+R2
+!i10b 1
+!s100 4O_5hf^_^4U6M1G<Shk2R1
+I?oLDba:[>;IG:@]9eM>Y?1
+R3
+Z33 !s105 de5_32_sv_unit
+S1
+R0
+Z34 w1570794803
+Z35 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de5_32.sv
+Z36 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/de5_32.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z37 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de5_32.sv|
+Z38 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/de5_32.sv|
+!i113 1
+R7
+R8
+R9
+vde5_32_testbench
+R1
+R2
+!i10b 1
+!s100 m6bKG>hf<_ikNRdfS>8]l3
+IYB@9fZ1nPHmjV2jE0KAU<3
+R3
+R33
+S1
+R0
+R34
+R35
+R36
+Z39 L0 16
+R5
+r1
+!s85 0
+31
+R6
+R37
+R38
+!i113 1
+R7
+R8
+R9
+vmux16_1
+R1
+R2
+!i10b 1
+!s100 UZ0nCfTYh]2aM2W[[Q@2_1
+I:h_9i9Y2zkV1T`0YaIm7U1
+R3
+Z40 !s105 mux16_1_sv_unit
+S1
+R0
+R4
+Z41 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux16_1.sv
+Z42 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux16_1.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z43 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux16_1.sv|
+Z44 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux16_1.sv|
+!i113 1
+R7
+R8
+R9
+vmux16_1_testbench
+R1
+R2
+!i10b 1
+!s100 jCRVgJ8Lb>fOmj:IPgjR_0
+IfK?zZaLjQdaRfAPeU>Ioh0
+R3
+R40
+S1
+R0
+R4
+R41
+R42
+R39
+R5
+r1
+!s85 0
+31
+R6
+R43
+R44
+!i113 1
+R7
+R8
+R9
+vmux2_1
+R1
+R2
+!i10b 1
+!s100 j;WPZ@<k:D@gS:lDXX0MR0
+IKPg]kaK=58S8Rg;^d56j11
+R3
+Z45 !s105 mux2_1_sv_unit
+S1
+R0
+R4
+Z46 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux2_1.sv
+Z47 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux2_1.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z48 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux2_1.sv|
+Z49 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux2_1.sv|
+!i113 1
+R7
+R8
+R9
+vmux2_1_testbench
+R1
+R2
+!i10b 1
+!s100 I=<:7X<6RP5GPJBXahX0b2
+I^jMSRZ_ROoj_9Znl[j`PK0
+R3
+R45
+S1
+R0
+R4
+R46
+R47
+L0 24
+R5
+r1
+!s85 0
+31
+R6
+R48
+R49
+!i113 1
+R7
+R8
+R9
+vmux32_1
+R1
+Z50 !s110 1570794928
+!i10b 1
+!s100 0Ri`T6Cm1V:QB0i9JeEaS3
+I<d8DSiAfcFC=CAg:3di:A0
+R3
+Z51 !s105 mux32_1_sv_unit
+S1
+R0
+Z52 w1570750086
+Z53 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux32_1.sv
+Z54 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux32_1.sv
+L0 2
+R5
+r1
+!s85 0
+31
+Z55 !s108 1570794928.000000
+Z56 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux32_1.sv|
+Z57 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux32_1.sv|
+!i113 1
+R7
+R8
+R9
+vmux32_1_testbench
+R1
+R50
+!i10b 1
+!s100 APYcUEMm8Aa=]@K3_J=EM2
+IDG5;cS7IQ?NPoDdZMF4zN1
+R3
+R51
+S1
+R0
+R52
+R53
+R54
+R39
+R5
+r1
+!s85 0
+31
+R55
+R56
+R57
+!i113 1
+R7
+R8
+R9
+vmux4_1
+R1
+R50
+!i10b 1
+!s100 gb2EQ7@X29<[3D4^`:Bif1
+IGTT6?DAd49?6G>dafZKI03
+R3
+Z58 !s105 mux4_1_sv_unit
+S1
+R0
+R52
+Z59 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux4_1.sv
+Z60 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux4_1.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R55
+Z61 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux4_1.sv|
+Z62 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux4_1.sv|
+!i113 1
+R7
+R8
+R9
+vmux4_1_testbench
+R1
+R50
+!i10b 1
+!s100 OM3k:aUd;^CJWNHMX3P@k0
+I3ki;m356ZQf:Hle`MAgKD2
+R3
+R58
+S1
+R0
+R52
+R59
+R60
+R39
+R5
+r1
+!s85 0
+31
+R55
+R61
+R62
+!i113 1
+R7
+R8
+R9
+vmux8_1
+R1
+R50
+!i10b 1
+!s100 BiZA6K:n1684zO?2d<HS=1
+IR?Y06`ABAeBBkA1Fc?CYg2
+R3
+Z63 !s105 mux8_1_sv_unit
+S1
+R0
+R52
+Z64 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux8_1.sv
+Z65 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux8_1.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R55
+Z66 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux8_1.sv|
+Z67 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/mux8_1.sv|
+!i113 1
+R7
+R8
+R9
+vmux8_1_testbench
+R1
+R50
+!i10b 1
+!s100 kS=^7K6czS]Dg5<ck7bKN1
+Iah>S0?GNImg=;z2@NfD9A1
+R3
+R63
+S1
+R0
+R52
+R64
+R65
+R39
+R5
+r1
+!s85 0
+31
+R55
+R66
+R67
+!i113 1
+R7
+R8
+R9
+vregfile
+R1
+R27
+!i10b 1
+!s100 843X7n6Nb9h7;9XJ6:J>F2
+IEeIHdGO@6HCVAiem3ZEDm0
+R3
+Z68 !s105 regfile_sv_unit
+S1
+R0
+Z69 w1570794801
+Z70 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/regfile.sv
+Z71 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/regfile.sv
+L0 2
+R5
+r1
+!s85 0
+31
+Z72 !s108 1570794930.000000
+Z73 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/regfile.sv|
+Z74 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/regfile.sv|
+!i113 1
+R7
+R8
+R9
+vregister
+R1
+R2
+!i10b 1
+!s100 ETZm=7QY[ZR]?_9]hUZhn2
+I42OQSl>Ef8hlWo^dI^Pa52
+R3
+Z75 !s105 register_sv_unit
+S1
+R0
+Z76 w1570794585
+Z77 8C:/Users/sjaem/Desktop/EE469_470/Lab1_files/register.sv
+Z78 FC:/Users/sjaem/Desktop/EE469_470/Lab1_files/register.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+Z79 !s107 C:/Users/sjaem/Desktop/EE469_470/Lab1_files/register.sv|
+Z80 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/Desktop/EE469_470/Lab1_files|C:/Users/sjaem/Desktop/EE469_470/Lab1_files/register.sv|
+!i113 1
+R7
+R8
+R9
+vregister_testbench
+R1
+R2
+!i10b 1
+!s100 Q]?SnclfQ@V]e0UZ7WXI83
+I1@:hQ4Qkj7P4IiB]LGk?62
+R3
+R75
+S1
+R0
+R76
+R77
+R78
+R15
+R5
+r1
+!s85 0
+31
+R6
+R79
+R80
+!i113 1
+R7
+R8
+R9
+vregstim
+R1
+R27
+!i10b 1
+!s100 E>]VVjoRecX?=8dZHANHh0
+IcSFZTo5Ml?=cfmUL]8CK]3
+R3
+R68
+S1
+R0
+R69
+R70
+R71
+L0 40
+R5
+r1
+!s85 0
+31
+R72
+R73
+R74
+!i113 1
+R7
+R8
+R9

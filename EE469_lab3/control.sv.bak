@@ -1,0 +1,49 @@
+module control (clk, reset, instruction);
+
+	input logic 			clk, reset;
+	logic [63:0]	pc;
+	logic	[31:0]	instruction;	
+	
+// alu
+// memories
+// datapath muxes
+
+	// instruction fetch unit
+	program_counter pc (clk, reset, pc_in, pc_out(pc));
+	instruction instr (.address(pc), .instruction, .clk);
+	
+	
+	 
+	 //OPCODE (Hex)
+	 //	ADDI: 0x244
+	 //	ADDS: 0x558
+	 //	B:		0x05
+	 //	B.LT:	0x54, cond: 0x0B
+	 //	BL:	0x25
+	 //	BR:	0x6B0
+	 //	CBZ:	0xB4
+	 //	LDUR:	0x7C2
+	 //	STUR:	0x7C0
+	 //	SUBS:	0x658
+	 
+
+	
+endmodule
+
+
+//ADDI Rd, Rn, Imm12: Reg[Rd] = Reg[Rn] + ZeroExtend(Imm12).
+//ADDS Rd, Rn, Rm: Reg[Rd] = Reg[Rn] + Reg[Rm]. Set flags.
+//B Imm26: PC = PC + SignExtend(Imm26 << 2).
+// For lab #4 (only) this instr. has a delay slot.
+//B.LT Imm19: If (flags.negative != flags.overflow) PC = PC + SignExtend(Imm19<<2).
+// For lab #4 (only) this instr. has a delay slot.
+//BL Imm26: X30 = PC + 4 (instruction after this one), PC = PC + SignExtend(Imm26<<2).
+// For lab #4 (only) this instr. has a delay slot.
+//BR Rd: PC = Reg[Rd].
+// For lab #4 (only) this instr. has a delay slot.
+//CBZ Rd, Imm19: If (Reg[Rd] == 0) PC = PC + SignExtend(Imm19<<2).
+// For lab #4 (only) this instr. has a delay slot.
+//LDUR Rd, [Rn, #Imm9]: Reg[Rd] = Mem[Reg[Rn] + SignExtend(Imm9)].
+//For lab #4 (only) the value in rd cannot be used in the next cycle.
+//STUR Rd, [Rn, #Imm9]: Mem[Reg[Rn] + SignExtend(Imm9)] = Reg[Rd].
+//SUBS Rd, Rn, Rm: Reg[Rd] = Reg[Rn] - Reg[Rm]. Set flags. 

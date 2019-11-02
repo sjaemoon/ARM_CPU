@@ -5,12 +5,18 @@ module control (clk, reset);
 	input logic alu_neg, alu_zero, alu_overf, alu_cOut;
 	input logic [31:0] instruction;	
 
-	output logic [7:0] ctrl_sig;
-	output logic flag_res, flag_wr_en, rd_x30;
+	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
+	output logic [2:0] = ALUOp;
 
-	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken;
-	logic [2:0] = ALUOp;
+
+	//flag_wr_en stores flags to the flag register
+	//rd_x30 used for the purposes of Instr BL
+
+	output logic flag_wr_en, rd_x30;
+
+	
 	logic [10:0] opcode;
+	logic [9:0] ctrl;
 	
 	assign opcode = instruction[31:21];
 
@@ -26,7 +32,7 @@ module control (clk, reset);
 	// TODO: Set other values as well... (rn, rm, rd, daddr, condaddr, etc)	
 	// control signals logic based on table
 	always_comb begin
-		case (opcode)
+		casex (opcode)
 		//Another mux that inputs into ALUSrc Mux
 		//Takes in DAddr9 or ALUImm12, controlled by
 		//Reg2Loc as ADDI adds Rn + ALUImm12, therefore
@@ -51,8 +57,13 @@ module control (clk, reset);
 							rd_x30 = 0;
 							flag_wr_en = 0; 
 						 end
+
+		//Extra mux needed to hardwire X30 to Aw
+		//Extra mux needed to take in PC + 4 and 
+		//connect it to Dw.
+		//Both mux controlled by rd_x30
 		11'b100101xxxxx: begin
-							ctrl = 10'b // BL - 0x25 (6bit)
+							ctrl = 10'bxxx1011xxx; // BL - 0x25 (6bit)
 							rd_x30 = 1;
 							flag_wr_en = 0; 
 						 end

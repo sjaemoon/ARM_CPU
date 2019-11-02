@@ -80,13 +80,13 @@ module control (//clk, reset
 		11'b11010110000: begin
 							ctrl = 10'b0xx00xxxxx; // BR - 0x6B0 (11bit)
 							rd_x30 = 0;
-							pc_rd = 0;
+							pc_rd = 1;
 							flag_wr_en = 0; 
 						 end
 		11'b10110100xxx: begin
 							ctrl = {5'b00x00, alu_zero, 4'b0000}; // CBZ - 0xB4 (8bit)
 							rd_x30 = 0;
-							pc_rd = 1;
+							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b11111000010: begin

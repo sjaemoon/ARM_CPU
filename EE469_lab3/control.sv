@@ -3,7 +3,7 @@ module control (
 				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp);
 	
 	input logic flag_neg, flag_zero, flag_overf, flag_cOut;
-	input logic [31:0] instruction;	
+	input logic [10:0] opcode;	
 
 	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
 	output logic [2:0] ALUOp;
@@ -13,10 +13,7 @@ module control (
 	//pc_rd used to choose between PC logic or PC = Reg[Rd]
 	output logic flag_wr_en, rd_x30, pc_rd;
 
-	logic [10:0] opcode;
 	logic [9:0] ctrl;
-	
-	assign opcode = instruction[31:21];
 
 	assign Reg2Loc = ctrl[9];
 	assign ALUSrc = ctrl[8];

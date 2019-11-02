@@ -1,8 +1,11 @@
-module control (clk, reset);
+module control (//clk, reset
+				flag_neg, flag_zero, flag_overf, flag_cOut, instruction,
+				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr,
+				ALUOp);
 
-	input logic clk, reset, zero_flag;
+	//input logic clk, reset;
 	
-	input logic alu_neg, alu_zero, alu_overf, alu_cOut;
+	input logic flag_neg, flag_zero, flag_overf, flag_cOut;
 	input logic [31:0] instruction;	
 
 	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
@@ -54,7 +57,7 @@ module control (clk, reset);
 							flag_wr_en = 0; 
 						 end
 		11'b01010100xxx: begin
-							ctrl = {5'b00x00, (alu_neg && (alu_neg != alu_overf)), 4'b000} // B.LT - 0x54 (8bit)
+							ctrl = {5'b00x00, (flag_neg && (flag_neg != flag_overf)), 4'b000} // B.LT - 0x54 (8bit)
 							rd_x30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
@@ -103,13 +106,9 @@ module control (clk, reset);
 							rd_x30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 1;
-						end
+						 end
 		endcase
 	end 
-		
-	
-	//logic Reg2Loc_out, ALUSrc_out, MemToReg_out, ALUOp_out, zero_flag;
-	
 
 	/* This block below is not necessary. Control unit does not contain any
 	   other modules. They should be initialized in the CPU top level module */

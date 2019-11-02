@@ -1,6 +1,6 @@
 module program_counter (clk, reset, pc_in, BrTaken, UncondBr, CondAddr19, BrAddr26, pc_out);
 
-	input	logic	clk, reset, BrTaken, UncondBr;
+	input logic	clk, reset, BrTaken, UncondBr;
 	input logic [63:0] pc_in;
 	output logic [63:0] pc_out;
 	

@@ -43,6 +43,7 @@ module control (//clk, reset
 							rd_x30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
+							
 						 end
 		11'b10101011000: begin
 							ctrl = 10'b100100x010;// ADDS - 0x558 (11bit)  

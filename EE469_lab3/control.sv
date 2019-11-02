@@ -1,15 +1,12 @@
-module control (//clk, reset
+module control (
 				flag_neg, flag_zero, flag_overf, flag_cOut, instruction,
-				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr,
-				ALUOp);
-
-	//input logic clk, reset;
+				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp);
 	
 	input logic flag_neg, flag_zero, flag_overf, flag_cOut;
 	input logic [31:0] instruction;	
 
 	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
-	output logic [2:0] = ALUOp;
+	output logic [2:0] ALUOp;
 
 	//flag_wr_en stores flags to the flag register
 	//rd_x30 used for the purposes of Instr BL

@@ -21,6 +21,11 @@ module processor (clk, reset);
 	control (.flag_neg, .flag_zero, .flag_overf, .flag_cOut, .instruction,
 				.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp);
 	
-	datapath ();
+	assign reg_WrEn = RegWrite;
+	regfile(.ReadData1(Da), .ReadData2(Db), .WriteData(Wd), 
+				.ReadRegister1(Aa),. ReadRegister2(Ab), 
+				.WriteRegister(Aw), .RegWrite(reg_WrEn), .clk);
+				
+	datapath(.clk, .Da, .Db, .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .ALUOp, .Dw);
 
 endmodule

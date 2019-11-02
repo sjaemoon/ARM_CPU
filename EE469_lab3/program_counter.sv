@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module program_counter (clk, reset, pc_ext, BrTaken, UncondBr, CondAddr19, BrAddr26, pc_out);
 
 	input logic	clk, reset, BrTaken, UncondBr, pc_rd;
@@ -49,4 +50,43 @@ module program_counter_textbench();
 
 	program_counter dut (.*);
 
-	
+	parameter CLOCK_PERIOD = 100;
+    initial begin
+        clk <= 0;
+        forever #(CLOCK_PERIOD/2) clk <= ~clk;
+    end
+
+	int i;
+
+	initial begin
+		reset <= 1;
+		BrTaken <= 0; UncondBr <= 0;
+		pc_rd <= 0; CondAddr19 <= 0;
+		BrAddr26 <= 0; pc_ext <= 'd45826; 	@(posedge clk);
+
+		reset <= 0; @(posedge clk);
+
+		for(i = 0; i < 64; i++) begin
+			@(posedge clk);
+		end
+
+		BrAddr26 <= 'd328; 					@(posedge clk);
+		UncondBr <= 1; 						@(posedge clk);
+		BrTaken <= 1; 						@(posedge clk);
+
+		BrTaken <= 0; 						@(posedge clk);
+		UncondBr <= 0; 						@(posedge clk);
+		CondAddr19 <= 'd164;	 			@(posedge clk);
+		BrTaken <= 1; 						@(posedge clk);
+		BrTaken <= 0; 						@(posedge clk);
+		pc_rd <= 1; 						@(posedge clk);
+		pc_rd <= 0; 						@(posedge clk);
+
+		for(i = 0; i < 32; i++) begin
+			@(posedge clk);
+		end
+
+		$stop;
+	end
+endmodule
+		

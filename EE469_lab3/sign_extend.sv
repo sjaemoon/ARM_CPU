@@ -10,9 +10,11 @@ module sign_extend #(parameter WIDTH=8) (se_in, se_out);
 	
 endmodule
 
+
 module sign_extend_testbench #(parameter WIDTH = 8) ();
 
-	logic se_in, se_out;
+	logic [WIDTH-1:0] se_in;
+	logic [63:0] se_out;
 	
 	initial begin
 		se_in = 1'b0; #10;

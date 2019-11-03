@@ -1,6 +1,8 @@
 `timescale 1ns/10ps
 module processor (clk, reset);
 
+	// TODO: Testbench, where do we get the signal for Rd_X30?
+	// I am guessing from the control, so make output logic from control.sv
 	input logic clk, reset;
 	logic [63:0] pc_Addr;
 	
@@ -16,7 +18,7 @@ module processor (clk, reset);
 	logic [64:0] PCPlusFour;
 	
 	// control signals
-	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
+	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr; 
 	logic [2:0] ALUOp;
 	
 	// flags from the ALU
@@ -34,7 +36,7 @@ module processor (clk, reset);
 	assign X30 = 5'd30;
 	assign PCPlusFour = pc_addr + 3'd4;
 	
-	instructmem instr (.address(pc_address), .instruction, .clk);
+	instructmem instr (.address(pc_Addr), .instruction, .clk);
 	
 	control ctrl (.opcode, .flag_neg, .flag_zero, .flag_overf, .flag_cOut, 
 				.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp);

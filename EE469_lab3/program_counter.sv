@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-module program_counter (clk, reset, pc_ext, BrTaken, UncondBr, CondAddr19, BrAddr26, pc_out);
+module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, UncondBr,  pc_out);
 
 	input logic	clk, reset, BrTaken, UncondBr, pc_rd;
 	input logic [18:0] CondAddr19;
@@ -40,6 +40,7 @@ module program_counter (clk, reset, pc_ext, BrTaken, UncondBr, CondAddr19, BrAdd
 	assign pcrd_mux_sig[0] = brtaken_mux;
 	assign pc_out = pc_out_internal;
 endmodule
+
 
 module program_counter_textbench();
 	logic	clk, reset, BrTaken, UncondBr, pc_rd;

@@ -1,5 +1,5 @@
 module control (
-				flag_neg, flag_zero, flag_overf, flag_cOut, instruction,
+				opcode, flag_neg, flag_zero, flag_overf, flag_cOut, 
 				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp);
 	
 	input logic flag_neg, flag_zero, flag_overf, flag_cOut;
@@ -104,33 +104,6 @@ module control (
 						 end
 		endcase
 	end 
-
-	/* This block below is not necessary. Control unit does not contain any
-	   other modules. They should be initialized in the CPU top level module */
-
-	/*
-	// TODO: initialize pc somehow
-	// instruction fetch unit
-	program_counter pc (clk, reset, pc_in, BrTaken, UncondBr, CondAddr19, BrAddr26, pc_out);
-	instruction instr (.address(pc), .instruction, .clk);
-	
-	// TODO: maybe put each instruction as separate module
-	// Reg2Loc mux
-	mux2_1 mux0 #(.WIDTH(64)) mux2 (.in(mux2_sig), .sel(Reg2Loc), .out(Reg2Loc_out));
-	
-	
-	// ALUSrc mux
-	mux2_1 mux1 #(.WIDTH(64)) mux2 (.in(mux2_sig), .sel(ALUSrc), .out(ALUSrc_out));
-	
-	// MemToReg mux
-	mux2_1 mux2 #(.WIDTH(64)) mux2 (.in(mux2_sig), .sel(MemToReg), .out(MemToReg_out));
-
-	// ALUOp ALU
-	alu alu0 (.A(Da), .B(ALUSrc_out), .cntrl(ALUOp), .result(ALUOp_out), 
-				 .negative, .zero(zero_flag), .overflow, .carry_out);
-	
-	// TODO: integrate regFile and dataMem
-	*/
 	
 endmodule
 

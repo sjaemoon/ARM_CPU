@@ -2,24 +2,46 @@
 module processor (clk, reset);
 
 	input logic clk, reset;
-	
 	logic [63:0] pc_Addr;
-	logic [31:0] instruction;
 	
-	logic Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12;
+	// instruction formats
+	logic [31:0] instruction;
+	logic [10:0] opcode;
+	logic [4:0] Rd, Rn, Rm;
+	logic [8:0] DAddr9;
+	logic [11:0] ALUImm12;
+	logic [18:0] CondAddr19;
+	logic [25:0] BrAddr26;
+	logic [4:0] X30;
+	logic [64:0] PCPlusFour;
+	
+	// control signals
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
 	logic [2:0] ALUOp;
+	
+	// flags from the ALU
 	logic flag_neg, flag_zero, flag_overf, flag_cOut;
 	
-	
- 	program_counter pc (.clk, .reset, .pc_ext(Db_ext), .BrTaken, .UncondBr, .CondAddr19, .BrAddr26, .pc_out(pc_Addr));
+	// decodes 32-bit instruction
+	assign opcode = instruction[31:21];
+	assign Rd = instruction[4:0];
+	assign Rn = instruction[9:5];
+	assign Rm = instruction[20:16];
+	assign DAddr9  = instruction[20:12];
+	assign ALU_Imm12 = instruction[21:10];
+	assign CondAddr19 = instruction[23:5];
+	assign BrAddr26 = instruction[25:0];
+	assign X30 = 5'd30;
+	assign PCPlusFour = pc_addr + 3'd4;
 	
 	instructmem instr (.address(pc_address), .instruction, .clk);
 	
 	control ctrl (.opcode, .flag_neg, .flag_zero, .flag_overf, .flag_cOut, 
 				.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp);
 	
-	datapath dp (.clk, .Rd, .Rm, .Rn, .PCPlusFour, .X30, .DAddr9, .ALUImm12, 
+ 	program_counter pc (.clk, .reset, .pc_ext(Db_ext), .CondAddr19, .BrAddr26, .BrTaken, .UncondBr, .pc_out(pc_Addr));
+	
+	datapath dp (.clk, .Rd, .Rn, .Rm, .PCPlusFour, .X30, .DAddr9, .ALUImm12, 
 					.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .ALUOp, .Rd_X30, 
 					.flag_neg, .flag_zero, .flag_overf, .flag_cOut, .Db_ext);
 

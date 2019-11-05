@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, UncondBr,  pc_out, PCPlusFour);
+module program_counter (clk, reset, pc_ext, pc_rd, CondAddr19, BrAddr26, BrTaken, UncondBr,  pc_out, PCPlusFour);
 
 	input logic	clk, reset, BrTaken, UncondBr, pc_rd;
 	input logic [18:0] CondAddr19;
@@ -7,7 +7,7 @@ module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, Uncon
 	input logic [63:0] pc_ext;
 	output logic [63:0] pc_out, PCPlusFour;
 
-	logic [63:0] pc_out_internal, non_br, br, shifted_addr, pcrd_mux, 
+	logic [63:0] pc_out_internal, shifted_addr, pcrd_mux, 
 				 uncondbr_mux, brtaken_mux, pc_in_internal;
 	logic [1:0][63:0] brtaken_mux_sig, uncondbr_mux_sig, pcrd_mux_sig;
 
@@ -21,15 +21,15 @@ module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, Uncon
     endgenerate
 
 	
-	n_bit_adder non_bradder (.A(pc_out_internal), .B(3'b100), .result(non_br));
-	n_bit_adder bradder (.A(shifted_addr), .B(pc_out_internal), .result(br));
+	n_bit_adder non_bradder (.A(pc_out_internal), .B(64'd4), .result(brtaken_mux_sig[0]));
+	n_bit_adder bradder (.A(shifted_addr), .B(pc_out_internal), .result(brtaken_mux_sig[1]));
 
 	//sign extenders for Addr19 and 26
 	sign_extend #(.WIDTH(19)) se19 (.in(CondAddr19), .out(uncondbr_mux_sig[0]));
 	sign_extend #(.WIDTH(26)) se26 (.in(BrAddr26), .out(uncondbr_mux_sig[1]));
 
 	//shift_left.sv for shifter module
-	shift_left #(.WIDTH(2)) shift_left2 (.in(uncond_mux), .out(shifted_addr));
+	shift_left #(.WIDTH(2)) shift_left2 (.in(uncondbr_mux), .out(shifted_addr));
 	
 	//Instantiate Muxes
 	mux2_1 #(.WIDTH(64)) uncond_mux (.in(uncondbr_mux_sig), .sel(UncondBr), .out(uncondbr_mux));
@@ -39,16 +39,17 @@ module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, Uncon
 	assign pcrd_mux_sig[1] = pc_ext;
 	assign pcrd_mux_sig[0] = brtaken_mux;
 	assign pc_out = pc_out_internal;
-	assign PCPlusFour = non_br;
+	assign PCPlusFour = brtaken_mux_sig[0];
 endmodule
 
 
-module program_counter_textbench();
+module program_counter_testbench();
+	//clk, reset, pc_ext, pc_rd, CondAddr19, BrAddr26, BrTaken, UncondBr,  pc_out, PCPlusFou
 	logic	clk, reset, BrTaken, UncondBr, pc_rd;
 	logic [18:0] CondAddr19;
 	logic [25:0] BrAddr26;
 	logic [63:0] pc_ext;
-	logic [63:0] pc_out;
+	logic [63:0] pc_out, PCPlusFour;
 
 	program_counter dut (.*);
 
@@ -75,14 +76,16 @@ module program_counter_textbench();
 		BrAddr26 <= 'd328; 					@(posedge clk);
 		UncondBr <= 1; 						@(posedge clk);
 		BrTaken <= 1; 						@(posedge clk);
-
 		BrTaken <= 0; 						@(posedge clk);
+		assert(pc_out == (4 * 67) + 'd4 * 'd328);
 		UncondBr <= 0; 						@(posedge clk);
 		CondAddr19 <= 'd164;	 			@(posedge clk);
 		BrTaken <= 1; 						@(posedge clk);
 		BrTaken <= 0; 						@(posedge clk);
+
 		pc_rd <= 1; 						@(posedge clk);
 		pc_rd <= 0; 						@(posedge clk);
+		assert(pc_out == 'd45826);
 
 		for(i = 0; i < 32; i++) begin
 			@(posedge clk);

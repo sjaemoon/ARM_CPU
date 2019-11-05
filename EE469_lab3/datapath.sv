@@ -4,8 +4,8 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 					flag_neg, flag_zero, flag_overf, flag_cOut, Db_ext);
 	
 	input clk;	
-	input logic [4:0] Rd, Rm, Rn
-	input logic PCPlusFour, X30
+	input logic [4:0] Rd, Rm, Rn;
+	input logic PCPlusFour, X30;
 	input logic [8:0] DAddr9;
 	input logic [11:0] ALUImm12;
 	input logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, Rd_X30;
@@ -22,9 +22,10 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	logic negative, zero, overflow, carry_out;
 	
 	// sign extend DAddr9 and ALUImm12
-	input logic [63:0] DAddr9_se, ALUImm12_se;
-	sign_extend daddr9_se #(.WIDTH(9)) (.in(DAddr9), .out(DAddr9_se));	
-	sign_extend aluimm12_se ##(.WIDTH(12)) (.in(ALUImm12), .out(ALUImm12_se));
+	logic [63:0] DAddr9_se, ALUImm12_se;
+
+	sign_extend #(.WIDTH(9)) daddr9_se (.in(DAddr9), .out(DAddr9_se));	
+	sign_extend #(.WIDTH(12)) aluimm12_se (.in(ALUImm12), .out(ALUImm12_se));
 		
 	// set up input of the muxes
 	assign Reg2Loc_in0[0] = Rd;
@@ -34,7 +35,7 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	assign Rd_X30_in0[1] = X30;
 	
 	assign Reg2Loc_in1[0] = DAddr9_se;
-	assign Reg2Loc_in1[1] = ALUimm12_se;
+	assign Reg2Loc_in1[1] = ALUImm12_se;
 	
 	assign ALUSrc_in[0] = Db;
 	assign ALUSrc_in[1] = Reg2Loc_out1;
@@ -42,7 +43,7 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	assign MemToReg_in[0] = ALUOp_out;
 	assign MemToReg_in[1] = mem_Addr;
 	
-	assign Rd_X30_in1[0] = PCPlusFour;
+	assign Rd_X30_in1[1] = PCPlusFour;
 	assign Rd_X30_in1[0] = MemToReg_out;
 	
 	// instantiation of muxes and alu
@@ -58,8 +59,8 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	assign Aw = Rd_X30_out0;
 	assign Aa = Rn;
 	assign Ab = Reg2Loc_out0;
-	assign Dw = Rd_X30_Out1;
-	regfile rf (.ReadData1(Da), .ReadData2(Db), .WriteData(Wd), 
+	assign Dw = Rd_X30_out1;
+	regfile rf (.ReadData1(Da), .ReadData2(Db), .WriteData(Dw), 
 					.ReadRegister1(Aa),. ReadRegister2(Ab), 
 					.WriteRegister(Aw), .RegWrite, .clk);
 				

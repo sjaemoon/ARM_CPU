@@ -1,6 +1,7 @@
 module control (
 				opcode, flag_neg, flag_zero, flag_overf, flag_cOut, 
-				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp);
+				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp,
+				flag_wr_en, Rd_X30, pc_rd);
 	
 	input logic flag_neg, flag_zero, flag_overf, flag_cOut;
 	input logic [10:0] opcode;	
@@ -9,9 +10,9 @@ module control (
 	output logic [2:0] ALUOp;
 
 	//flag_wr_en stores flags to the flag register
-	//rd_x30 used for the purposes of Instr BL
+	//Rd_X30 used for the purposes of Instr BL
 	//pc_rd used to choose between PC logic or PC = Reg[Rd]
-	output logic flag_wr_en, rd_x30, pc_rd;
+	output logic flag_wr_en, Rd_X30, pc_rd;
 
 	logic [9:0] ctrl;
 
@@ -34,26 +35,26 @@ module control (
 		//Source of Db does not matter.
 		11'b1001000100x: begin
 							ctrl = 10'b110100x010; // ADDI - 0x244 (10bit)
-							rd_x30 = 0;
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 							
 						 end
 		11'b10101011000: begin
 							ctrl = 10'b100100x010;// ADDS - 0x558 (11bit)  
-							rd_x30 = 0;
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 1; 
 						 end
 		11'b000101xxxxx: begin
 							ctrl = 10'bxxx0011xxx; // B - 0x05 (6bit)
-							rd_x30 = 0;
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b01010100xxx: begin
-							ctrl = {5'b00x00, (flag_neg && (flag_neg != flag_overf)), 4'b000} // B.LT - 0x54 (8bit)
-							rd_x30 = 0;
+							ctrl = {5'b00x00, (flag_neg && (flag_neg != flag_overf)), 4'b000}; // B.LT - 0x54 (8bit)
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
@@ -61,10 +62,10 @@ module control (
 		//Extra mux needed to hardwire X30 to Aw
 		//Extra mux needed to take in PC + 4 and 
 		//connect it to Dw.
-		//Both mux controlled by rd_x30
+		//Both mux controlled by Rd_X30
 		11'b100101xxxxx: begin
 							ctrl = 10'bxxx1011xxx; // BL - 0x25 (6bit)
-							rd_x30 = 1;
+							Rd_X30 = 1;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
@@ -74,31 +75,31 @@ module control (
 		//controlled by pc_rd;
 		11'b11010110000: begin
 							ctrl = 10'b0xx00xxxxx; // BR - 0x6B0 (11bit)
-							rd_x30 = 0;
+							Rd_X30 = 0;
 							pc_rd = 1;
 							flag_wr_en = 0; 
 						 end
 		11'b10110100xxx: begin
-							ctrl = {5'b00x00, alu_zero, 4'b0000}; // CBZ - 0xB4 (8bit)
-							rd_x30 = 0;
+							ctrl = {5'b00x00, flag_zero, 4'b0000}; // CBZ - 0xB4 (8bit)
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b11111000010: begin
 							ctrl = 10'bx11100x010; // LDUR =- 0x7C2 (11bit)
-							rd_x30 = 0;
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b11111000000: begin
 							ctrl = 10'b01x010x010; // STUR - 0x7C0 (11bit)
-							rd_x30 = 0;
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b11101011000: begin
 							ctrl = 10'b100100x011; // SUBS - 0x658 (11bit)
-							rd_x30 = 0;
+							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 1;
 						 end

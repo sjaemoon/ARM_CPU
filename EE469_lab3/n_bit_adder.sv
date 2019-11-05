@@ -8,15 +8,15 @@ module n_bit_adder (A, B, result);
     logic [63:0] next_carry, sum_out;
 
     //bit 0 adder
-    full_adder adder0 (.a(A[0]), .b(B[0]), .Cin(cntrl[0]), 
-							  .Cout(next_carry[0]), .out(sum_out[0]));
+    full_adder adder0 (.a(A[0]), .b(B[0]), .Cin(1'b0), 
+							  .Cout(next_carry[0]), .sum(sum_out[0]));
     
     genvar i;
     //Generate bits 1-63
     generate 
         for(i = 1; i < 64; i++) begin : full_adders
             full_adder adderN (.a(A[i]), .b(B[i]), .Cin(next_carry[i - 1]), 
-										 .Cout(next_carry[i]), .out(sum_out[i]);
+										 .Cout(next_carry[i]), .sum(sum_out[i]));
         end
     endgenerate
 						 

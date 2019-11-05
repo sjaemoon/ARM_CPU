@@ -10,6 +10,7 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	input logic [11:0] ALUImm12;
 	input logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, Rd_X30;
 	input logic [2:0] ALUOp;
+	output logic flag_neg, flag_zero, flag_overf, flag_cOut, Db_ext;
 	
 	// inputs/outputs of RegFile
 	logic [63:0] Aw, Aa, Ab, Dw, Da, Db;

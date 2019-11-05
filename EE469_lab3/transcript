@@ -1,0 +1,31 @@
+# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:28:29 on Nov 04,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# ** Error: (vlog-66) Execution of vlib.exe failed. Please check the error log for more details.
+# End time: 23:28:29 on Nov 04,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlib work
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:29:04 on Nov 04,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# -- Compiling module datapath
+# ** Error: (vlog-13069) ./datapath.sv(8): near "input": syntax error, unexpected input, expecting ';'.
+# ** Error: (vlog-13069) ./datapath.sv(25): near "#": syntax error, unexpected '#', expecting ';'.
+# ** Error: (vlog-13069) ./datapath.sv(26): near "##": syntax error, unexpected ##, expecting ';'.
+# ** Error: ./datapath.sv(60): (vlog-2730) Undefined variable: 'Rd_X30_Out1'.
+# ** Error: ./datapath.sv(2): Identifier must be declared with a port mode: PCPlusFour.
+# ** Error: ./datapath.sv(2): Identifier must be declared with a port mode: X30.
+# ** Error: ./datapath.sv(2): (vlog-2730) Undefined variable: 'DAddr9'.
+# ** Error: ./datapath.sv(2): Identifier must be declared with a port mode: DAddr9.
+# ** Error: ./datapath.sv(4): Identifier must be declared with a port mode: flag_neg.
+# ** Error: ./datapath.sv(4): Identifier must be declared with a port mode: flag_zero.
+# ** Error: ./datapath.sv(4): Identifier must be declared with a port mode: flag_overf.
+# ** Error: ./datapath.sv(4): Identifier must be declared with a port mode: flag_cOut.
+# ** Error: ./datapath.sv(4): Identifier must be declared with a port mode: Db_ext.
+# End time: 23:29:04 on Nov 04,2019, Elapsed time: 0:00:00
+# Errors: 13, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.

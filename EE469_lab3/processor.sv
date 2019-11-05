@@ -34,17 +34,17 @@ module processor (clk, reset);
 	assign CondAddr19 = instruction[23:5];
 	assign BrAddr26 = instruction[25:0];
 	assign X30 = 5'd30;
-	assign PCPlusFour = pc_addr + 3'd4;
 	
 	instructmem instr (.address(pc_Addr), .instruction, .clk);
 	
 	control ctrl (.opcode, .flag_neg, .flag_zero, .flag_overf, .flag_cOut, 
-				.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp);
+				  .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp);
 	
- 	program_counter pc (.clk, .reset, .pc_ext(Db_ext), .CondAddr19, .BrAddr26, .BrTaken, .UncondBr, .pc_out(pc_Addr));
+ 	program_counter pc (.clk, .reset, .pc_ext(Db_ext), .CondAddr19, .BrAddr26, 
+	 					.BrTaken, .UncondBr, .pc_out(pc_Addr), .PCPlusFour);
 	
 	datapath dp (.clk, .Rd, .Rn, .Rm, .PCPlusFour, .X30, .DAddr9, .ALUImm12, 
-					.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .ALUOp, .Rd_X30, 
-					.flag_neg, .flag_zero, .flag_overf, .flag_cOut, .Db_ext);
+				 .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .ALUOp, .Rd_X30, 
+				 .flag_neg, .flag_zero, .flag_overf, .flag_cOut, .Db_ext);
 
 endmodule

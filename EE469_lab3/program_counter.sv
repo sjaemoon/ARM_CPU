@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, UncondBr,  pc_out);
+module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, UncondBr,  pc_out, PCPlusFour);
 
 	input logic	clk, reset, BrTaken, UncondBr, pc_rd;
 	input logic [18:0] CondAddr19;

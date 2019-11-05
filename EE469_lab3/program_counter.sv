@@ -5,7 +5,7 @@ module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, Uncon
 	input logic [18:0] CondAddr19;
 	input logic [25:0] BrAddr26;
 	input logic [63:0] pc_ext;
-	output logic [63:0] pc_out;
+	output logic [63:0] pc_out, PCPlusFour;
 
 	logic [63:0] pc_out_internal, non_br, br, shifted_addr, pcrd_mux, 
 				 uncondbr_mux, brtaken_mux, pc_in_internal;
@@ -39,6 +39,7 @@ module program_counter (clk, reset, pc_ext, CondAddr19, BrAddr26, BrTaken, Uncon
 	assign pcrd_mux_sig[1] = pc_ext;
 	assign pcrd_mux_sig[0] = brtaken_mux;
 	assign pc_out = pc_out_internal;
+	assign PCPlusFour = non_br;
 endmodule
 
 

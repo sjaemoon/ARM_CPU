@@ -34,7 +34,7 @@ module processor (clk, reset);
 	assign Rn = instruction[9:5];
 	assign Rm = instruction[20:16];
 	assign DAddr9  = instruction[20:12];
-	assign ALU_Imm12 = instruction[21:10];
+	assign ALUImm12 = instruction[21:10];
 	assign CondAddr19 = instruction[23:5];
 	assign BrAddr26 = instruction[25:0];
 	assign X30 = 5'd30;

@@ -68,7 +68,7 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	assign Ab = Reg2Loc_out0;
 	assign Dw = Rd_X30_out1;
 	regfile rf (.ReadData1(Da), .ReadData2(Db), .WriteData(Dw), 
-					.ReadRegister1(Aa),. ReadRegister2(Ab), 
+					.ReadRegister1(Aa), .ReadRegister2(Ab), 
 					.WriteRegister(Aw), .RegWrite, .clk);
 				
 	// instantiation of DataMemory

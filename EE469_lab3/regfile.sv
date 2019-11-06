@@ -23,8 +23,10 @@ module regfile(ReadData1, ReadData2, WriteData,
         end
     endgenerate
 
+	assign regOut[31] = 64'd0;
+	
     //Register 31 will always be 0.
-    register #(.WIDTH(64)) reg31 (.in(64'd0), .enable(regEnable[31]), .clk, .out(regOut[31]));
+    //register #(.WIDTH(64)) reg31 (.in(64'd0), .enable(regEnable[31]), .clk, .out(regOut[31]));
 
 	//MUX1 for Register N
 	mux32_1 #(.WIDTH(64)) muxn (.in(regOut), .sel(ReadRegister1), .out(ReadData1));

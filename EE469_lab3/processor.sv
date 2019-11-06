@@ -15,7 +15,7 @@ module processor (clk, reset);
 	logic [18:0] CondAddr19;
 	logic [25:0] BrAddr26;
 	logic [4:0] X30;
-	logic [64:0] PCPlusFour, Db_ext;
+	logic [63:0] PCPlusFour, Db_ext;
 	
 	// control signals
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, pc_rd, Rd_X30; 

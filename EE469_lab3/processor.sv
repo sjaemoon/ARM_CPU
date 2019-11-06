@@ -25,6 +25,9 @@ module processor (clk, reset);
 	logic flag_neg, flag_zero, flag_overf, flag_cOut;
 	logic flag_wr_en;
 	
+	//register flag out
+	logic negative_o, zero_o, overflow_o, carry_out_o;
+
 	// decodes 32-bit instruction
 	assign opcode = instruction[31:21];
 	assign Rd = instruction[4:0];
@@ -36,17 +39,30 @@ module processor (clk, reset);
 	assign BrAddr26 = instruction[25:0];
 	assign Rd_X30 = 5'd30;
 
-	flag_register flag_reg (.clk, .wr_en())
+	//Flag register
+	//Takes in alu flags, stores it in register
+	//When ADDS or SUBS is executed
+	flag_register flag_reg (.clk, .wr_en(flag_wr_en), .negative(flag_neg), .zero(flag_zero), .overflow(flag_overf),
+							.carry_out(flag_cOut), .*);
 	
+	//Instruction memory containing
+	//Instructions for the processor
 	instructmem instr (.address(pc_Addr), .instruction, .clk);
 	
+	//Control module for
+	//the Processor
 	control ctrl (.opcode, .flag_neg, .flag_zero, .flag_overf, .flag_cOut, 
 				  .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp
 				  .flag_wr_en, .rd_x30, .pc_rd);
 	
+	//Program counter block
+	//Contains counter itself, necessady adders and muxes
  	program_counter pc (.clk, .reset, .pc_ext(Db_ext), .pc_rd, .CondAddr19, .BrAddr26, 
 	 					.BrTaken, .UncondBr, .pc_out(pc_Addr), .PCPlusFour);
 	
+	//Datapath containing memory
+	//Regfile
+	//ALU. Only outputs Db_ext and flags.
 	datapath dp (.clk, .Rd, .Rn, .Rm, .PCPlusFour, .X30, .DAddr9, .ALUImm12, 
 				 .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .ALUOp, .Rd_X30, 
 				 .flag_neg, .flag_zero, .flag_overf, .flag_cOut, .Db_ext);

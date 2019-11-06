@@ -2,7 +2,7 @@
 module processorstim();
     logic clk, reset;
 
-    parameter ClockDelay = 50000;
+    parameter ClockDelay = 50;
 
     processor dut (.*);
 
@@ -17,7 +17,7 @@ module processorstim();
         reset <= 1;     @(posedge clk);
         reset <= 0;     @(posedge clk);
 
-        for(i = 0; i < 600; i++) begin
+        for(i = 0; i < 1200; i++) begin
             @(posedge clk);
         end
         $stop;

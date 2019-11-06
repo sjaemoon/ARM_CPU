@@ -47,7 +47,7 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	assign ALUSrc_in[1] = Reg2Loc_out1;
 
 	assign MemToReg_in[0] = ALUOp_out;
-	assign MemToReg_in[1] = mem_Addr;
+	assign MemToReg_in[1] = Dout;
 	
 	assign Rd_X30_in1[1] = PCPlusFour;
 	assign Rd_X30_in1[0] = MemToReg_out;

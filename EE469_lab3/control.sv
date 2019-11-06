@@ -1,10 +1,10 @@
 `timescale 1ns/10ps
 module control (
-				opcode, flag_neg, flag_zero, flag_overf, flag_cOut, 
+				opcode, flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero, 
 				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp,
 				flag_wr_en, Rd_X30, pc_rd);
 	
-	input logic flag_neg, flag_zero, flag_overf, flag_cOut;
+	input logic flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero;
 	input logic [10:0] opcode;	
 
 	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
@@ -81,13 +81,13 @@ module control (
 							flag_wr_en = 0; 
 						 end
 		11'b10110100xxx: begin
-							ctrl = {5'b00x00, flag_zero, 4'b0000}; // CBZ - 0xB4 (8bit)
+							ctrl = {5'b00x00, aluFlag_zero, 4'b0000}; // CBZ - 0xB4 (8bit)
 							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b11111000010: begin
-							ctrl = 10'bx11100x010; // LDUR =- 0x7C2 (11bit)
+							ctrl = 10'b011100x010; // LDUR =- 0x7C2 (11bit)
 							Rd_X30 = 0;
 							pc_rd = 0;
 							flag_wr_en = 0; 
@@ -110,7 +110,7 @@ module control (
 endmodule
 
 module control_testbench();
-	logic flag_neg, flag_zero, flag_overf, flag_cOut;
+	logic flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero;
 	logic [10:0] opcode;	
 
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr,
@@ -120,7 +120,7 @@ module control_testbench();
 	control dut (.*);
 
 	initial begin
-		flag_zero = 0; flag_overf = 0; flag_neg = 1; flag_cOut = 1; #10;
+		flag_zero = 0; flag_overf = 0; flag_neg = 1; flag_cOut = 1; aluFlag_zero = 1; #10;
 		opcode = 11'b1001000100x; #10;
 		opcode = 11'b10101011000; #10;
 		opcode = 11'b000101xxxxx; #10;

@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module control (
 				opcode, flag_neg, flag_zero, flag_overf, flag_cOut, 
 				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp,
@@ -107,6 +108,31 @@ module control (
 	end 
 	
 endmodule
+
+module control_testbench();
+	logic flag_neg, flag_zero, flag_overf, flag_cOut;
+	logic [10:0] opcode;	
+
+	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
+	logic [2:0] ALUOp;
+
+	initial begin
+		opcode = 11'b1001000100x; #10;
+		opcode = 11'b10101011000; #10;
+		opcode = 11'b000101xxxxx; #10;
+		opcode = 11'b01010100xxx; #10;
+		opdoce = 11'b100101xxxxx; #10;
+		opcode = 11'b11010110000; #10;
+		opcode = 11'b10110100xxx; #10;
+		opcode = 11'b11111000010; #10;
+		opcode = 11'b11111000000; #10;
+		opcode = 11'b11101011000; #10;
+	end
+endmodule
+
+
+
+
 
 /*
 	Reference

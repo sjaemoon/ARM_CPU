@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module flag_register    (clk, wr_en, negative, zero, overflow, carry_out, 
                          negative_o, zero_o, overflow_o, carry_out_o);
 

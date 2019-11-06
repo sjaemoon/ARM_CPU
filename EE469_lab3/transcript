@@ -203,3 +203,1203 @@ add wave -position end  sim:/control_testbench/Rd_X30
 add wave -position end  sim:/control_testbench/pc_rd
 add wave -position end  sim:/control_testbench/ALUOp
 run -all
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:52:37 on Nov 05,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 17:52:37 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:03:43 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# ** Error: datapath.sv(97): (vlog-2730) Undefined variable: 'ClockDelay'.
+# ** Error: datapath.sv(114): (vlog-2730) Undefined variable: 'WriteData'.
+# ** Error: (vlog-13069) datapath.sv(127): near "=": syntax error, unexpected '=', expecting ++ or --.
+# End time: 19:03:43 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:03:48 on Nov 05,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# ** Error: ./datapath.sv(97): (vlog-2730) Undefined variable: 'ClockDelay'.
+# ** Error: ./datapath.sv(114): (vlog-2730) Undefined variable: 'WriteData'.
+# ** Error: (vlog-13069) ./datapath.sv(127): near "=": syntax error, unexpected '=', expecting ++ or --.
+# End time: 19:03:48 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:06:17 on Nov 05,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# ** Error: (vlog-13069) ./datapath.sv(133): near "=": syntax error, unexpected '=', expecting ++ or --.
+# End time: 19:06:17 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:06:28 on Nov 05,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:06:28 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# End time: 19:06:41 on Nov 05,2019, Elapsed time: 2:49:04
+# Errors: 10, Warnings: 0
+# vsim work.datapath_testbench 
+# Start time: 19:06:42 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# ** Error: (vsim-3033) ./datapath.sv(55): Instantiation of 'alu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut File: ./datapath.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# Loading work.regfile
+# ** Error: (vsim-3033) ./regfile.sv(15): Instantiation of 'de_5_32' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# Loading work.register
+# ** Error: (vsim-3033) ./regfile.sv(30): Instantiation of 'mux32_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# ** Error: (vsim-3033) ./regfile.sv(33): Instantiation of 'mux32_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# ** Error: (vsim-3033) ./datapath.sv(71): Instantiation of 'datamem' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut File: ./datapath.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# Error loading design
+# End time: 19:06:42 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:06:57 on Nov 05,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:06:57 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./alu.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:07 on Nov 05,2019
+# vlog -reportprogress 300 ./alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 19:07:07 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./de_1_2.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:16 on Nov 05,2019
+# vlog -reportprogress 300 ./de_1_2.sv 
+# -- Compiling module de_1_2
+# -- Compiling module de_1_2_testbench
+# 
+# Top level modules:
+# 	de_1_2_testbench
+# End time: 19:07:17 on Nov 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog ./de_2_4.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:21 on Nov 05,2019
+# vlog -reportprogress 300 ./de_2_4.sv 
+# -- Compiling module de_2_4
+# -- Compiling module de_2_4_testbench
+# 
+# Top level modules:
+# 	de_2_4_testbench
+# End time: 19:07:21 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./de_4_16.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:26 on Nov 05,2019
+# vlog -reportprogress 300 ./de_4_16.sv 
+# -- Compiling module de_4_16
+# -- Compiling module de_4_16_testbench
+# 
+# Top level modules:
+# 	de_4_16_testbench
+# End time: 19:07:26 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog de_5_32.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:30 on Nov 05,2019
+# vlog -reportprogress 300 de_5_32.sv 
+# -- Compiling module de_5_32
+# -- Compiling module de_5_32_testbench
+# 
+# Top level modules:
+# 	de_5_32_testbench
+# End time: 19:07:30 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# vsim work.datapath_testbench 
+# Start time: 19:07:38 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# ** Error: (vsim-3033) ./nth_alu.sv(54): Instantiation of 'mux8_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/aluop_alu/alu0 File: ./nth_alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# ** Error: (vsim-3033) ./nth_alu.sv(54): Instantiation of 'mux8_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/aluop_alu/alu63 File: ./nth_alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# ** Error: (vsim-3033) ./regfile.sv(30): Instantiation of 'mux32_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# ** Error: (vsim-3033) ./regfile.sv(33): Instantiation of 'mux32_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# ** Error: (vsim-3033) ./datapath.sv(71): Instantiation of 'datamem' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut File: ./datapath.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# Error loading design
+# End time: 19:07:38 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+vlog ./mux2_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:44 on Nov 05,2019
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 19:07:44 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./mux4_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:48 on Nov 05,2019
+# vlog -reportprogress 300 ./mux4_1.sv 
+# -- Compiling module mux4_1
+# -- Compiling module mux4_1_testbench
+# 
+# Top level modules:
+# 	mux4_1_testbench
+# End time: 19:07:48 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./mux8_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:55 on Nov 05,2019
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 19:07:55 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./mux8_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:07:59 on Nov 05,2019
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 19:07:59 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./mux16_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:08:03 on Nov 05,2019
+# vlog -reportprogress 300 ./mux16_1.sv 
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# 
+# Top level modules:
+# 	mux16_1_testbench
+# End time: 19:08:03 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./mux32_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:08:07 on Nov 05,2019
+# vlog -reportprogress 300 ./mux32_1.sv 
+# -- Compiling module mux32_1
+# -- Compiling module mux32_1_testbench
+# 
+# Top level modules:
+# 	mux32_1_testbench
+# End time: 19:08:07 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# vsim work.datapath_testbench 
+# Start time: 19:08:12 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# ** Error: (vsim-3033) ./datapath.sv(71): Instantiation of 'datamem' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut File: ./datapath.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/work
+# Error loading design
+# End time: 19:08:12 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vlog ./datamem.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:08:18 on Nov 05,2019
+# vlog -reportprogress 300 ./datamem.sv 
+# -- Compiling module datamem
+# -- Compiling module datamem_testbench
+# 
+# Top level modules:
+# 	datamem_testbench
+# End time: 19:08:18 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# vsim work.datapath_testbench 
+# Start time: 19:08:20 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: (vsim-3015) ./datapath.sv(53): [PCDPC] - Port size (128) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) ./datapath.sv(53): [PCDPC] - Port size (64) does not match connection size (1) for port 'out'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) ./datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'ReadRegister1'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) ./datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'ReadRegister2'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) ./datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'WriteRegister'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+add wave -position end  sim:/datapath_testbench/clk
+add wave -position end  sim:/datapath_testbench/Rd
+add wave -position end  sim:/datapath_testbench/Rm
+add wave -position end  sim:/datapath_testbench/Rn
+add wave -position end  sim:/datapath_testbench/X30
+add wave -position end  sim:/datapath_testbench/PCPlusFour
+add wave -position end  sim:/datapath_testbench/DAddr9
+add wave -position end  sim:/datapath_testbench/ALUImm12
+add wave -position end  sim:/datapath_testbench/Reg2Loc
+add wave -position end  sim:/datapath_testbench/ALUSrc
+add wave -position end  sim:/datapath_testbench/MemToReg
+add wave -position end  sim:/datapath_testbench/RegWrite
+add wave -position end  sim:/datapath_testbench/MemWrite
+add wave -position end  sim:/datapath_testbench/Rd_X30
+add wave -position end  sim:/datapath_testbench/ALUOp
+add wave -position end  sim:/datapath_testbench/flag_neg
+add wave -position end  sim:/datapath_testbench/flag_zero
+add wave -position end  sim:/datapath_testbench/flag_overf
+add wave -position end  sim:/datapath_testbench/flag_cOut
+add wave -position end  sim:/datapath_testbench/Db_ext
+run -all
+#   50.00 ns Writing pattern to all registers.
+# 6350.00 ns Read contents of Registers from Db_ext
+# ** Error: Assertion error.
+#    Time: 6450 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 6550 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 6650 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 6750 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 6850 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 6950 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7050 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7150 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7250 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7350 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7450 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7550 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7650 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7750 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7850 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 7950 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8050 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8150 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8250 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8350 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8450 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8550 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8650 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8750 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8850 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 8950 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 9050 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 9150 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 9250 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Error: Assertion error.
+#    Time: 9350 ns  Scope: datapath_testbench File: ./datapath.sv Line: 133
+# ** Note: $stop    : ./datapath.sv(136)
+#    Time: 9450 ns  Iteration: 1  Instance: /datapath_testbench
+# Break in Module datapath_testbench at ./datapath.sv line 136
+vlog ./datamem.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:10:27 on Nov 05,2019
+# vlog -reportprogress 300 ./datamem.sv 
+# -- Compiling module datamem
+# -- Compiling module datamem_testbench
+# 
+# Top level modules:
+# 	datamem_testbench
+# End time: 19:10:27 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:10:30 on Nov 05,2019
+# vlog -reportprogress 300 ./datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:10:30 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3/datapath_wave.do}
+vsim work.datapath_testbench
+# End time: 19:10:55 on Nov 05,2019, Elapsed time: 0:02:35
+# Errors: 30, Warnings: 6
+# vsim work.datapath_testbench 
+# Start time: 19:10:55 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: (vsim-3015) ./datapath.sv(53): [PCDPC] - Port size (128) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) ./datapath.sv(53): [PCDPC] - Port size (64) does not match connection size (1) for port 'out'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) ./datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'ReadRegister1'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) ./datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'ReadRegister2'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) ./datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'WriteRegister'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+vlog ./sign_extend.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:13:58 on Nov 05,2019
+# vlog -reportprogress 300 ./sign_extend.sv 
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# 
+# Top level modules:
+# 	sign_extend
+# 	sign_extend_testbench
+# End time: 19:13:59 on Nov 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.sign_extend_testbench
+# End time: 19:14:08 on Nov 05,2019, Elapsed time: 0:03:13
+# Errors: 0, Warnings: 6
+# vsim work.sign_extend_testbench 
+# Start time: 19:14:08 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.sign_extend_testbench
+add wave -position end  sim:/sign_extend_testbench/in
+add wave -position end  sim:/sign_extend_testbench/out
+run -all
+vlog ./sign_extend.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:17:33 on Nov 05,2019
+# vlog -reportprogress 300 ./sign_extend.sv 
+# -- Compiling module sign_extend
+# ** Error: (vlog-13069) ./sign_extend.sv(9): near "{": syntax error, unexpected '{', expecting ';' or ','.
+# -- Compiling module sign_extend_testbench
+# End time: 19:17:33 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog ./sign_extend.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:17:44 on Nov 05,2019
+# vlog -reportprogress 300 ./sign_extend.sv 
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# 
+# Top level modules:
+# 	sign_extend
+# 	sign_extend_testbench
+# End time: 19:17:44 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.sign_extend_testbench
+# End time: 19:17:54 on Nov 05,2019, Elapsed time: 0:03:46
+# Errors: 2, Warnings: 0
+# vsim work.sign_extend_testbench 
+# Start time: 19:17:55 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.sign_extend_testbench
+add wave -position end  sim:/sign_extend_testbench/in
+add wave -position end  sim:/sign_extend_testbench/out
+run -all
+vlog ./sign_extend.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:18:27 on Nov 05,2019
+# vlog -reportprogress 300 ./sign_extend.sv 
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# 
+# Top level modules:
+# 	sign_extend_testbench
+# End time: 19:18:27 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.sign_extend_testbench
+# End time: 19:18:30 on Nov 05,2019, Elapsed time: 0:00:35
+# Errors: 0, Warnings: 0
+# vsim work.sign_extend_testbench 
+# Start time: 19:18:30 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.sign_extend_testbench
+# Loading work.sign_extend
+add wave -position end  sim:/sign_extend_testbench/in
+add wave -position end  sim:/sign_extend_testbench/out
+run -all
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:19:17 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:19:18 on Nov 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# End time: 19:19:29 on Nov 05,2019, Elapsed time: 0:00:59
+# Errors: 0, Warnings: 0
+# vsim work.datapath_testbench 
+# Start time: 19:19:29 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: (vsim-3015) datapath.sv(53): [PCDPC] - Port size (128) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(53): [PCDPC] - Port size (64) does not match connection size (1) for port 'out'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'ReadRegister1'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'ReadRegister2'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(64): [PCDPC] - Port size (5) does not match connection size (64) for port 'WriteRegister'. The port definition is at: ./regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:22:51 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# ** Error (suppressible): datapath.sv(17): (vlog-13169) Packed dimension must specify a range.
+# ** Error: (vlog-13069) datapath.sv(17): near ":": syntax error, unexpected ':', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: datapath.sv(41): (vlog-2730) Undefined variable: 'Db'.
+# -- Compiling module datapath_testbench
+# End time: 19:22:51 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:23:20 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:23:20 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# End time: 19:23:24 on Nov 05,2019, Elapsed time: 0:03:55
+# Errors: 3, Warnings: 6
+# vsim work.datapath_testbench 
+# Start time: 19:23:24 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: (vsim-3015) datapath.sv(51): [PCDPC] - Port size (10) does not match connection size (128) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux0 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(51): [PCDPC] - Port size (5) does not match connection size (64) for port 'out'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux0 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(52): [PCDPC] - Port size (10) does not match connection size (128) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rd_x30_mux0 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(52): [PCDPC] - Port size (5) does not match connection size (64) for port 'out'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rd_x30_mux0 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(53): [PCDPC] - Port size (128) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(53): [PCDPC] - Port size (64) does not match connection size (1) for port 'out'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(55): [PCDPC] - Port size (64) does not match connection size (5) for port 'A'. The port definition is at: ./alu.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/aluop_alu File: ./alu.sv
+# ** Warning: (vsim-3015) datapath.sv(64): [PCDPC] - Port size (64) does not match connection size (5) for port 'ReadData1'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(64): [PCDPC] - Port size (64) does not match connection size (5) for port 'ReadData2'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(64): [PCDPC] - Port size (64) does not match connection size (5) for port 'WriteData'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(71): [PCDPC] - Port size (64) does not match connection size (5) for port 'write_data'. The port definition is at: ./datamem.sv(16).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/dm File: ./datamem.sv
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:26:15 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:26:15 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# End time: 19:26:18 on Nov 05,2019, Elapsed time: 0:02:54
+# Errors: 0, Warnings: 12
+# vsim work.datapath_testbench 
+# Start time: 19:26:18 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: (vsim-3015) datapath.sv(57): [PCDPC] - Port size (128) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(57): [PCDPC] - Port size (64) does not match connection size (1) for port 'out'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/reg2loc_mux1 File: ./mux2_1.sv
+# ** Warning: (vsim-3015) datapath.sv(59): [PCDPC] - Port size (64) does not match connection size (5) for port 'A'. The port definition is at: ./alu.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/aluop_alu File: ./alu.sv
+# ** Warning: (vsim-3015) datapath.sv(68): [PCDPC] - Port size (64) does not match connection size (5) for port 'ReadData1'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(68): [PCDPC] - Port size (64) does not match connection size (5) for port 'ReadData2'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(68): [PCDPC] - Port size (64) does not match connection size (5) for port 'WriteData'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(75): [PCDPC] - Port size (64) does not match connection size (5) for port 'write_data'. The port definition is at: ./datamem.sv(16).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/dm File: ./datamem.sv
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:26:59 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:27:00 on Nov 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# End time: 19:27:02 on Nov 05,2019, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 8
+# vsim work.datapath_testbench 
+# Start time: 19:27:02 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: (vsim-3015) datapath.sv(59): [PCDPC] - Port size (64) does not match connection size (5) for port 'A'. The port definition is at: ./alu.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/aluop_alu File: ./alu.sv
+# ** Warning: (vsim-3015) datapath.sv(68): [PCDPC] - Port size (64) does not match connection size (5) for port 'ReadData1'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(68): [PCDPC] - Port size (64) does not match connection size (5) for port 'ReadData2'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(68): [PCDPC] - Port size (64) does not match connection size (5) for port 'WriteData'. The port definition is at: ./regfile.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/rf File: ./regfile.sv
+# ** Warning: (vsim-3015) datapath.sv(75): [PCDPC] - Port size (64) does not match connection size (5) for port 'write_data'. The port definition is at: ./datamem.sv(16).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_testbench/dut/dm File: ./datamem.sv
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:28:03 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:28:03 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# End time: 19:28:05 on Nov 05,2019, Elapsed time: 0:01:03
+# Errors: 0, Warnings: 6
+# vsim work.datapath_testbench 
+# Start time: 19:28:05 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+add wave -position end  sim:/datapath_testbench/clk
+add wave -position end  sim:/datapath_testbench/Rd
+add wave -position end  sim:/datapath_testbench/Rm
+add wave -position end  sim:/datapath_testbench/Rn
+add wave -position end  sim:/datapath_testbench/X30
+add wave -position end  sim:/datapath_testbench/PCPlusFour
+add wave -position end  sim:/datapath_testbench/DAddr9
+add wave -position end  sim:/datapath_testbench/ALUImm12
+add wave -position end  sim:/datapath_testbench/Reg2Loc
+add wave -position end  sim:/datapath_testbench/ALUSrc
+add wave -position end  sim:/datapath_testbench/MemToReg
+add wave -position end  sim:/datapath_testbench/RegWrite
+add wave -position end  sim:/datapath_testbench/MemWrite
+add wave -position end  sim:/datapath_testbench/Rd_X30
+add wave -position end  sim:/datapath_testbench/ALUOp
+add wave -position end  sim:/datapath_testbench/Db_ext
+add wave -position end  sim:/datapath_testbench/flag_neg
+add wave -position end  sim:/datapath_testbench/flag_zero
+add wave -position end  sim:/datapath_testbench/flag_overf
+add wave -position end  sim:/datapath_testbench/flag_cOut
+run -all
+#   50.00 ns Writing pattern to all registers.
+# 6350.00 ns Read contents of Registers from Db_ext
+# ** Error: Assertion error.
+#    Time: 6450 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 6550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6550 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 6650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6650 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 6750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6750 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 6850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6850 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 6950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6950 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7050 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7150 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7250 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7350 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7450 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7550 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7650 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7750 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7850 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 7950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7950 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8050 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8150 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8250 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8350 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8450 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8550 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8650 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8750 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8850 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 8950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8950 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 9050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9050 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 9150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9150 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 9250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9250 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 9350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9350 ns  Scope: datapath_testbench File: datapath.sv Line: 138
+# ** Error: Assertion error.
+#    Time: 9450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Note: $stop    : datapath.sv(141)
+#    Time: 9450 ns  Iteration: 1  Instance: /datapath_testbench
+# Break in Module datapath_testbench at datapath.sv line 141
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:30:28 on Nov 05,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 19:30:28 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.datapath_testbench
+# End time: 19:30:39 on Nov 05,2019, Elapsed time: 0:02:34
+# Errors: 87, Warnings: 1
+# vsim work.datapath_testbench 
+# Start time: 19:30:39 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.datapath_testbench
+# Loading work.datapath
+# Loading work.sign_extend
+# Loading work.mux2_1
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.register
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: Design size of 6696 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+do datapath_wave.do
+run -all
+#   50.00 ns Writing pattern to all registers.
+# 6350.00 ns Read contents of Registers from Db_ext
+# ** Error: Assertion error.
+#    Time: 6550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 6950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 6950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 7950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 7950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8550 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8650 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8750 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8850 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 8950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 8950 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9050 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9150 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9250 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9350 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Error: Assertion error.
+#    Time: 9450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 31
+# ** Error: Assertion error.
+#    Time: 9450 ns  Scope: datapath_testbench.dut.dm File: ./datamem.sv Line: 33
+# ** Note: $stop    : datapath.sv(141)
+#    Time: 9450 ns  Iteration: 1  Instance: /datapath_testbench
+# Break in Module datapath_testbench at datapath.sv line 141

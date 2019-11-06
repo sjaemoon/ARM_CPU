@@ -15,10 +15,10 @@ module processor (clk, reset);
 	logic [18:0] CondAddr19;
 	logic [25:0] BrAddr26;
 	logic [4:0] X30;
-	logic [64:0] PCPlusFour;
+	logic [64:0] PCPlusFour, Db_ext;
 	
 	// control signals
-	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr; 
+	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, pc_rd, Rd_X30; 
 	logic [2:0] ALUOp;
 	
 	// flags from the ALU
@@ -37,7 +37,7 @@ module processor (clk, reset);
 	assign ALU_Imm12 = instruction[21:10];
 	assign CondAddr19 = instruction[23:5];
 	assign BrAddr26 = instruction[25:0];
-	assign Rd_X30 = 5'd30;
+	assign X30 = 5'd30;
 
 	//Flag register
 	//Takes in alu flags, stores it in register
@@ -51,9 +51,10 @@ module processor (clk, reset);
 	
 	//Control module for
 	//the Processor
-	control ctrl (.opcode, .flag_neg, .flag_zero, .flag_overf, .flag_cOut, 
-				  .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp
-				  .flag_wr_en, .rd_x30, .pc_rd);
+	control ctrl (.opcode, .flag_neg(negative_o), .flag_zero(zero_o), 
+				  .flag_overf(overflow_o), .flag_cOut(carry_out_o), 
+				  .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp,
+				  .flag_wr_en, .Rd_X30, .pc_rd);
 	
 	//Program counter block
 	//Contains counter itself, necessady adders and muxes

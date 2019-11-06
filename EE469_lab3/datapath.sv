@@ -57,9 +57,10 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	mux2_1 #(.WIDTH(5)) rd_x30_mux0 (.in(Rd_X30_in0), .sel(Rd_X30), .out(Rd_X30_out0));
 	mux2_1 #(.WIDTH(64)) reg2loc_mux1 (.in(Reg2Loc_in1),.sel(Reg2Loc), .out(Reg2Loc_out1));
 	mux2_1 #(.WIDTH(64)) alusrc_mux (.in(ALUSrc_in),.sel(ALUSrc), .out(ALUSrc_out));
-	alu aluop_alu (.A(Da), .B(ALUSrc_out), .cntrl(ALUOp), .result(ALUOp_out), .negative, .zero, .overflow, .carry_out);
 	mux2_1 #(.WIDTH(64)) memtoreg_mux (.in(MemToReg_in),.sel(MemToReg), .out(MemToReg_out));
 	mux2_1 #(.WIDTH(64)) rd_x30_mux1 (.in(Rd_X30_in1), .sel(Rd_X30), .out(Rd_X30_out1));
+
+	alu aluop_alu (.A(Da), .B(ALUSrc_out), .cntrl(ALUOp), .result(ALUOp_out), .negative, .zero, .overflow, .carry_out);
 	
 	// instantitation of RegFile
 	assign Aw = Rd_X30_out0;

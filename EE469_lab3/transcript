@@ -91,3 +91,115 @@ vlog ./control.sv
 # 	control
 # End time: 16:07:20 on Nov 05,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+vsim control.sv
+# OpenFile control.sv
+vsim control.sv
+# OpenFile control.sv
+vlog ./control.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:12:50 on Nov 05,2019
+# vlog -reportprogress 300 ./control.sv 
+# -- Compiling module control
+# -- Compiling module control_testbench
+# ** Error: ./control.sv(124): (vlog-2730) Undefined variable: 'opdoce'.
+# End time: 16:12:50 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog ./control.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:12:59 on Nov 05,2019
+# vlog -reportprogress 300 ./control.sv 
+# -- Compiling module control
+# -- Compiling module control_testbench
+# 
+# Top level modules:
+# 	control
+# 	control_testbench
+# End time: 16:12:59 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.control_testbench
+# vsim work.control_testbench 
+# Start time: 16:13:08 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.control_testbench
+vlog ./control.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:14:39 on Nov 05,2019
+# vlog -reportprogress 300 ./control.sv 
+# -- Compiling module control
+# -- Compiling module control_testbench
+# 
+# Top level modules:
+# 	control
+# 	control_testbench
+# End time: 16:14:39 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.control_testbench
+# End time: 16:14:41 on Nov 05,2019, Elapsed time: 0:01:33
+# Errors: 0, Warnings: 0
+# vsim work.control_testbench 
+# Start time: 16:14:41 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.control_testbench
+add wave -position end  sim:/control_testbench/flag_neg
+add wave -position end  sim:/control_testbench/flag_zero
+add wave -position end  sim:/control_testbench/flag_overf
+add wave -position end  sim:/control_testbench/flag_cOut
+add wave -position 0  sim:/control_testbench/opcode
+add wave -position end  sim:/control_testbench/Reg2Loc
+add wave -position end  sim:/control_testbench/ALUSrc
+add wave -position end  sim:/control_testbench/MemToReg
+add wave -position end  sim:/control_testbench/RegWrite
+add wave -position end  sim:/control_testbench/MemWrite
+add wave -position end  sim:/control_testbench/BrTaken
+add wave -position end  sim:/control_testbench/UncondBr
+add wave -position end  sim:/control_testbench/ALUOp
+run -all
+vlog ./control.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:11 on Nov 05,2019
+# vlog -reportprogress 300 ./control.sv 
+# -- Compiling module control
+# ** Error (suppressible): ./control.sv(17): (vlog-2388) 'flag_wr_en' already declared in this scope (control).
+# ** Error (suppressible): ./control.sv(17): (vlog-2388) 'Rd_X30' already declared in this scope (control).
+# ** Error (suppressible): ./control.sv(17): (vlog-2388) 'pc_rd' already declared in this scope (control).
+# -- Compiling module control_testbench
+# End time: 16:17:11 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog ./control.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:30 on Nov 05,2019
+# vlog -reportprogress 300 ./control.sv 
+# -- Compiling module control
+# -- Compiling module control_testbench
+# 
+# Top level modules:
+# 	control_testbench
+# End time: 16:17:30 on Nov 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.control_testbench
+# End time: 16:17:37 on Nov 05,2019, Elapsed time: 0:02:56
+# Errors: 1, Warnings: 0
+# vsim work.control_testbench 
+# Start time: 16:17:37 on Nov 05,2019
+# Loading sv_std.std
+# Loading work.control_testbench
+# Loading work.control
+add wave -position end  sim:/control_testbench/flag_neg
+add wave -position end  sim:/control_testbench/flag_zero
+add wave -position end  sim:/control_testbench/flag_overf
+add wave -position end  sim:/control_testbench/flag_cOut
+add wave -position end  sim:/control_testbench/opcode
+add wave -position end  sim:/control_testbench/Reg2Loc
+add wave -position end  sim:/control_testbench/ALUSrc
+add wave -position end  sim:/control_testbench/MemToReg
+add wave -position end  sim:/control_testbench/RegWrite
+add wave -position end  sim:/control_testbench/MemWrite
+add wave -position end  sim:/control_testbench/BrTaken
+add wave -position end  sim:/control_testbench/UncondBr
+add wave -position end  sim:/control_testbench/flag_wr_en
+add wave -position end  sim:/control_testbench/Rd_X30
+add wave -position end  sim:/control_testbench/pc_rd
+add wave -position end  sim:/control_testbench/ALUOp
+run -all

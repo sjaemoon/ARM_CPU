@@ -113,15 +113,19 @@ module control_testbench();
 	logic flag_neg, flag_zero, flag_overf, flag_cOut;
 	logic [10:0] opcode;	
 
-	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
+	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr,
+		  flag_wr_en, Rd_X30, pc_rd;
 	logic [2:0] ALUOp;
 
+	control dut (.*);
+
 	initial begin
+		flag_zero = 0; flag_overf = 0; flag_neg = 1; flag_cOut = 1; #10;
 		opcode = 11'b1001000100x; #10;
 		opcode = 11'b10101011000; #10;
 		opcode = 11'b000101xxxxx; #10;
 		opcode = 11'b01010100xxx; #10;
-		opdoce = 11'b100101xxxxx; #10;
+		opcode = 11'b100101xxxxx; #10;
 		opcode = 11'b11010110000; #10;
 		opcode = 11'b10110100xxx; #10;
 		opcode = 11'b11111000010; #10;
@@ -129,10 +133,6 @@ module control_testbench();
 		opcode = 11'b11101011000; #10;
 	end
 endmodule
-
-
-
-
 
 /*
 	Reference

@@ -74,7 +74,7 @@ module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12,
 	// instantiation of DataMemory
 	assign Din = Db;
 	assign mem_Addr = ALUOp_out;
-	datamem dm (.address(mem_Addr), .write_enable(MemWrite), .read_enable(1'b1), 
+	datamem dm (.address(mem_Addr), .write_enable(MemWrite), .read_enable(MemToReg), 
 					.write_data(Db), .clk, .xfer_size(4'd8), .read_data(Dout));
 	
 	// assign datapath outputs

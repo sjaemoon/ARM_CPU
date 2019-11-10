@@ -1,8 +1,6 @@
 `timescale 1ns/10ps
 module processor (clk, reset);
 
-	// TODO: Testbench, where do we get the signal for Rd_X30?
-	// I am guessing from the control, so make output logic from control.sv
 	input logic clk, reset;
 	logic [63:0] pc_Addr;
 	

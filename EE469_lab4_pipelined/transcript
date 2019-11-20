@@ -1,0 +1,66 @@
+# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
+vlog datapath.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:43:32 on Nov 06,2019
+# vlog -reportprogress 300 datapath.sv 
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# 
+# Top level modules:
+# 	datapath_testbench
+# End time: 18:43:32 on Nov 06,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog instructmem.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:43:57 on Nov 06,2019
+# vlog -reportprogress 300 instructmem.sv 
+# -- Compiling module instructmem
+# -- Compiling module instructmem_testbench
+# 
+# Top level modules:
+# 	instructmem_testbench
+# End time: 18:43:57 on Nov 06,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.processorstim
+# vsim work.processorstim 
+# Start time: 18:44:08 on Nov 06,2019
+# Loading sv_std.std
+# Loading work.processorstim
+# Loading work.processor
+# Loading work.flag_register
+# Loading work.D_FF_en
+# Loading work.mux2_1
+# Loading work.D_FF
+# Loading work.instructmem
+# Loading work.control
+# Loading work.program_counter
+# Loading work.n_bit_adder
+# Loading work.full_adder
+# Loading work.sign_extend
+# Loading work.shift_left
+# Loading work.datapath
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.regfile
+# Loading work.de_5_32
+# Loading work.de_1_2
+# Loading work.de_4_16
+# Loading work.de_2_4
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.datamem
+# Loading work.register
+# ** Warning: Design size of 6720 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
+do processorstim_wave.do
+run -all
+# Running benchmark: ./benchmarks/test04_LdurStur.arm
+# ** Note: $stop    : processorstim.sv(23)
+#    Time: 60075 ns  Iteration: 1  Instance: /processorstim
+# Break in Module processorstim at processorstim.sv line 23
+# End time: 18:46:12 on Nov 06,2019, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 1

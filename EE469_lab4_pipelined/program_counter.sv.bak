@@ -1,0 +1,12 @@
+module program_counter (clk, reset, pc_in, BrTaken, UncondBr, pc_out);
+
+	input	logic	clk, reset, BrTaken, UncondBr;
+	input	logic [63:0] pc_in;
+	output logic [63:0] pc_out;
+	
+	
+	
+	// probably do not need the flags
+	alu alu0 (.A(pc_in), .B(), .result(pc_out));
+
+endmodule

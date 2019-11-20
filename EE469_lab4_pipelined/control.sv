@@ -4,29 +4,32 @@ module control (
 				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp,
 				flag_wr_en, Rd_X30, pc_rd);
 	
-	input logic flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero;
+	//input logic flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero;
 	input logic [10:0] opcode;	
 
-	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr;
+	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite; 
+	//BrTaken, UncondBr;
 	output logic [2:0] ALUOp;
 
 	//flag_wr_en stores flags to the flag register
 	//Rd_X30 used for the purposes of Instr BL
 	//pc_rd used to choose between PC logic or PC = Reg[Rd]
-	output logic flag_wr_en, Rd_X30, pc_rd;
 
-	logic [9:0] ctrl;
+	output logic flag_wr_en, Rd_X30; 
+	//pc_rd;
 
-	assign Reg2Loc = ctrl[9];
-	assign ALUSrc = ctrl[8];
-	assign MemToReg = ctrl[7];
-	assign RegWrite = ctrl[6];
-	assign MemWrite = ctrl[5];
-	assign BrTaken = ctrl[4];
-	assign UncondBr = ctrl[3];
+	logic [7:0] ctrl;
+
+	assign Reg2Loc = ctrl[7];
+	assign ALUSrc = ctrl[6];
+	assign MemToReg = ctrl[5];
+	assign RegWrite = ctrl[4];
+	assign MemWrite = ctrl[3];
+	//assign BrTaken = ctrl[4];
+	//assign UncondBr = ctrl[3];
 	assign ALUOp = ctrl[2:0];
 	
-	// TODO: Set other values as well... (rn, rm, rd, daddr, condaddr, etc)	
+	
 	// control signals logic based on table
 	always_comb begin
 		casex (opcode)
@@ -48,9 +51,9 @@ module control (
 							flag_wr_en = 1; 
 						 end
 		11'b000101xxxxx: begin
-							ctrl = 10'bxxx0011xxx; // B - 0x05 (6bit)
+							ctrl = 10'bxxx00xxx; // B - 0x05 (6bit)
 							Rd_X30 = 0;
-							pc_rd = 0;
+							//pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b01010100xxx: begin

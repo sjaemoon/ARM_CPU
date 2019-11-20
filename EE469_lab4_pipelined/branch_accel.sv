@@ -1,0 +1,1 @@
+module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd)

@@ -1,8 +1,8 @@
 `timescale 1ns/10ps
 module control (
 				opcode, flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero, 
-				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp,
-				flag_wr_en, Rd_X30, pc_rd);
+				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, ALUOp,
+				flag_wr_en, Rd_X30);
 	
 	//input logic flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero;
 	input logic [10:0] opcode;	
@@ -47,7 +47,7 @@ module control (
 		11'b10101011000: begin
 							ctrl = 8'b10010010;// ADDS - 0x558 (11bit)  
 							Rd_X30 = 0;
-							..pc_rd = 0;
+							//pc_rd = 0;
 							flag_wr_en = 1; 
 						 end
 		11'b000101xxxxx: begin
@@ -116,9 +116,9 @@ module control_testbench();
 	logic flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero;
 	logic [10:0] opcode;	
 
-	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr,
-		  flag_wr_en, Rd_X30, pc_rd;
-	logic [2:0] ALUOp;
+	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite,
+		  flag_wr_en, Rd_X30;
+	logic [2:0] ALUOp; 
 
 	control dut (.*);
 
@@ -168,4 +168,11 @@ endmodule
 	For lab #4 (only) the value in rd cannot be used in the next cycle.
 	STUR Rd, [Rn, #Imm9]: Mem[Reg[Rn] + SignExtend(Imm9)] = Reg[Rd].
 	SUBS Rd, Rn, Rm: Reg[Rd] = Reg[Rn] - Reg[Rm]. Set flags. 
+*/
+
+/* Changes *******************
+Ctrl bits are now 8 bits instead of 10.
+Assignments changed accordingly.
+BrTaken, UncondBr, and pc_rd now taken care by
+the Branch Accelerator
 */

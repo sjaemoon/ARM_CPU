@@ -104,3 +104,114 @@ vlog control.sv
 # 	control_testbench
 # End time: 21:57:37 on Nov 20,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+vsim work.branch_accel
+# vsim work.branch_accel 
+# Start time: 21:58:48 on Nov 20,2019
+# Loading sv_std.std
+# Loading work.branch_accel
+# Loading work.register
+# Loading work.mux2_1
+# Loading work.zero_flag
+# Loading work.D_FF_en
+# Loading work.D_FF
+# ** Warning: (vsim-3015) branch_accel.sv(29): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_neg File: ./mux2_1.sv
+# ** Warning: (vsim-3015) branch_accel.sv(30): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_zero File: ./mux2_1.sv
+# ** Warning: (vsim-3015) branch_accel.sv(31): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_overf File: ./mux2_1.sv
+# ** Warning: (vsim-3015) branch_accel.sv(32): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_cOut File: ./mux2_1.sv
+vsim quit
+# End time: 22:00:18 on Nov 20,2019, Elapsed time: 0:01:30
+# Errors: 0, Warnings: 4
+# vsim quit 
+# Start time: 22:00:18 on Nov 20,2019
+# ** Error: (vsim-3170) Could not find 'quit'.
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Error loading design
+# End time: 22:00:18 on Nov 20,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Break key hit
+vlog branch_accel.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:00:37 on Nov 20,2019
+# vlog -reportprogress 300 branch_accel.sv 
+# -- Compiling module branch_accel
+# -- Compiling module accel_stim
+# 
+# Top level modules:
+# 	accel_stim
+# End time: 22:00:37 on Nov 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.branch_stim
+# vsim work.branch_stim 
+# Start time: 22:00:43 on Nov 20,2019
+# ** Error: (vsim-3170) Could not find 'branch_stim'.
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Error loading design
+# End time: 22:00:44 on Nov 20,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.accel_stim
+# vsim work.accel_stim 
+# Start time: 22:00:52 on Nov 20,2019
+# Loading sv_std.std
+# Loading work.accel_stim
+# Loading work.branch_accel
+# Loading work.register
+# Loading work.mux2_1
+# Loading work.zero_flag
+# Loading work.D_FF_en
+# Loading work.D_FF
+add wave -position end  sim:/accel_stim/clk
+add wave -position end  sim:/accel_stim/opcode
+add wave -position end  sim:/accel_stim/regVal_in
+add wave -position end  sim:/accel_stim/flag_wr_en
+add wave -position end  sim:/accel_stim/flag_neg
+add wave -position end  sim:/accel_stim/flag_zero
+add wave -position end  sim:/accel_stim/flag_overf
+add wave -position end  sim:/accel_stim/flag_cOut
+add wave -position end  sim:/accel_stim/alu_neg
+add wave -position end  sim:/accel_stim/alu_zero
+add wave -position end  sim:/accel_stim/alu_overf
+add wave -position end  sim:/accel_stim/alu_cOut
+add wave -position end  sim:/accel_stim/BrTaken
+add wave -position end  sim:/accel_stim/UncondBr
+add wave -position end  sim:/accel_stim/pc_rd
+run -all
+# ** Note: $stop    : branch_accel.sv(178)
+#    Time: 11500 ns  Iteration: 1  Instance: /accel_stim
+# Break in Module accel_stim at branch_accel.sv line 178
+add wave -position 15  sim:/accel_stim/dut/zero_internal
+add wave -position 15  sim:/accel_stim/dut/setFlag_reg
+restart -f
+run -all
+# ** Note: $stop    : branch_accel.sv(178)
+#    Time: 11500 ns  Iteration: 1  Instance: /accel_stim
+# Break in Module accel_stim at branch_accel.sv line 178
+vlog control.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:05:33 on Nov 20,2019
+# vlog -reportprogress 300 control.sv 
+# -- Compiling module control
+# -- Compiling module control_testbench
+# 
+# Top level modules:
+# 	control_testbench
+# End time: 22:05:33 on Nov 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog branch_accel.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:05:39 on Nov 20,2019
+# vlog -reportprogress 300 branch_accel.sv 
+# -- Compiling module branch_accel
+# -- Compiling module accel_stim
+# 
+# Top level modules:
+# 	accel_stim
+# End time: 22:05:39 on Nov 20,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 22:07:32 on Nov 20,2019, Elapsed time: 0:06:40
+# Errors: 0, Warnings: 0

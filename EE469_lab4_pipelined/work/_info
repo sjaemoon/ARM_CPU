@@ -10,23 +10,23 @@ cModel Technology
 Z0 dC:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3
 vaccel_stim
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1574315824
+Z2 !s110 1574316339
 !i10b 1
-!s100 Gf1N@D[APGA<>SB9lTQTd2
-IZR@>EO@9C_Rj>BB]VV6H82
+!s100 eHAoDf<?4>d4k>[Kf>NfI1
+Ia>FK[NILn_lh^4Sca0E0?2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 !s105 branch_accel_sv_unit
 S1
 Z5 dC:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined
-Z6 w1574315815
+Z6 w1574316013
 Z7 8branch_accel.sv
 Z8 Fbranch_accel.sv
-L0 83
+L0 84
 Z9 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z10 !s108 1574315824.000000
+Z10 !s108 1574316339.000000
 Z11 !s107 branch_accel.sv|
 Z12 !s90 -reportprogress|300|branch_accel.sv|
 !i113 1
@@ -58,8 +58,8 @@ vbranch_accel
 R1
 R2
 !i10b 1
-!s100 dN4]QoNcb99flWlOU0QIE1
-IFWiK@<m<o=2R@0QX9JJAg3
+!s100 LVnMbhLNE1F51;6ae45dK0
+IYlmBS6LdeoN?WSDW@7naY1
 R3
 R4
 S1
@@ -79,7 +79,7 @@ R12
 R13
 vcontrol
 R1
-Z14 !s110 1574315857
+Z14 !s110 1574316333
 !i10b 1
 !s100 Xkb8`RgV^`YBiUHkjag9h1
 I[n>E72=:oVPKOWKngl><70
@@ -87,7 +87,7 @@ R3
 Z15 !s105 control_sv_unit
 S1
 R5
-Z16 w1574315853
+Z16 w1574316327
 Z17 8control.sv
 Z18 Fcontrol.sv
 L0 2
@@ -95,7 +95,7 @@ R9
 r1
 !s85 0
 31
-Z19 !s108 1574315857.000000
+Z19 !s108 1574316333.000000
 Z20 !s107 control.sv|
 Z21 !s90 -reportprogress|300|control.sv|
 !i113 1
@@ -104,8 +104,8 @@ vcontrol_testbench
 R1
 R14
 !i10b 1
-!s100 lz>iXNk6k8QJT<5=DdjBb2
-If[GiBl]]XEJhgX=zJED<L1
+!s100 [m[4`2BTmaX3>lV0?a1el1
+Ic9hZS]KAcK>XkV5^cC[Fi0
 R3
 R15
 S1

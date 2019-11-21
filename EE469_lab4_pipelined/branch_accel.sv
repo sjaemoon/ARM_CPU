@@ -16,7 +16,8 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
     output logic BrTaken, UncondBr, pc_rd;
 
     logic setFlag_reg;
-    logic neg_in, zero_in, overf_in, cOut_in, neg_o, zer_o, overf_o, cOut_o;
+    logic [1:0] neg_in, zero_in, overf_in, cOut_in; 
+    logic neg_o, zer_o, overf_o, cOut_o;
     logic zero_internal, CBZ;
 
     assign neg_in = {alu_neg, flag_neg};

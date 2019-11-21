@@ -113,7 +113,6 @@ module control (
 endmodule
 
 module control_testbench();
-	logic flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero;
 	logic [10:0] opcode;	
 
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite,
@@ -123,7 +122,6 @@ module control_testbench();
 	control dut (.*);
 
 	initial begin
-		flag_zero = 0; flag_overf = 0; flag_neg = 1; flag_cOut = 1; aluFlag_zero = 1; #10;
 		opcode = 11'b1001000100x; #10;
 		opcode = 11'b10101011000; #10;
 		opcode = 11'b000101xxxxx; #10;

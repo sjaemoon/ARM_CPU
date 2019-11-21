@@ -83,7 +83,7 @@ endmodule
 module accel_stim();
    
    logic clk, flag_wr_en;
-   logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut);
+   logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut;
    logic [10:0] opcode;
    logic [63:0] regVal_in;
    logic BrTaken, UncondBr, pc_rd;
@@ -97,4 +97,77 @@ module accel_stim();
       forever #(CLOCK_PERIOD/2) clk <= ~clk;
    end
 
-   
+   initial begin
+      flag_neg <= 0; flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0; 
+      alu_neg <= 0; alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;
+
+      regVal_in <= 64'd100;
+
+      // ADDI instr
+      opcode <= 11'b1001000100x;
+      flag_wr_en <= 0; @(posedge clk);
+
+      // SUBS instr
+      alu_neg = 1; 
+
+      opcode <= 11'b11101011000;
+      flag_wr_en = 1; @(posedge clk);
+
+      // B.LT instr 
+      flag_neg = 1;
+      alu_neg = 0;
+
+      opcode <= 1'b01010100xxx;
+      flag_wr_en = 0; @(posedge clk);
+
+      assert (UncondBr == 0 && BrTaken == 1 && pc_rd == 0);
+
+      // ADD instr
+      opcode <= 11'b1001000100x;
+      @(posedge clk);
+
+      // LDUR inst
+      opcode <= 11'b11111000010;
+      @(posedge clk);
+
+      // ADDS instr
+      alu_neg = 0; alu_zero = 1; alu_overf = 0; alu_cOut = 0;
+
+      opcode <= 11'b10101011000;
+      flag_wr_en = 1; @(posedge clk);
+
+      // ADDI instr
+      flag_neg = 0; flag_zero = 1; flags_overf = 0; flags_cOut = 0;
+      alu_neg = 0; alu_zero = 0; alu_overf = 0; alu_cOut = 0;
+
+      opcode <= 11'b1001000100x;
+      flag_wr_en = 0; @(posedge clk);
+
+      // B.LT instr
+      opcode <= 1'b01010100xxx;
+      flag_wr_en = 0; @(posedge clk);
+
+      assert (UncondBr == 0 && BrTaken == 1 && pc_rd == 0);
+
+      // CBZ instr
+      opcode <= 11'b10110100xxx;
+      @(posedge clk);
+
+      assert (UncondBr == 0 && BrTaken == 0 && pc_rd == 0);
+
+      // CBZ instr
+      regVal_in <= 64'd0;
+      opcode <= 11'b10110100xxx;
+      @(posedge clk);
+      
+      assert (UncondBr == 0 && BrTaken == 1 && pc_rd == 0);
+
+      // BR instr
+      opcode <= 11'b11010110000;
+      @(posedge clk);
+
+      assert (pc_rd == 1);
+
+      $stop;
+   end
+endmodule

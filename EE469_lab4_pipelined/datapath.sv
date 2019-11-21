@@ -1,10 +1,10 @@
 `timescale 1ns/10ps
-module datapath (clk, Rd, Rm, Rn, PCPlusFour, X30, DAddr9, ALUImm12, 
+module datapath (clk, Rd, Rn, Rm, PCPlusFour, X30, DAddr9, ALUImm12, 
 					Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, ALUOp, Rd_X30, 
 					flag_neg, flag_zero, flag_overf, flag_cOut, Db_ext);
 	
 	input logic clk;	
-	input logic [4:0] Rd, Rm, Rn, X30;
+	input logic [4:0] Rd, Rn, Rm, X30;
 	input logic [63:0] PCPlusFour;
 	input logic [8:0] DAddr9;
 	input logic [11:0] ALUImm12;
@@ -88,8 +88,8 @@ endmodule
 
 module datapath_testbench();
 	logic clk;	
-	logic [4:0] Rd, Rm, Rn, X30;
-	logic [63:0] PCPlusFour, Db_ext;;
+	logic [4:0] Rd, Rn, Rm, X30;
+	logic [63:0] PCPlusFour, Db_ext;
 	logic [8:0] DAddr9;
 	logic [11:0] ALUImm12;
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, Rd_X30;

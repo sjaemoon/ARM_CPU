@@ -1,6 +1,6 @@
-module D_FF (q, d, reset, clk);
-    output  reg q;
-    input   d, reset, clk;
+module D_FF (clk, reset, d, q);
+    input   clk, reset, d;
+	 output  reg q;
     
     always_ff @(posedge clk) begin
         if (reset)

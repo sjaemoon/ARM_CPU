@@ -49,10 +49,8 @@ module processor (clk, reset);
 	
 	//Control module for
 	//the Processor
-	control ctrl (.opcode, .flag_neg(negative_o), .flag_zero(zero_o), 
-				  .flag_overf(overflow_o), .flag_cOut(carry_out_o), .aluFlag_zero(flag_zero),
-				  .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .BrTaken, .UncondBr, .ALUOp,
-				  .flag_wr_en, .Rd_X30, .pc_rd);
+	control ctrl (.opcode, .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, .ALUOp,
+				  .flag_wr_en, .Rd_X30); // removed unnecessary input
 	
 	//Program counter block
 	//Contains counter itself, necessady adders and muxes

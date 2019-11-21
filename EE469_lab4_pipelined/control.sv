@@ -106,7 +106,14 @@ module control (
 							Rd_X30 = 0;
 							//pc_rd = 0;
 							flag_wr_en = 1;
-						 end
+						 end	
+						 
+		// To synthesize on Quartus
+		default: begin
+				ctrl = 8'bxxxxxxxx;
+				Rd_X30 = 0;
+				flag_wr_en = 1;
+			end
 		endcase
 	end 
 	

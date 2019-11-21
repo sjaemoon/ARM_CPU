@@ -48,4 +48,11 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
                             pc_rd = 0;
                          end
 
+        //BL - 0x25 (6bit)
+        11'b100101xxxxx: begin
+                            BrTaken = 1;
+                            UncondBr = 1;
+                            pc_rd = 0;
+                         end
+
         

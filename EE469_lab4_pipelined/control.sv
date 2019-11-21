@@ -68,9 +68,9 @@ module control (
 		//connect it to Dw.
 		//Both mux controlled by Rd_X30
 		11'b100101xxxxx: begin
-							ctrl = 10'bxxx1011xxx; // BL - 0x25 (6bit)
+							ctrl = 10'bxxx10xxx; // BL - 0x25 (6bit)
 							Rd_X30 = 1;
-							pc_rd = 0;
+							//pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 

@@ -84,9 +84,9 @@ module control (
 							flag_wr_en = 0; 
 						 end
 		11'b10110100xxx: begin
-							ctrl = {5'b00x00, aluFlag_zero, 4'b0000}; // CBZ - 0xB4 (8bit)
+							ctrl = {5'b00x00, 3'b000}; // CBZ - 0xB4 (8bit)
 							Rd_X30 = 0;
-							pc_rd = 0;
+							//pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 		11'b11111000010: begin

@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 module control (
-				opcode, flag_neg, flag_zero, flag_overf, flag_cOut, aluFlag_zero, 
+				opcode, 
 				Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, ALUOp,
 				flag_wr_en, Rd_X30);
 	

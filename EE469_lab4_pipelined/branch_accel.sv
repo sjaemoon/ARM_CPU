@@ -1,12 +1,12 @@
 `timescale 1ns/10ps
-module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
-                    flag_neg, flag_zero, flag_overf, flag_cOut
+module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in,
+                    flag_neg, flag_zero, flag_overf, flag_cOut,
                     alu_neg, alu_zero, alu_overf, alu_cOut);
     //Store flag_wr_en in a register, effectively figuring if previous instruction sets flags
     //or not. Read flags from ALU if register is 1, read from flags register otherwise.
     
     input logic clk, flag_wr_en;
-    input logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut);
+    input logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut;
     input logic [10:0] opcode;
 
     //regVal_in needed for CBZ
@@ -103,24 +103,28 @@ module accel_stim();
 
       regVal_in <= 64'd100;
 
+      @(posedge clk);
+
       // ADDI instr
       opcode <= 11'b1001000100x;
       flag_wr_en <= 0; @(posedge clk);
 
       // SUBS instr
-      alu_neg = 1; 
-
       opcode <= 11'b11101011000;
       flag_wr_en = 1; @(posedge clk);
 
-      // B.LT instr 
-      flag_neg = 1;
-      alu_neg = 0;
+      // Flags from ALU executing SUBS
+      alu_neg <= 1; //rest are 0s
 
-      opcode <= 1'b01010100xxx;
+      // B.LT instr 
+      opcode <= 11'b01010100xxx;
       flag_wr_en = 0; @(posedge clk);
 
       assert (UncondBr == 0 && BrTaken == 1 && pc_rd == 0);
+
+      // Flags from ALU moves to FlagReg
+      alu_neg <= 0;
+      flag_neg <= 1; flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 
       // ADD instr
       opcode <= 11'b1001000100x;
@@ -131,23 +135,25 @@ module accel_stim();
       @(posedge clk);
 
       // ADDS instr
-      alu_neg = 0; alu_zero = 1; alu_overf = 0; alu_cOut = 0;
-
       opcode <= 11'b10101011000;
       flag_wr_en = 1; @(posedge clk);
 
-      // ADDI instr
-      flag_neg = 0; flag_zero = 1; flags_overf = 0; flags_cOut = 0;
-      alu_neg = 0; alu_zero = 0; alu_overf = 0; alu_cOut = 0;
+      // Flags from ALU executing ADDS
+      alu_cOut <= 1; //rest are 0s
 
+      // ADDI instr
       opcode <= 11'b1001000100x;
       flag_wr_en = 0; @(posedge clk);
 
+      // Flags from ALU moves to FlagReg
+      alu_cOut <= 0;
+      flag_neg <= 0; flag_zero <= 0; flag_overf <= 0; flag_cOut <= 1;
+
       // B.LT instr
-      opcode <= 1'b01010100xxx;
+      opcode <= 11'b01010100xxx;
       flag_wr_en = 0; @(posedge clk);
 
-      assert (UncondBr == 0 && BrTaken == 1 && pc_rd == 0);
+      assert (UncondBr == 0 && BrTaken == 0 && pc_rd == 0);
 
       // CBZ instr
       opcode <= 11'b10110100xxx;

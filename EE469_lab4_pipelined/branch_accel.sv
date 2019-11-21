@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
                     flag_neg, flag_zero, flag_overf, flag_cOut
                     alu_neg, alu_zero, alu_overf, alu_cOut);
@@ -77,9 +78,23 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
                  end
         endcase
     end
+endmodule
 
-                
+module accel_stim();
+   
+   logic clk, flag_wr_en;
+   logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut);
+   logic [10:0] opcode;
+   logic [63:0] regVal_in;
+   logic BrTaken, UncondBr, pc_rd;
 
-        
+   branch_accel dut (.*);
 
-        
+   parameter CLOCK_PERIOD = 1000;
+
+   initial begin
+      clk <= 0;
+      forever #(CLOCK_PERIOD/2) clk <= ~clk;
+   end
+
+   

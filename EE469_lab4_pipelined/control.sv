@@ -57,9 +57,9 @@ module control (
 							flag_wr_en = 0; 
 						 end
 		11'b01010100xxx: begin
-							ctrl = {5'b00x00, (flag_neg && (flag_neg != flag_overf)), 4'b000}; // B.LT - 0x54 (8bit)
+							ctrl = {5'b00x00, 3'b000}; // B.LT - 0x54 (8bit)
 							Rd_X30 = 0;
-							pc_rd = 0;
+							//pc_rd = 0;
 							flag_wr_en = 0; 
 						 end
 

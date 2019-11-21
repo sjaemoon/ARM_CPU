@@ -36,7 +36,16 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
         casex (opcode)
         // B - 0x05 (6bit)
         11'b000101xxxxx: begin
-            BrTaken = 1;
-            UncondBr = 1;
-            pc_rd = 0;
-        (flag_neg && (flag_neg != flag_overf)) //logic for B.LT
+                            BrTaken = 1;
+                            UncondBr = 1;
+                            pc_rd = 0;
+                         end
+
+        // B.LT - 0x54 (8bit)
+        11'b01010100xxx: begin
+                            BrTaken = (flag_neg && (flag_neg != flag_overf)); //logic for B.LT
+                            UncondBr = 0;
+                            pc_rd = 0;
+                         end
+
+        

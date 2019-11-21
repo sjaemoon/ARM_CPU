@@ -12,29 +12,29 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:25 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv 
 # -- Compiling module zero_flag
 # -- Compiling module zero_flag_testbench
 # 
 # Top level modules:
 # 	zero_flag_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:25 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:25 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv 
 # -- Compiling module sign_extend
 # -- Compiling module sign_extend_testbench
 # 
 # Top level modules:
 # 	sign_extend_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:26 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:26 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv 
 # -- Compiling module shift_left
 # -- Compiling module shift_left_testbench
@@ -42,300 +42,266 @@
 # Top level modules:
 # 	shift_left
 # 	shift_left_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:26 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:26 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:26 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:26 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv 
 # -- Compiling module mux4_1
 # -- Compiling module mux4_1_testbench
 # 
 # Top level modules:
 # 	mux4_1_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:26 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:27 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv 
 # -- Compiling module mux32_1
 # -- Compiling module mux32_1_testbench
 # 
 # Top level modules:
 # 	mux32_1_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:27 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:27 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv 
 # -- Compiling module mux16_1
 # -- Compiling module mux16_1_testbench
 # 
 # Top level modules:
 # 	mux16_1_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:27 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:27 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv 
 # -- Compiling module D_FF_en
 # -- Compiling module D_FF_en_testbench
 # 
 # Top level modules:
 # 	D_FF_en_testbench
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:27 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:51 on Nov 21,2019
+# Start time: 11:04:27 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv 
 # -- Compiling module D_FF
 # 
 # Top level modules:
 # 	D_FF
-# End time: 07:35:51 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:27 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:28 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv 
 # -- Compiling module de_2_4
 # -- Compiling module de_2_4_testbench
 # 
 # Top level modules:
 # 	de_2_4_testbench
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:28 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:28 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv 
 # -- Compiling module de_1_2
 # -- Compiling module de_1_2_testbench
 # 
 # Top level modules:
 # 	de_1_2_testbench
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:28 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:28 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:28 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:28 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:29 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:29 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv 
 # -- Compiling module control
 # -- Compiling module control_testbench
 # 
 # Top level modules:
 # 	control_testbench
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:29 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:29 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv 
 # -- Compiling module n_bit_adder
 # 
 # Top level modules:
 # 	n_bit_adder
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:29 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:29 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv 
 # -- Compiling module full_adder
 # -- Compiling module full_adder_testbench
 # 
 # Top level modules:
 # 	full_adder_testbench
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:29 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:29 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv 
 # -- Compiling module instructmem
 # -- Compiling module instructmem_testbench
 # 
 # Top level modules:
 # 	instructmem_testbench
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:30 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:52 on Nov 21,2019
+# Start time: 11:04:30 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv 
 # -- Compiling module register
 # -- Compiling module register_testbench
 # 
 # Top level modules:
 # 	register_testbench
-# End time: 07:35:52 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:30 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:30 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv 
 # -- Compiling module nth_alu
 # -- Compiling module nth_alu_testbench
 # 
 # Top level modules:
 # 	nth_alu_testbench
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:30 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:30 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv 
 # -- Compiling module flag_register
 # -- Compiling module flag_register_testbench
 # 
 # Top level modules:
 # 	flag_register_testbench
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:30 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:30 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv 
 # -- Compiling module de_5_32
 # -- Compiling module de_5_32_testbench
 # 
 # Top level modules:
 # 	de_5_32_testbench
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:31 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:31 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv 
 # -- Compiling module de_4_16
 # -- Compiling module de_4_16_testbench
 # 
 # Top level modules:
 # 	de_4_16_testbench
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:31 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:31 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv 
 # -- Compiling module program_counter
 # -- Compiling module program_counter_testbench
 # 
 # Top level modules:
 # 	program_counter_testbench
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:31 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:31 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv 
 # -- Compiling module regfile
 # -- Compiling module regstim
 # 
 # Top level modules:
 # 	regstim
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:31 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:31 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv 
 # -- Compiling module datapath
 # -- Compiling module datapath_testbench
 # 
 # Top level modules:
 # 	datapath_testbench
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:32 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined {C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:35:53 on Nov 21,2019
+# Start time: 11:04:32 on Nov 21,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined" C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv 
 # -- Compiling module processor
 # 
 # Top level modules:
 # 	processor
-# End time: 07:35:53 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:04:32 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vlog -reportprogress 300 -work work C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:37:15 on Nov 21,2019
+# Start time: 11:05:09 on Nov 21,2019
 # vlog -reportprogress 300 -work work C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv 
 # -- Compiling module forwarding_unit
 # -- Compiling module forwarding_unit_testbench
 # 
 # Top level modules:
 # 	forwarding_unit_testbench
-# End time: 07:37:15 on Nov 21,2019, Elapsed time: 0:00:00
+# End time: 11:05:09 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vsim work.forwarding_unit_testbench
-# vsim work.forwarding_unit_testbench 
-# Start time: 07:37:29 on Nov 21,2019
-# Loading sv_std.std
-# Loading work.forwarding_unit_testbench
-# Loading work.forwarding_unit
-# Loading work.mux4_1
-# Loading work.D_FF
-# ** Warning: (vsim-3015) C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv(57): [PCDPC] - Port size (20) does not match connection size (256) for port 'in'. The port definition is at: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/reg1_mux File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
-# ** Warning: (vsim-3015) C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv(57): [PCDPC] - Port size (5) does not match connection size (64) for port 'out'. The port definition is at: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/reg1_mux File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
-# ** Warning: (vsim-3015) C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv(58): [PCDPC] - Port size (20) does not match connection size (256) for port 'in'. The port definition is at: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/reg2_mux File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
-# ** Warning: (vsim-3015) C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv(58): [PCDPC] - Port size (5) does not match connection size (64) for port 'out'. The port definition is at: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/reg2_mux File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
-run -all
-# ** Error: Assertion error.
-#    Time: 0 ps  Scope: forwarding_unit_testbench File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv Line: 80
-# ** Error: Assertion error.
-#    Time: 50 ns  Scope: forwarding_unit_testbench File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv Line: 82
-# ** Error: Assertion error.
-#    Time: 150 ns  Scope: forwarding_unit_testbench File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv Line: 84
-# ** Error: Assertion error.
-#    Time: 250 ns  Scope: forwarding_unit_testbench File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv Line: 86
-# ** Error: Assertion error.
-#    Time: 350 ns  Scope: forwarding_unit_testbench File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv Line: 88
-# ** Error: Assertion error.
-#    Time: 450 ns  Scope: forwarding_unit_testbench File: C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv Line: 90
-# ** Note: $stop    : C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv(91)
-#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
-# Break in Module forwarding_unit_testbench at C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv line 91
-# End time: 07:43:55 on Nov 21,2019, Elapsed time: 0:06:26
-# Errors: 6, Warnings: 4

@@ -9,7 +9,7 @@ module D_FF_en (clk, reset, enable, in, out);
 	assign mux_in[1] = in;
 	
 	mux2_1 #(.WIDTH(1)) muxIn (.in(mux_in), .sel(enable), .out(ff_in));
-	D_FF ff (.clk(clk), .reset(reset), .d(ff_in), .q(mux_in[0]));
+	D_FF ff (.q(mux_in[0]), .d(ff_in), .reset(reset), .clk(clk));
 	
 	assign out = mux_in[0];
 	//buf #0.05 out_buffer (out, ff_in[0]);

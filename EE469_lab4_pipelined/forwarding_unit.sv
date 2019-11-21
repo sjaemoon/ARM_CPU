@@ -14,8 +14,8 @@ module forwarding_unit (clk, Rd, Rn, Rm, Da, Db, ALU_out, Mem_out, reg1, reg2);
 	genvar i;
 	generate
 	for (i = 0; i < 5; i++) begin: shift
-		D_FF dff1 (.clk, .reset(1'b0), .d(Rd[i]), .q(Rd_1cyc[i]));
-		D_FF dff2 (.clk, .reset(1'b0), .d(Rd_1cyc[i]), .q(Rd_2cyc[i]));
+		D_FF dff1 (.q(Rd_1cyc[i]), .d(Rd[i]), .reset(1'b0), .clk);
+		D_FF dff2 (.q(Rd_2cyc[i]), .d(Rd_1cyc[i]), .reset(1'b0), .clk);
 		xnor #0.05 XNOR0 (RnXNORRd1cyc_sel[i], Rn[i], Rd_1cyc[i]); // timing
 		xnor #0.05 XNOR1 (RnXNORRd2cyc_sel[i], Rn[i], Rd_2cyc[i]);
 		xnor #0.05 XNOR2 (RmXNORRd1cyc_sel[i], Rm[i], Rd_1cyc[i]);	

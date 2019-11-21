@@ -20,7 +20,6 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
 
     assign neg_in = {alu_neg, flag_neg};
     assign zero_in = {alu_zero, flag_zero};
-    //assign zero_in2 = {zero_internal, zero_o1};
     assign overf_in = {alu_overf, flag_overf};
     assign cOut_in = {alu_cOut, flag_cOut};
 
@@ -30,7 +29,8 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
     mux2_1 #(.WIDTH(1)) flags_zero (.in(zero_in), .sel(setFlag_reg), .out(zero_o));
     mux2_1 #(.WIDTH(1)) flags_overf (.in(overf_in), .sel(setFlag_reg), .out(overf_o));
     mux2_1 #(.WIDTH(1)) flags_cOut (.in(cOut_in), .sel(setFlag_reg), .out(cOut_o));
-    //mux2_1 #(.WIDTH(1)) flags_zero2 (.in(zero_in2), .sel(CBZ), .out(zero_o2));
+
+    zero_flag zero_module (.in(regVal_in), .out(zero_internal));
 
     always_comb begin
         casex (opcode)
@@ -72,6 +72,14 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
                             UncondBr = 0;
                             pc_rd = 0;
                          end
+
+        default: begin
+                    BrTaken = 0;
+                    UncondBr = 0;
+                    pc_rd = 0;
+                 end
+        endcase
+    end
 
                 
 

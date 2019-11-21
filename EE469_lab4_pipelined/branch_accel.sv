@@ -34,10 +34,7 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
 
     always_comb begin
         casex (opcode)
-        BrTaken = 0;
-        UncondBr = 0;
-        pc_rd = 0;
-
+        
         // B - 0x05 (6bit)
         11'b000101xxxxx: begin
                             BrTaken = 1;

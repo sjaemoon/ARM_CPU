@@ -33,16 +33,16 @@ module forwarding_unit (clk, Rd, Rn, Rm, Da, Db, ALU_out, Mem_out, reg1, reg2);
 	
 	// At most 4 gate inputs
 	// reg1_sel
-	and #0.05 AND20 (reg1_sel_temp0, RnXNORRd1cyc_sel[0], RnXNORRd1cyc_sel[1], RnXNORRd1cyc_sel[2], RnXNORRd1cyc_sel[3]);
-	and #0.05 AND21 (reg1_sel[0], reg1_sel_temp0, RnXNORRd1cyc_sel[4]);
-	and #0.05 AND22 (reg1_sel_temp1, RnXNORRd2cyc_sel[0], RnXNORRd2cyc_sel[1], RnXNORRd2cyc_sel[2], RnXNORRd2cyc_sel[3]);
-	and #0.05 AND23 (reg1_sel[1], reg1_sel_temp1, RnXNORRd2cyc_sel[4]);
+	and #0.05 AND0 (reg1_sel_temp0, RnXNORRd1cyc_sel[0], RnXNORRd1cyc_sel[1], RnXNORRd1cyc_sel[2], RnXNORRd1cyc_sel[3]);
+	and #0.05 AND1 (reg1_sel[0], reg1_sel_temp0, RnXNORRd1cyc_sel[4]);
+	and #0.05 AND2 (reg1_sel_temp1, RnXNORRd2cyc_sel[0], RnXNORRd2cyc_sel[1], RnXNORRd2cyc_sel[2], RnXNORRd2cyc_sel[3]);
+	and #0.05 AND3 (reg1_sel[1], reg1_sel_temp1, RnXNORRd2cyc_sel[4]);
 	
 	// reg2_sel
-	and #0.05 AND24 (reg2_sel_temp0, RmXNORRd1cyc_sel[0], RmXNORRd1cyc_sel[1], RmXNORRd1cyc_sel[2], RmXNORRd1cyc_sel[3]);
-	and #0.05 AND25 (reg2_sel[0], reg2_sel_temp0, RmXNORRd1cyc_sel[4]);
-	and #0.05 AND26 (reg2_sel_temp1, RmXNORRd2cyc_sel[0], RmXNORRd2cyc_sel[1], RmXNORRd2cyc_sel[2], RmXNORRd2cyc_sel[3]);
-	and #0.05 AND27 (reg2_sel[1], reg2_sel_temp1, RmXNORRd2cyc_sel[4]);
+	and #0.05 AND4 (reg2_sel_temp0, RmXNORRd1cyc_sel[0], RmXNORRd1cyc_sel[1], RmXNORRd1cyc_sel[2], RmXNORRd1cyc_sel[3]);
+	and #0.05 AND5 (reg2_sel[0], reg2_sel_temp0, RmXNORRd1cyc_sel[4]);
+	and #0.05 AND6 (reg2_sel_temp1, RmXNORRd2cyc_sel[0], RmXNORRd2cyc_sel[1], RmXNORRd2cyc_sel[2], RmXNORRd2cyc_sel[3]);
+	and #0.05 AND7 (reg2_sel[1], reg2_sel_temp1, RmXNORRd2cyc_sel[4]);
 	
 	assign reg1_mux_in[0] = Da;
 	assign reg1_mux_in[1] = ALU_out;
@@ -54,8 +54,8 @@ module forwarding_unit (clk, Rd, Rn, Rm, Da, Db, ALU_out, Mem_out, reg1, reg2);
 	assign reg2_mux_in[2] = Mem_out;
 	assign reg2_mux_in[3] = 5'b0;
 	
-	mux4_1 #(.WIDTH(5)) reg1_mux (reg1_mux_in, reg1_sel, reg1);
-	mux4_1 #(.WIDTH(5)) reg2_mux (reg2_mux_in, reg2_sel, reg2);
+	mux4_1 #(.WIDTH(64)) reg1_mux (reg1_mux_in, reg1_sel, reg1);
+	mux4_1 #(.WIDTH(64)) reg2_mux (reg2_mux_in, reg2_sel, reg2);
 
 endmodule
 
@@ -76,24 +76,19 @@ module forwarding_unit_testbench ();
 	forwarding_unit dut (.*);
 	
 	initial begin
-		Rd <= 5'd2; Rn <= 5'd1; Rm <= 5'd0; Da <= 64'd8; Db <= 64'd16; ALU_out <= 64'd32; Mem_out <= 64'd64;
-		assert(reg1 == Da && reg2 == Db); @(posedge clk);
-		Rd <= 5'd3; Rn <= 5'd2; Rm <= 5'd0; Da <= 64'd12; Db <= 64'd16; ALU_out <= 64'd24; Mem_out <= 64'd64;
-		assert(reg1 == ALU_out && reg2 == Db); @(posedge clk);
-		Rd <= 5'd4; Rn <= 5'd3; Rm <= 5'd2; Da <= 64'd10; Db <= 64'd24; ALU_out <= 64'd20; Mem_out <= 64'd24;
-		assert(reg1 == ALU_out && reg2 == Mem_out); @(posedge clk);
-		Rd <= 5'd5; Rn <= 5'd3; Rm <= 5'd4; Da <= 64'd10; Db <= 64'd28; ALU_out <= 64'd34; Mem_out <= 64'd100;
-		assert(reg1 == Mem_out && reg2 == ALU_out); @(posedge clk);
-		Rd <= 5'd6; Rn <= 5'd6; Rm <= 5'd5; Da <= 64'd64; Db <= 64'd0; ALU_out <= 64'd38; Mem_out <= 64'd100;
-		assert(reg1 == Da && reg2 == ALU_out); @(posedge clk);
-		Rd <= 5'd7; Rn <= 5'd3; Rm <= 5'd4; Da <= 64'd28; Db <= 64'd38; ALU_out <= 64'd64; Mem_out <= 64'd100;
-		assert(reg1 == Da && reg2 == Db); @(posedge clk);
+		Rd <= 5'd2; Rn <= 5'd1; Rm <= 5'd0; Da <= 64'd8; Db <= 64'd16; ALU_out <= 64'd32; Mem_out <= 64'd64; @(posedge clk);
+		assert(reg1 == Da && reg2 == Db); 
+		Rd <= 5'd3; Rn <= 5'd2; Rm <= 5'd0; Da <= 64'd12; Db <= 64'd16; ALU_out <= 64'd24; Mem_out <= 64'd64; @(posedge clk);
+		assert(reg1 == ALU_out && reg2 == Db); 
+		Rd <= 5'd4; Rn <= 5'd3; Rm <= 5'd2; Da <= 64'd10; Db <= 64'd24; ALU_out <= 64'd20; Mem_out <= 64'd24; @(posedge clk);
+		assert(reg1 == ALU_out && reg2 == Mem_out); 
+		Rd <= 5'd5; Rn <= 5'd3; Rm <= 5'd4; Da <= 64'd10; Db <= 64'd28; ALU_out <= 64'd34; Mem_out <= 64'd100; @(posedge clk);
+		assert(reg1 == Mem_out && reg2 == ALU_out); 
+		Rd <= 5'd6; Rn <= 5'd6; Rm <= 5'd5; Da <= 64'd64; Db <= 64'd0; ALU_out <= 64'd38; Mem_out <= 64'd100; @(posedge clk);
+		assert(reg1 == Da && reg2 == ALU_out); 
+		Rd <= 5'd7; Rn <= 5'd3; Rm <= 5'd4; Da <= 64'd28; Db <= 64'd38; ALU_out <= 64'd64; Mem_out <= 64'd100; @(posedge clk);
+		assert(reg1 == Da && reg2 == Db); 
 		$stop;		
 	end
 	
 endmodule
-
-// added default to control
-// changed dff
-// fixed Rn, Rm mistake on datapath instantiation
-// completed forwarding unit

@@ -78,9 +78,9 @@ module control (
 		//PC in register RD or PC+4
 		//controlled by pc_rd;
 		11'b11010110000: begin
-							ctrl = 10'b0xx00xxxxx; // BR - 0x6B0 (11bit)
+							ctrl = 10'b0xx00xxx; // BR - 0x6B0 (11bit)
 							Rd_X30 = 0;
-							pc_rd = 1;
+							//pc_rd = 1;
 							flag_wr_en = 0; 
 						 end
 		11'b10110100xxx: begin

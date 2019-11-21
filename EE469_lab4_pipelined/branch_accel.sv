@@ -16,7 +16,7 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
 
     logic setFlag_reg;
     logic neg_in, zero_in1, zero_in2, overf_in, cOut_in, neg_o, zer_o1, zero_o2, overf_o, cOut_o;
-    logic zero_internal;
+    logic zero_internal, CBZ;
 
     assign neg_in = {alu_neg, flag_neg};
     assign zero_in1 = {alu_zero, flag_zero};
@@ -30,10 +30,12 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
     mux2_1 #(.WIDTH(1)) flags_zero (.in(zero_in1), .sel(setFlag_reg), .out(zero_o1));
     mux2_1 #(.WIDTH(1)) flags_overf (.in(overf_in), .sel(setFlag_reg), .out(overf_o));
     mux2_1 #(.WIDTH(1)) flags_cOut (.in(cOut_in), .sel(setFlag_reg), .out(cOut_o));
-    mux2_1 #(.WIDTH(1)) flags_zero2 (.in(zero_in2), .sel(CBZ?), .out(zero_o2));
+    mux2_1 #(.WIDTH(1)) flags_zero2 (.in(zero_in2), .sel(CBZ), .out(zero_o2));
 
     always_comb begin
         casex (opcode)
+        CBZ = 0;
+        
         // B - 0x05 (6bit)
         11'b000101xxxxx: begin
                             BrTaken = 1;
@@ -43,7 +45,7 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
 
         // B.LT - 0x54 (8bit)
         11'b01010100xxx: begin
-                            BrTaken = (flag_neg && (flag_neg != flag_overf)); //logic for B.LT
+                            BrTaken = (neg_o && (neg_o != overf_o)); //logic for B.LT
                             UncondBr = 0;
                             pc_rd = 0;
                          end
@@ -54,5 +56,16 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
                             UncondBr = 1;
                             pc_rd = 0;
                          end
+
+        //BR - 0x6B0 (11bit)
+        11'b11010110000: begin
+                            BrTaken = 0;
+                            UncondBr = 0;
+                            pc_rd = 1;
+                         end
+
+        
+
+        
 
         

@@ -1,7 +1,7 @@
 module alu_staged   (clk,
                      reg1, reg2, ALU_op, flag_wr_en, //Used Signals
                      PCPlusFour_in, Aw_in, MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in, //Passthru Sig inputs
-                     PCPlusFour_out, Aw_out, MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out //Passthru Sig outs
+                     PCPlusFour_out, Aw_out, MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out, //Passthru Sig outs
                      ALU_out, ALU_fw, alu_neg, alu_zero, alu_overf, alu_cOut, //ALU outputs
                      flag_neg, flag_zero, flag_overf, flag_cOut); //Flag register outputs
 
@@ -11,9 +11,12 @@ module alu_staged   (clk,
     input logic [2:0] ALU_op;
     input logic MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in;
 
-    output logic [63:0] ALU_out, PCPlusFour_out;
+    output logic [63:0] ALU_out, ALU_fw, PCPlusFour_out;
     output logic [4:0] Aw_out;
     output logic MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out;
+    output logic alu_neg, alu_zero, alu_overf, alu_cOut,
+                 flag_neg, flag_zero, flag_overf, flag_cOut;
+
 
     logic neg, zero, overf, cOut;
     logic [63:0] ALU_internal;
@@ -21,7 +24,7 @@ module alu_staged   (clk,
     alu ALU_unit (.A(reg1), .B(reg2), .cntrl(ALU_op), .result(ALU_internal),
                   .negative(neg), .zero(zero), .overflow(overf), .carry_out(cOut));
 
-    flag_register flagreg (.clk, .wr_en(flag_wr_en), .
+    flag_register flagreg (.clk, .wr_en(flag_wr_en),
                            .negative(neg), .zero(zero), .overflow(overf), .carry_out(cOut),
                            .negative_o(flag_neg), .zero_o(flag_zero), .overflow_o(flag_overf), .carry_out_o(flag_cOut));
 

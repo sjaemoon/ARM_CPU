@@ -279,3 +279,6 @@ restart -f; run -all
 # ** Note: $stop    : alu_staged.sv(85)
 #    Time: 250 ns  Iteration: 1  Instance: /ALU_staged_stim
 # Break in Module ALU_staged_stim at alu_staged.sv line 85
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {U:/EE469 Lab Files/EE469_ComputerArchitecture/EE469_lab4_pipelined/ALUstaged_wave.do}
+# End time: 20:11:39 on Nov 21,2019, Elapsed time: 0:10:19
+# Errors: 1, Warnings: 0

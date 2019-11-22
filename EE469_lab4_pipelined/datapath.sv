@@ -4,7 +4,7 @@ module datapath (clk, Rd, Rn, Rm, PCPlusFour, X30, DAddr9, ALUImm12,
 					flag_neg, flag_zero, flag_overf, flag_cOut, Db_ext);
 	
 	input logic clk;	
-	input logic [4:0] Rd, Rn, Rm, X30;
+	input logic [4:0] Rd, Rm, Rn, X30;
 	input logic [63:0] PCPlusFour;
 	input logic [8:0] DAddr9;
 	input logic [11:0] ALUImm12;
@@ -21,18 +21,15 @@ module datapath (clk, Rd, Rn, Rm, PCPlusFour, X30, DAddr9, ALUImm12,
 	// i/o of muxes and alu
 	logic [1:0][4:0] Reg2Loc_in0, Rd_X30_in0;
 	logic [1:0][63:0] Reg2Loc_in1, Rd_X30_in1, ALUSrc_in, MemToReg_in;
+
 	logic [4:0] Reg2Loc_out0, Rd_X30_out0;
 	logic [63:0] Reg2Loc_out1, Rd_X30_out1, ALUSrc_out, MemToReg_out, ALUOp_out;
+
 	logic negative, zero, overflow, carry_out;
 	
 	// sign extend DAddr9 and ALUImm12
 	logic [63:0] DAddr9_se, ALUImm12_se;
 
-	// instantiation of forwarding unit
-	logic [63:0] reg1, reg2;
-	forwarding_unit fu (.clk, .Aw, .Aa, .Ab, .Da, .Db(ALUSrc_out), 
-		.ALU_out(ALUOp_out), .Mem_out(Dout), .reg1, .reg2);
-	
 	sign_extend #(.WIDTH(9)) daddr9_se (.in(DAddr9), .out(DAddr9_se));	
 	sign_extend #(.WIDTH(12)) aluimm12_se (.in(ALUImm12), .out(ALUImm12_se));
 		
@@ -63,8 +60,7 @@ module datapath (clk, Rd, Rn, Rm, PCPlusFour, X30, DAddr9, ALUImm12,
 	mux2_1 #(.WIDTH(64)) memtoreg_mux (.in(MemToReg_in),.sel(MemToReg), .out(MemToReg_out));
 	mux2_1 #(.WIDTH(64)) rd_x30_mux1 (.in(Rd_X30_in1), .sel(Rd_X30), .out(Rd_X30_out1));
 
-	alu aluop_alu (.A(reg1), .B(reg2), .cntrl(ALUOp), .result(ALUOp_out), 
-		.negative, .zero, .overflow, .carry_out);
+	alu aluop_alu (.A(Da), .B(ALUSrc_out), .cntrl(ALUOp), .result(ALUOp_out), .negative, .zero, .overflow, .carry_out);
 	
 	// instantitation of RegFile
 	assign Aw = Rd_X30_out0;
@@ -92,8 +88,8 @@ endmodule
 
 module datapath_testbench();
 	logic clk;	
-	logic [4:0] Rd, Rn, Rm, X30;
-	logic [63:0] PCPlusFour, Db_ext;
+	logic [4:0] Rd, Rm, Rn, X30;
+	logic [63:0] PCPlusFour, Db_ext;;
 	logic [8:0] DAddr9;
 	logic [11:0] ALUImm12;
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, Rd_X30;

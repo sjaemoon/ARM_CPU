@@ -1,0 +1,75 @@
+`timescale 1ns/10ps
+module reg_dec_staged (clk, opcode, Rd, Rn, Rm, 
+								Daddr9, ALUImm12, ALU_out, Mem_out, 
+								flag_neg, flag_zero, flag_overf, flag_cOut, 
+								alu_neg, alu_zero, alu_overf, alu_cOut, 
+								BrTaken, UncondBr, pc_rd, reg1, reg2,
+								Aw_out);
+
+	input logic clk;
+	input logic [10:0] opcode;
+	input logic [4:0] Rd, Rn, Rm;
+	input logic [8:0] DAddr9;
+	input logic [11:0] ALUImm12;
+	input logic [63:0] ALU_out, Mem_out;
+	input logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut; 
+	output logic BrTaken, UncondBr, pc_rd;
+	output logic [63:0] reg1, reg2;
+	output logic AW_out, MemToReg, RegWrite, MemWrite, ALU_op, flag_wr_en, Rd_X30;
+	
+	// instantiation of control
+	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite;
+	logic [2:0] ALUOp;
+	logic flag_wr_en, Rd_X30;
+	control ctrl (.opcode, .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, 
+						.MemWrite, .ALUOp, .flag_wr_en, .Rd_X30);
+	
+	
+	// set up input of the muxes
+	assign Reg2Loc_in0[0] = Rd;
+	assign Reg2Loc_in0[1] = Rm;
+	
+	assign Rd_X30_in0[0] = Rd;
+	assign Rd_X30_in0[1] = X30;
+	
+	assign Reg2Loc_in1[0] = DAddr9_se;
+	assign Reg2Loc_in1[1] = ALUImm12_se;
+	
+	assign ALUSrc_in[0] = Db;
+	assign ALUSrc_in[1] = Reg2Loc_out1;
+	
+	// instantiation of muxes
+	mux2_1 #(.WIDTH(5)) reg2loc_mux0 (.in(Reg2Loc_in0), .sel(Reg2Loc), .out(Reg2Loc_out0));
+	mux2_1 #(.WIDTH(5)) rd_x30_mux0 (.in(Rd_X30_in0), .sel(Rd_X30), .out(Rd_X30_out0));
+	mux2_1 #(.WIDTH(64)) reg2loc_mux1 (.in(Reg2Loc_in1),.sel(Reg2Loc), .out(Reg2Loc_out1));
+	mux2_1 #(.WIDTH(64)) alusrc_mux (.in(ALUSrc_in),.sel(ALUSrc), .out(ALUSrc_out));
+	
+	// instantitation of regfile
+	logic [4:0] Aw, Aa, Ab;
+	assign Aw = Rd_X30_out0;
+	assign Aa = Rn;
+	assign Ab = Reg2Loc_out0;
+	assign Dw = Rd_X30_out1;
+	regfile rf (.ReadData1(Da), .ReadData2(Db), .WriteData(Dw), 
+					.ReadRegister1(Aa), .ReadRegister2(Ab), 
+					.WriteRegister(Aw), .RegWrite, .clk);
+					
+	// instantiation of forwarding unit
+	forwarding_unit fu (.clk, .Aw, .Aa, .Ab, .Da, .Db(ALUSrc_out), 
+		.ALU_out(ALUOp_out), .Mem_out(Dout), .reg1, .reg2);
+		
+	// instantiation of branch accelerator
+	branch_accel ba (.clk, .opcode, .flag_wr_en, .BrTaken, .UncondBr, .pc_rd, .regVal_in(reg2),
+					  .flag_neg, .flag_zero, .flag_overf, .flag_cOut,
+					  .alu_neg, .alu_zero, .alu_overf, .alu_cOut);
+	
+	// instantiation of registers
+	register #(.WIDTH(5)) Aw_reg (.in(Aw), .enable(1'b1), .clk, .out(Aw_out));
+	register #(.WIDTH(1)) MemToReg_reg (.in(MemToReg), .enable(1'b1), .clk, .out(MemToReg_out));
+	register #(.WIDTH(1)) RegWrite_reg (.in(RegWrite), .enable(1'b1), .clk, .out(RegWrite_out));
+	register #(.WIDTH(1)) ALUOp_reg (.in(ALUOp), .enable(1'b1), .clk, .out(ALUOp));
+	register #(.WIDTH(1)) flag_wr_en_reg (.in(flag_wr_en), .enable(1'b1), .clk, .out(flag_wr_en));
+	register #(.WIDTH(1)) Rd_X30_reg (.in(Rd_X30), .enable(1'b1), .clk, .out(Rd_X30));
+	
+endmodule
+	

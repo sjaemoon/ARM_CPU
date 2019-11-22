@@ -248,3 +248,135 @@ restart -f; run -all
 # ** Note: $stop    : forwarding_unit.sv(87)
 #    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
 # Break in Module forwarding_unit_testbench at forwarding_unit.sv line 87
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:58:38 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemToReg' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'RegWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'flag_wr_en' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'Rd_X30' already declared in this scope (reg_dec_staged).
+# ** Error: reg_dec_staged.sv(29): (vlog-2730) Undefined variable: 'Reg2Loc_in0'.
+# ** Error: reg_dec_staged.sv(32): (vlog-2730) Undefined variable: 'Rd_X30_in0'.
+# ** Error: reg_dec_staged.sv(33): (vlog-2730) Undefined variable: 'X30'.
+# ** Error: reg_dec_staged.sv(35): (vlog-2730) Undefined variable: 'Reg2Loc_in1'.
+# ** Error: reg_dec_staged.sv(35): (vlog-2730) Undefined variable: 'DAddr9_se'.
+# ** Error: reg_dec_staged.sv(36): (vlog-2730) Undefined variable: 'ALUImm12_se'.
+# ** Error: reg_dec_staged.sv(38): (vlog-2730) Undefined variable: 'ALUSrc_in'.
+# ** Error: reg_dec_staged.sv(38): (vlog-2730) Undefined variable: 'Db'.
+# ** Error: reg_dec_staged.sv(39): (vlog-2730) Undefined variable: 'Reg2Loc_out1'.
+# ** Error: reg_dec_staged.sv(52): (vlog-2730) Undefined variable: 'Rd_X30_out1'.
+# ** Error: reg_dec_staged.sv(3): (vlog-2730) Undefined variable: 'Daddr9'.
+# ** Error: reg_dec_staged.sv(3): Identifier must be declared with a port mode: Daddr9.
+# ** Error: reg_dec_staged.sv(7): Identifier must be declared with a port mode: Aw_out.
+# End time: 17:58:39 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 18, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:02:22 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemToReg' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'RegWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'flag_wr_en' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'Rd_X30' already declared in this scope (reg_dec_staged).
+# ** Error: reg_dec_staged.sv(40): (vlog-2730) Undefined variable: 'X30'.
+# ** Error: reg_dec_staged.sv(42): (vlog-2730) Undefined variable: 'DAddr9_se'.
+# ** Error: reg_dec_staged.sv(43): (vlog-2730) Undefined variable: 'ALUImm12_se'.
+# ** Error: reg_dec_staged.sv(46): (vlog-2730) Undefined variable: 'Reg2Loc_out1'.
+# ** Error: reg_dec_staged.sv(58): (vlog-2730) Undefined variable: 'Rd_X30_out1'.
+# ** Error: reg_dec_staged.sv(3): (vlog-2730) Undefined variable: 'Daddr9'.
+# ** Error: reg_dec_staged.sv(3): Identifier must be declared with a port mode: Daddr9.
+# ** Error: reg_dec_staged.sv(7): Identifier must be declared with a port mode: Aw_out.
+# End time: 18:02:22 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 13, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:04:24 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemToReg' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'RegWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'flag_wr_en' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'Rd_X30' already declared in this scope (reg_dec_staged).
+# ** Error: reg_dec_staged.sv(45): (vlog-2730) Undefined variable: 'DAddr9_se'.
+# ** Error: reg_dec_staged.sv(46): (vlog-2730) Undefined variable: 'ALUImm12_se'.
+# ** Error: reg_dec_staged.sv(3): (vlog-2730) Undefined variable: 'Daddr9'.
+# ** Error: reg_dec_staged.sv(3): Identifier must be declared with a port mode: Daddr9.
+# ** Error: reg_dec_staged.sv(7): Identifier must be declared with a port mode: Aw_out.
+# End time: 18:04:24 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:05:58 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error: (vlog-13069) reg_dec_staged.sv(7): near ";": syntax error, unexpected ';', expecting ')'.
+# End time: 18:05:59 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:19 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemToReg' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'RegWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'flag_wr_en' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'Rd_X30' already declared in this scope (reg_dec_staged).
+# ** Error: reg_dec_staged.sv(7): Identifier must be declared with a port mode: Aw_out.
+# End time: 18:06:19 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:06:46 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemToReg' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'RegWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(21): (vlog-2388) 'MemWrite' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'flag_wr_en' already declared in this scope (reg_dec_staged).
+# ** Error (suppressible): reg_dec_staged.sv(23): (vlog-2388) 'Rd_X30' already declared in this scope (reg_dec_staged).
+# End time: 18:06:47 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 5, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:11:24 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error: reg_dec_staged.sv(2): Identifier must be declared with a port mode: PCPlusFour.
+# ** Error: reg_dec_staged.sv(6): Identifier must be declared with a port mode: PCPlusFour_out.
+# End time: 18:11:24 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:12:18 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# ** Error: reg_dec_staged.sv(6): Identifier must be declared with a port mode: PCPlusFour_out.
+# End time: 18:12:18 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:16:34 on Nov 21,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# 
+# Top level modules:
+# 	reg_dec_staged
+# End time: 18:16:36 on Nov 21,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# End time: 18:17:56 on Nov 21,2019, Elapsed time: 1:52:40
+# Errors: 54, Warnings: 7

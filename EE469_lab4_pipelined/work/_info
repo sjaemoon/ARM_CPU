@@ -1069,6 +1069,29 @@ r1
 !s90 -reportprogress|300|./program_counter.sv|
 !i113 1
 R13
+vreg_dec_staged
+R1
+!s110 1574388995
+!i10b 1
+!s100 ZH;1Vda<1Cn6Y3emc8j=G2
+ImKB2ZUz03F[i1LBB7`ZHi2
+R3
+!s105 reg_dec_staged_sv_unit
+S1
+R5
+w1574388866
+8reg_dec_staged.sv
+Freg_dec_staged.sv
+L0 2
+R9
+r1
+!s85 0
+31
+!s108 1574388994.000000
+!s107 reg_dec_staged.sv|
+!s90 -reportprogress|300|reg_dec_staged.sv|
+!i113 1
+R13
 vregfile
 R1
 R83

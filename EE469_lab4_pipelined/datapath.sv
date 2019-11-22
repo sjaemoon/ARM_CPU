@@ -30,8 +30,8 @@ module datapath (clk, Rd, Rn, Rm, PCPlusFour, X30, DAddr9, ALUImm12,
 
 	// instantiation of forwarding unit
 	logic [63:0] reg1, reg2;
-	forwarding_unit fu (.clk, .Rd, .Rn, .Rm, .Da, 
-		.Db(ALUSrc_out), .ALU_out(ALUOp_out), .Mem_out(Dout), .reg1, .reg2);
+	forwarding_unit fu (.clk, .Aw, .Aa, .Ab, .Da, .Db(ALUSrc_out), 
+		.ALU_out(ALUOp_out), .Mem_out(Dout), .reg1, .reg2);
 	
 	sign_extend #(.WIDTH(9)) daddr9_se (.in(DAddr9), .out(DAddr9_se));	
 	sign_extend #(.WIDTH(12)) aluimm12_se (.in(ALUImm12), .out(ALUImm12_se));

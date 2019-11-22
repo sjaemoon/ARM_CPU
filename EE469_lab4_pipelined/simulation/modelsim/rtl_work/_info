@@ -7,1255 +7,1257 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/simulation/modelsim
+Z0 dU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/simulation/modelsim
 valu
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1574365970
+!s110 1574381835
 !i10b 1
 !s100 BKK046]dLMg]7h>QNl;mO1
-I1?j9z<VJ8ZoDQE3;H2LD90
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+IzS;7CMC3kf270;O]2jU_L1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 alu_sv_unit
 S1
 R0
-Z4 w1573081902
-8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv
-FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv
+Z3 w1574378947
+8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv
+FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv
 L0 3
-Z5 OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1574365970.000000
-!s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv|
+!s108 1574381834.000000
+!s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/alu.sv|
 !i113 1
-Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined
-Z9 tCvgOpt 0
+Z5 o-sv -work work
+Z6 !s92 -sv -work work +incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined
+Z7 tCvgOpt 0
 vcontrol
 R1
-Z10 !s110 1574365971
+Z8 !s110 1574381837
 !i10b 1
 !s100 QRbERF:iU2eDLMJYQhS601
-IfZIli6dLkXFVF072F6UPd2
-R3
-Z11 !s105 control_sv_unit
+IV3Dd8CQO<V44g`XTbN]?33
+R2
+Z9 !s105 control_sv_unit
 S1
 R0
-Z12 w1574338972
-Z13 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv
-Z14 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv
+Z10 w1574378948
+Z11 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv
+Z12 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-Z15 !s108 1574365971.000000
-Z16 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv|
-Z17 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv|
+Z13 !s108 1574381837.000000
+Z14 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv|
+Z15 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/control.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
 vcontrol_testbench
 R1
-R10
+R8
 !i10b 1
 !s100 =F1UozA7f=kQ4HU0[oljN3
-IAn]=4W;T`FNVa4I`GK?bS1
-R3
-R11
+ICjOeU>6zFhEoY_3oK?Te02
+R2
+R9
 S1
 R0
+R10
+R11
 R12
-R13
-R14
 L0 122
-R5
+R4
 r1
 !s85 0
 31
+R13
+R14
 R15
-R16
-R17
 !i113 1
+R5
+R6
 R7
-R8
-R9
 vD_FF
 R1
-R2
+!s110 1574381832
 !i10b 1
 !s100 ?I5_eJXVSE8CH68WAO81;0
-I?VSG5OQT]^Rh^JQ@T54ZJ3
-R3
+I[dE:U6lK1<T]<YzRMUPlL0
+R2
 !s105 D_FF_sv_unit
 S1
 R0
-w1574362733
-8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv
-FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv
+w1574378946
+8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv
+FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv
 L0 1
-R5
+R4
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv|
+!s108 1574381831.000000
+!s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
 n@d_@f@f
 vD_FF_en
 R1
-R2
+Z16 !s110 1574381831
 !i10b 1
 !s100 JDQSXn@l:VkjnO0`:[7=B0
-ILBa2^B[Nk`1^L`4UeSada2
-R3
-Z18 !s105 D_FF_en_sv_unit
+Ik:iWb6ALIZAFUV1Pd9ozU2
+R2
+Z17 !s105 D_FF_en_sv_unit
 S1
 R0
-Z19 w1574362782
-Z20 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv
-Z21 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv
+R3
+Z18 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv
+Z19 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R6
-Z22 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv|
-Z23 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv|
+Z20 !s108 1574381830.000000
+Z21 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv|
+Z22 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/D_FF_en.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
 n@d_@f@f_en
 vD_FF_en_testbench
 R1
-R2
+R16
 !i10b 1
 !s100 geh:Z[^WhM;XiEd5zH08U1
-I>H>VY[[hl>jcT^P19@2KM0
-R3
-R18
+IPm7kAzX]DF[h`bDzGYD7f2
+R2
+R17
 S1
 R0
+R3
+R18
 R19
-R20
-R21
-Z24 L0 18
-R5
+Z23 L0 18
+R4
 r1
 !s85 0
 31
-R6
+R20
+R21
 R22
-R23
 !i113 1
+R5
+R6
 R7
-R8
-R9
 n@d_@f@f_en_testbench
 vdatapath
 R1
-Z25 !s110 1574365973
+Z24 !s110 1574381851
 !i10b 1
-!s100 Xhdb1SEHiDn14;KO^E;Y`1
-I_P>LRQJ3P[K4>ZjmA:G]N2
-R3
-Z26 !s105 datapath_sv_unit
+!s100 Z88X56LF0dc6Ln@MZEUHV0
+IEUz:_?OZmcL9eL^KClFVg3
+R2
+Z25 !s105 datapath_sv_unit
 S1
 R0
-Z27 w1574364951
-Z28 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv
-Z29 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv
+Z26 w1574381070
+Z27 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv
+Z28 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-Z30 !s108 1574365973.000000
-Z31 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv|
-Z32 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv|
+Z29 !s108 1574381850.000000
+Z30 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv|
+Z31 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/datapath.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
 vdatapath_testbench
 R1
-R25
+R24
 !i10b 1
 !s100 oJlCc9=hzL^QDJiX55oCF2
-I62?m1V;oc>DhD@DWRE7>>1
-R3
-R26
+IdA[K9V4=5k>mSL=0LY=gh2
+R2
+R25
 S1
 R0
+R26
 R27
 R28
-R29
 L0 93
-R5
+R4
 r1
 !s85 0
 31
+R29
 R30
 R31
-R32
 !i113 1
+R5
+R6
 R7
-R8
-R9
 vde_1_2
 R1
-R2
+Z32 !s110 1574381834
 !i10b 1
 !s100 A<oUAm@QA<7?__3JHSQ[B3
-IgA]J:F2gXH6HALfQEKFdZ3
-R3
+IXKBRgn_zChA7dT[1N?4cV0
+R2
 Z33 !s105 de_1_2_sv_unit
 S1
 R0
-R4
-Z34 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv
-Z35 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv
+Z34 w1574378954
+Z35 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv
+Z36 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R6
-Z36 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv|
-Z37 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv|
+Z37 !s108 1574381833.000000
+Z38 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv|
+Z39 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_1_2.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
 vde_1_2_testbench
 R1
-R2
+R32
 !i10b 1
 !s100 GdmRdLOH]FQ1>MBYTRaQM1
-I51:3[MO_]R2cVbV7[YmST3
-R3
+IkO9Wk0`bgFFcQ9Szd8zXM0
+R2
 R33
 S1
 R0
-R4
 R34
 R35
-Z38 L0 17
-R5
+R36
+Z40 L0 17
+R4
 r1
 !s85 0
 31
-R6
-R36
 R37
+R38
+R39
 !i113 1
+R5
+R6
 R7
-R8
-R9
 vde_2_4
 R1
-R2
+Z41 !s110 1574381833
 !i10b 1
 !s100 PCKOW[PGCPmU3SE2MW>Xm1
-I4K9U2YQ5zLULJ1EmVJ0RU0
-R3
-Z39 !s105 de_2_4_sv_unit
+IXUT>HkK9EIYCTdejjPkFo0
+R2
+Z42 !s105 de_2_4_sv_unit
 S1
 R0
-R4
-Z40 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv
-Z41 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv
+R34
+Z43 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv
+Z44 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R6
-Z42 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv|
-Z43 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv|
+Z45 !s108 1574381832.000000
+Z46 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv|
+Z47 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_2_4.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
 vde_2_4_testbench
 R1
-R2
+R41
 !i10b 1
 !s100 kH?mjSV]R4ozUKPIH00BV1
-I2gB?mo_6E8z6f??9z8ZRA2
-R3
-R39
-S1
-R0
-R4
-R40
-R41
-R24
-R5
-r1
-!s85 0
-31
-R6
+Ibb^]6AUXL4ZfddH4hN4^>1
+R2
 R42
-R43
-!i113 1
-R7
-R8
-R9
-vde_4_16
-R1
-Z44 !s110 1574365972
-!i10b 1
-!s100 ;:R0mX<E:DU5YU9GkCd^T0
-I^Cz<SZTANTOck:`[m2R:J0
-R3
-Z45 !s105 de_4_16_sv_unit
 S1
 R0
+R34
+R43
+R44
+R23
 R4
-Z46 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv
-Z47 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv
-L0 2
-R5
 r1
 !s85 0
 31
-Z48 !s108 1574365972.000000
-Z49 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv|
-Z50 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv|
-!i113 1
-R7
-R8
-R9
-vde_4_16_testbench
-R1
-R44
-!i10b 1
-!s100 J7Y0>SOKX?LZ_;VI1Wimh0
-IRF;8SYZS=IF1EP<hHKbCc1
-R3
 R45
-S1
-R0
-R4
 R46
 R47
-R24
-R5
-r1
-!s85 0
-31
-R48
-R49
-R50
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vde_5_32
+vde_4_16
 R1
-R44
+Z48 !s110 1574381846
 !i10b 1
-!s100 m[[OEBO]e[o:46LiXbzc73
-IFP:IbQ0^QHeO0`>AOJHSC1
-R3
-Z51 !s105 de_5_32_sv_unit
+!s100 ;:R0mX<E:DU5YU9GkCd^T0
+IzZGmXZNkCj^LzF6KAe_0T0
+R2
+Z49 !s105 de_4_16_sv_unit
 S1
 R0
-R4
-Z52 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv
-Z53 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv
+R34
+Z50 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv
+Z51 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R48
-Z54 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv|
-Z55 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv|
+Z52 !s108 1574381845.000000
+Z53 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv|
+Z54 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_4_16.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vde_5_32_testbench
+vde_4_16_testbench
 R1
-R44
+R48
 !i10b 1
-!s100 O=bcERIO7:In==G^k4Mfg1
-I^:b2Ze?eZSc@C77jT1^Wb1
-R3
-R51
+!s100 J7Y0>SOKX?LZ_;VI1Wimh0
+I@KXc3;?J1OI:D?Jd^P[WT2
+R2
+R49
 S1
 R0
+R34
+R50
+R51
+R23
 R4
+r1
+!s85 0
+31
 R52
 R53
-Z56 L0 16
-R5
-r1
-!s85 0
-31
-R48
 R54
-R55
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vflag_register
+vde_5_32
 R1
-R44
+Z55 !s110 1574381845
 !i10b 1
-!s100 331F14AMDWli0TK03^EVz1
-ITX<zaP8Q8HmJWnDAD<5Bj0
-R3
-Z57 !s105 flag_register_sv_unit
+!s100 m[[OEBO]e[o:46LiXbzc73
+InFP8dJnLi;:X`::7@zTW83
+R2
+Z56 !s105 de_5_32_sv_unit
 S1
 R0
-R4
-Z58 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv
-Z59 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv
+R34
+Z57 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv
+Z58 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R48
-Z60 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv|
-Z61 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv|
+Z59 !s108 1574381844.000000
+Z60 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv|
+Z61 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/de_5_32.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vflag_register_testbench
+vde_5_32_testbench
 R1
-R44
+R55
 !i10b 1
-!s100 5`WD=eFHTPJEn:b^<kVST2
-I]VGF5Mo@8JX>3LeK7iQ3I1
-R3
-R57
+!s100 O=bcERIO7:In==G^k4Mfg1
+I>RFj3fCV4V:]Qi<GP]?Ym3
+R2
+R56
 S1
 R0
-R4
+R34
+R57
 R58
-R59
-Z62 L0 14
-R5
+Z62 L0 16
+R4
 r1
 !s85 0
 31
-R48
+R59
 R60
 R61
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vforwarding_unit
+vflag_register
 R1
-Z63 !s110 1574366354
+Z63 !s110 1574381844
 !i10b 1
-!s100 T2lS5HgzPc67?jRDHX2>i1
-IER7e<`CIWJ3a8b`:VHfXe0
-R3
-Z64 !s105 forwarding_unit_sv_unit
+!s100 331F14AMDWli0TK03^EVz1
+I=OWWX@YRP3;X^KP@3m;Ok1
+R2
+Z64 !s105 flag_register_sv_unit
 S1
 R0
-Z65 w1574366345
-Z66 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv
-Z67 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv
+R34
+Z65 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv
+Z66 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-Z68 !s108 1574366354.000000
-Z69 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv|
-Z70 !s90 -reportprogress|300|-work|work|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv|
+Z67 !s108 1574381843.000000
+Z68 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv|
+Z69 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/flag_register.sv|
 !i113 1
-Z71 o-work work
-R9
-vforwarding_unit_testbench
+R5
+R6
+R7
+vflag_register_testbench
 R1
 R63
 !i10b 1
-!s100 o8b[eLHIL5e>EzMWE=fB40
-IfS]T28Z0MDPigc3L:@2>O2
-R3
+!s100 5`WD=eFHTPJEn:b^<kVST2
+IhQ?:LGLCcbIfmPlFf0BUU2
+R2
 R64
 S1
 R0
+R34
 R65
 R66
-R67
-Z72 L0 63
-R5
+Z70 L0 14
+R4
 r1
 !s85 0
 31
+R67
 R68
 R69
-R70
 !i113 1
-R71
-R9
-vfull_adder
+R5
+R6
+R7
+vforwarding_unit
 R1
-R10
+Z71 !s110 1574381850
 !i10b 1
-!s100 N3DB8A2?ViYahN?X1Y]@Z0
-Iom;b`OhbPX0@Y_1i8Ha:z1
-R3
-Z73 !s105 full_adder_sv_unit
+!s100 5aT_WUn>Md@WcM9G_OzNU2
+I9UnoeOb8Y>KfA8zYVVn?z1
+R2
+Z72 !s105 forwarding_unit_sv_unit
 S1
 R0
-Z74 w1571638194
-Z75 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv
-Z76 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv
+Z73 w1574380838
+Z74 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv
+Z75 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R15
-Z77 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv|
-Z78 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv|
+Z76 !s108 1574381848.000000
+Z77 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv|
+Z78 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/forwarding_unit.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vfull_adder_testbench
+vforwarding_unit_testbench
 R1
-R10
+R71
 !i10b 1
-!s100 A_4eL;64H<c]B?9IkNdlP1
-I=A[5^NYC:c3FaALdTKXi`0
-R3
-R73
+!s100 Y4lG_kz<HaA070[4?h1NT0
+I^nieF5eA[XeWolnA<N]S@0
+R2
+R72
 S1
 R0
+R73
 R74
 R75
-R76
-R38
-R5
+L0 43
+R4
 r1
 !s85 0
 31
-R15
+R76
 R77
 R78
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vinstructmem
+vfull_adder
 R1
-R10
+Z79 !s110 1574381839
 !i10b 1
-!s100 8Me^BXa3Yf8Rc]PF:Pn_E2
-IKFV]Gk15^d:;mLf2i[9DN0
-R3
-Z79 !s105 instructmem_sv_unit
+!s100 N3DB8A2?ViYahN?X1Y]@Z0
+Ik_LJJR1l@lb]][ejAU[6<0
+R2
+Z80 !s105 full_adder_sv_unit
 S1
 R0
-Z80 w1574338897
-Z81 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv
-Z82 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv
-L0 23
-R5
+R34
+Z81 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv
+Z82 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv
+L0 2
+R4
 r1
 !s85 0
 31
-R15
-Z83 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv|
-Z84 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv|
+Z83 !s108 1574381838.000000
+Z84 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv|
+Z85 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/full_adder.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vinstructmem_testbench
+vfull_adder_testbench
 R1
-R10
-!i10b 1
-!s100 ffG_QE4`?cbXlAN[Kf0Dm3
-IK@^K30262?^hz8CldEKkG2
-R3
 R79
+!i10b 1
+!s100 A_4eL;64H<c]B?9IkNdlP1
+I`oC6Zl2hB4cNA3d8XMWCO0
+R2
+R80
 S1
 R0
-R80
+R34
 R81
 R82
-R72
-R5
+R40
+R4
 r1
 !s85 0
 31
-R15
 R83
 R84
-!i113 1
-R7
-R8
-R9
-vmux16_1
-R1
-R2
-!i10b 1
-!s100 UZ0nCfTYh]2aM2W[[Q@2_1
-IoI0WDEXheAU;XlJnFkYGO1
-R3
-Z85 !s105 mux16_1_sv_unit
-S1
-R0
-R4
-Z86 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv
-Z87 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv
-L0 2
-R5
-r1
-!s85 0
-31
-R6
-Z88 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv|
-Z89 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv|
-!i113 1
-R7
-R8
-R9
-vmux16_1_testbench
-R1
-R2
-!i10b 1
-!s100 jCRVgJ8Lb>fOmj:IPgjR_0
-IhO_dS36366SchS[fdlnLQ1
-R3
 R85
+!i113 1
+R5
+R6
+R7
+vinstructmem
+R1
+Z86 !s110 1574381840
+!i10b 1
+!s100 8Me^BXa3Yf8Rc]PF:Pn_E2
+IzUi^e`MXP0DG]g`i=^TG?1
+R2
+Z87 !s105 instructmem_sv_unit
 S1
 R0
+Z88 w1574381076
+Z89 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv
+Z90 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv
+L0 23
 R4
-R86
-R87
-R56
-R5
 r1
 !s85 0
 31
+Z91 !s108 1574381839.000000
+Z92 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv|
+Z93 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/instructmem.sv|
+!i113 1
+R5
 R6
+R7
+vinstructmem_testbench
+R1
+R86
+!i10b 1
+!s100 ffG_QE4`?cbXlAN[Kf0Dm3
+IN2kn7JK4D8X1`Pelm8G@W1
+R2
+R87
+S1
+R0
 R88
 R89
-!i113 1
-R7
-R8
-R9
-vmux2_1
-R1
-R10
-!i10b 1
-!s100 j;WPZ@<k:D@gS:lDXX0MR0
-Ij322X?268J;<O[`5k[3Xh2
-R3
-Z90 !s105 mux2_1_sv_unit
-S1
-R0
-Z91 w1571638229
-Z92 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv
-Z93 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv
-L0 2
-R5
+R90
+L0 63
+R4
 r1
 !s85 0
 31
-R15
-Z94 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv|
-Z95 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv|
-!i113 1
-R7
-R8
-R9
-vmux2_1_testbench
-R1
-R10
-!i10b 1
-!s100 I=<:7X<6RP5GPJBXahX0b2
-I7AeBC?bY?X=Fz991RWN9H3
-R3
-R90
-S1
-R0
 R91
 R92
 R93
-L0 24
-R5
-r1
-!s85 0
-31
-R15
-R94
-R95
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vmux32_1
+vmux16_1
 R1
-Z96 !s110 1574365969
+Z94 !s110 1574381830
 !i10b 1
-!s100 0Ri`T6Cm1V:QB0i9JeEaS3
-IRSL>B7fYZa^_iKLmme`HP0
-R3
-Z97 !s105 mux32_1_sv_unit
+!s100 UZ0nCfTYh]2aM2W[[Q@2_1
+IP1hmFK]Z4Q`g@LY^VWo`T1
+R2
+Z95 !s105 mux16_1_sv_unit
 S1
 R0
-R4
-Z98 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv
-Z99 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv
+R34
+Z96 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv
+Z97 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-Z100 !s108 1574365969.000000
-Z101 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv|
-Z102 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv|
+R20
+Z98 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv|
+Z99 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux16_1.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vmux32_1_testbench
+vmux16_1_testbench
 R1
-R96
+R94
 !i10b 1
-!s100 APYcUEMm8Aa=]@K3_J=EM2
-IX]02WoIK[C[9KGC2W^QDl0
-R3
-R97
+!s100 jCRVgJ8Lb>fOmj:IPgjR_0
+IO^6C:P_bj4lCT]eMMziK82
+R2
+R95
 S1
 R0
+R34
+R96
+R97
+R62
 R4
+r1
+!s85 0
+31
+R20
 R98
 R99
-R56
-R5
-r1
-!s85 0
-31
-R100
-R101
-R102
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vmux4_1
+vmux2_1
 R1
-R96
+Z100 !s110 1574381836
 !i10b 1
-!s100 Ca2zLOFfYg3CfkJD=kSzF0
-IFn>:d:f1fZiEKdB`?aoIA3
-R3
-Z103 !s105 mux4_1_sv_unit
+!s100 j;WPZ@<k:D@gS:lDXX0MR0
+IC_eB8[42[DdT1Rm5Z<CZS0
+R2
+Z101 !s105 mux2_1_sv_unit
 S1
 R0
-R4
-Z104 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
-Z105 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
+R34
+Z102 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv
+Z103 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R100
-Z106 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv|
-Z107 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv|
+Z104 !s108 1574381835.000000
+Z105 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv|
+Z106 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux2_1.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vmux4_1_testbench
+vmux2_1_testbench
 R1
-R96
+R100
 !i10b 1
-!s100 QnWHPbjOEga9a7`eRdYRK0
-IjaWmRG]aj]zzc12BohKSo0
-R3
-R103
+!s100 I=<:7X<6RP5GPJBXahX0b2
+IcVfK]bC2FCM4ohIVe1hL23
+R2
+R101
 S1
 R0
+R34
+R102
+R103
+L0 24
 R4
+r1
+!s85 0
+31
 R104
 R105
-L0 29
-R5
-r1
-!s85 0
-31
-R100
 R106
-R107
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vmux8_1
+vmux32_1
 R1
-R96
+Z107 !s110 1574381829
 !i10b 1
-!s100 BiZA6K:n1684zO?2d<HS=1
-I3kK?b^2JLd@@MDFIjE0I<3
-R3
-Z108 !s105 mux8_1_sv_unit
+!s100 0Ri`T6Cm1V:QB0i9JeEaS3
+IeX<Undn:F10T^Q8hNG<[n2
+R2
+Z108 !s105 mux32_1_sv_unit
 S1
 R0
-R4
-Z109 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv
-Z110 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv
+Z109 w1574378955
+Z110 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv
+Z111 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R100
-Z111 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv|
-Z112 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv|
+Z112 !s108 1574381828.000000
+Z113 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv|
+Z114 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux32_1.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vmux8_1_testbench
+vmux32_1_testbench
 R1
-R96
+R107
 !i10b 1
-!s100 kS=^7K6czS]Dg5<ck7bKN1
-I761Xn`9?;mX?]P@AU>`QP2
-R3
+!s100 APYcUEMm8Aa=]@K3_J=EM2
+IEk5V=J]ieFI;FC1:o`9F31
+R2
 R108
 S1
 R0
-R4
 R109
 R110
-R56
-R5
-r1
-!s85 0
-31
-R100
 R111
+R62
+R4
+r1
+!s85 0
+31
 R112
-!i113 1
-R7
-R8
-R9
-vn_bit_adder
-R1
-R10
-!i10b 1
-!s100 @_F`7?0939Z34R6IHUFSM1
-INVY1]Q[8Pm<XHfghC<FlA2
-R3
-!s105 n_bit_adder_sv_unit
-S1
-R0
-R4
-8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv
-FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv
-L0 2
-R5
-r1
-!s85 0
-31
-R15
-!s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv|
-!i113 1
-R7
-R8
-R9
-vnth_alu
-R1
-R44
-!i10b 1
-!s100 Ma^@V:4X^ijlEHMYDDcJZ0
-IQg>`G@9XImO`5Q]0aCLAC0
-R3
-Z113 !s105 nth_alu_sv_unit
-S1
-R0
-R4
-Z114 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv
-Z115 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv
-L0 2
-R5
-r1
-!s85 0
-31
-R48
-Z116 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv|
-Z117 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv|
-!i113 1
-R7
-R8
-R9
-vnth_alu_testbench
-R1
-R44
-!i10b 1
-!s100 <0=G3ehEEOFm62IckTkIJ3
-IzRMMYah]=XWQl^5kzDVNK2
-R3
 R113
-S1
-R0
-R4
 R114
+!i113 1
+R5
+R6
+R7
+vmux4_1
+R1
+Z115 !s110 1574381828
+!i10b 1
+!s100 Ca2zLOFfYg3CfkJD=kSzF0
+I1EIO2JGO6[Ee9k?J;a<Ae0
+R2
+Z116 !s105 mux4_1_sv_unit
+S1
+R0
+R109
+Z117 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
+Z118 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z119 !s108 1574381827.000000
+Z120 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv|
+Z121 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux4_1.sv|
+!i113 1
+R5
+R6
+R7
+vmux4_1_testbench
+R1
 R115
-L0 57
-R5
-r1
-!s85 0
-31
-R48
+!i10b 1
+!s100 QnWHPbjOEga9a7`eRdYRK0
+In:`5HeS=mM72]HXDg<J2C0
+R2
 R116
+S1
+R0
+R109
 R117
-!i113 1
-R7
-R8
-R9
-vprocessor
-R1
-R25
-!i10b 1
-!s100 b]HI_NjjLfREb8RAA9dE12
-IWc>6MbLXmYHk:IacCWcH@3
-R3
-!s105 processor_sv_unit
-S1
-R0
-w1574338017
-8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv
-FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv
-L0 2
-R5
-r1
-!s85 0
-31
-R30
-!s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv|
-!i113 1
-R7
-R8
-R9
-vprogram_counter
-R1
-R25
-!i10b 1
-!s100 om??z[U5z71dfN9TMW:[`1
-IFSRXb?P<Q=RJd3U><`5QE2
-R3
-Z118 !s105 program_counter_sv_unit
-S1
-R0
-R4
-Z119 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv
-Z120 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv
-L0 2
-R5
-r1
-!s85 0
-31
-R48
-Z121 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv|
-Z122 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv|
-!i113 1
-R7
-R8
-R9
-vprogram_counter_testbench
-R1
-R25
-!i10b 1
-!s100 n[TX]59Gn4IT:GD=nH^3a1
-IQm?@PL3Kgl;6QjJRHNggh1
-R3
 R118
-S1
-R0
+L0 29
 R4
+r1
+!s85 0
+31
 R119
 R120
-L0 46
-R5
-r1
-!s85 0
-31
-R48
 R121
+!i113 1
+R5
+R6
+R7
+vmux8_1
+R1
+Z122 !s110 1574381827
+!i10b 1
+!s100 BiZA6K:n1684zO?2d<HS=1
+Iab`JAK=NUb>0WfdAaS0aB2
+R2
+Z123 !s105 mux8_1_sv_unit
+S1
+R0
+R109
+Z124 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv
+Z125 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z126 !s108 1574381826.000000
+Z127 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv|
+Z128 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/mux8_1.sv|
+!i113 1
+R5
+R6
+R7
+vmux8_1_testbench
+R1
 R122
-!i113 1
-R7
-R8
-R9
-vregfile
-R1
-R25
 !i10b 1
-!s100 Ki`bT]4`UClThXUQ48OLO1
-I:fXajB4Uzko5mdUlRke6L2
-R3
-Z123 !s105 regfile_sv_unit
-S1
-R0
-R4
-Z124 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv
-Z125 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv
-L0 2
-R5
-r1
-!s85 0
-31
-R30
-Z126 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv|
-Z127 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv|
-!i113 1
-R7
-R8
-R9
-vregister
-R1
-R44
-!i10b 1
-!s100 koZH]ONG:n6<0><@Xj1Y92
-IPa4WNzbb380F2kJQBzD@13
-R3
-Z128 !s105 register_sv_unit
-S1
-R0
-R4
-Z129 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv
-Z130 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv
-L0 2
-R5
-r1
-!s85 0
-31
-R48
-Z131 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv|
-Z132 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv|
-!i113 1
-R7
-R8
-R9
-vregister_testbench
-R1
-R44
-!i10b 1
-!s100 Q]?SnclfQ@V]e0UZ7WXI83
-I1_IUGmBkKcA4kgnQon@jA0
-R3
-R128
-S1
-R0
-R4
-R129
-R130
-R24
-R5
-r1
-!s85 0
-31
-R48
-R131
-R132
-!i113 1
-R7
-R8
-R9
-vregstim
-R1
-R25
-!i10b 1
-!s100 5H:G3llKeOV_[R08ljFIZ3
-IA;CRCnRl7KQfz;GBo96C=0
-R3
+!s100 kS=^7K6czS]Dg5<ck7bKN1
+IS=]6GGN<fY`H=4j36A?=10
+R2
 R123
 S1
 R0
-R4
+R109
 R124
 R125
-L0 42
-R5
+R62
+R4
 r1
 !s85 0
 31
-R30
 R126
 R127
+R128
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vshift_left
+vn_bit_adder
 R1
-R96
+!s110 1574381838
 !i10b 1
-!s100 RLX[O6l<;FaZl:0M4IJnz2
-I=Vm9REf85P`bjG9l`V8zJ0
-R3
-Z133 !s105 shift_left_sv_unit
+!s100 @_F`7?0939Z34R6IHUFSM1
+Ii:aJaS;Gf:OD40V>:M:Ak3
+R2
+!s105 n_bit_adder_sv_unit
 S1
 R0
-R4
-Z134 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv
-Z135 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv
+R34
+8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv
+FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R100
-Z136 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv|
-Z137 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv|
+R83
+!s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/n_bit_adder.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vshift_left_testbench
+vnth_alu
 R1
-R96
+Z129 !s110 1574381843
 !i10b 1
-!s100 4lG6P7[Ag8a0`A`a@[`W^1
-IOEZkhhLn^HV5^l_2Q?1LS1
-R3
-R133
+!s100 Ma^@V:4X^ijlEHMYDDcJZ0
+IWbRk56bKmLLRFzX32_G^C0
+R2
+Z130 !s105 nth_alu_sv_unit
 S1
 R0
+Z131 w1574378956
+Z132 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv
+Z133 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv
+L0 2
 R4
+r1
+!s85 0
+31
+Z134 !s108 1574381842.000000
+Z135 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv|
+Z136 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/nth_alu.sv|
+!i113 1
+R5
+R6
+R7
+vnth_alu_testbench
+R1
+R129
+!i10b 1
+!s100 <0=G3ehEEOFm62IckTkIJ3
+I7g9?`5ez:e_k4bBjk5JJ_0
+R2
+R130
+S1
+R0
+R131
+R132
+R133
+L0 57
+R4
+r1
+!s85 0
+31
 R134
 R135
-L0 12
-R5
-r1
-!s85 0
-31
-R100
 R136
-R137
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vsign_extend
+vprocessor
 R1
-R96
+!s110 1574381852
 !i10b 1
-!s100 6OUNBX83g2^6od]aZQY>V0
-IN;X^`X9Ef]DUc1d4P;2Do0
-R3
-Z138 !s105 sign_extend_sv_unit
+!s100 b]HI_NjjLfREb8RAA9dE12
+Ik2LEz96m;7z`VeRBi<Pf11
+R2
+!s105 processor_sv_unit
 S1
 R0
-R4
-Z139 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv
-Z140 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv
+R131
+8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv
+FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R100
-Z141 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv|
-Z142 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv|
+!s108 1574381851.000000
+!s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/processor.sv|
 !i113 1
+R5
+R6
 R7
-R8
-R9
-vsign_extend_testbench
+vprogram_counter
 R1
-R96
+Z137 !s110 1574381847
 !i10b 1
-!s100 `CzkWdDD?RPo>B820HB7d2
-Im5An;:CK3zo=2z658IPnV1
-R3
+!s100 om??z[U5z71dfN9TMW:[`1
+IB_DmKFRU22N;`WBemVPO^0
+R2
+Z138 !s105 program_counter_sv_unit
+S1
+R0
+R131
+Z139 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv
+Z140 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z141 !s108 1574381846.000000
+Z142 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv|
+Z143 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/program_counter.sv|
+!i113 1
+R5
+R6
+R7
+vprogram_counter_testbench
+R1
+R137
+!i10b 1
+!s100 n[TX]59Gn4IT:GD=nH^3a1
+IT`@?POH7ZahM2UAH_96Um1
+R2
 R138
 S1
 R0
-R4
+R131
 R139
 R140
-R62
-R5
+L0 46
+R4
 r1
 !s85 0
 31
-R100
 R141
 R142
-!i113 1
-R7
-R8
-R9
-vzero_flag
-R1
-R96
-!i10b 1
-!s100 [5o3ZibJZlSP82=?=F;Xo1
-IlJ]3_lWmOEGnZ8<5]6M:_1
-R3
-Z143 !s105 zero_flag_sv_unit
-S1
-R0
-R4
-Z144 8C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv
-Z145 FC:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv
-L0 4
-R5
-r1
-!s85 0
-31
-Z146 !s108 1574365968.000000
-Z147 !s107 C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv|
-Z148 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined|C:/Users/sjaem/git_repo/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv|
-!i113 1
-R7
-R8
-R9
-vzero_flag_testbench
-R1
-R96
-!i10b 1
-!s100 [[K:>TDAGCB54_ilAz^m51
-IX<Uj<Sd^j0l[z>MZBf25h0
-R3
 R143
+!i113 1
+R5
+R6
+R7
+vregfile
+R1
+Z144 !s110 1574381848
+!i10b 1
+!s100 Ki`bT]4`UClThXUQ48OLO1
+IJ:QC4zQU`o9b0Q7XN@Pd=3
+R2
+Z145 !s105 regfile_sv_unit
 S1
 R0
+R131
+Z146 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv
+Z147 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv
+L0 2
 R4
-R144
-R145
-L0 45
-R5
 r1
 !s85 0
 31
+Z148 !s108 1574381847.000000
+Z149 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv|
+Z150 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/regfile.sv|
+!i113 1
+R5
+R6
+R7
+vregister
+R1
+Z151 !s110 1574381842
+!i10b 1
+!s100 koZH]ONG:n6<0><@Xj1Y92
+IR`mh47^T25b1RUH_]4_:52
+R2
+Z152 !s105 register_sv_unit
+S1
+R0
+R131
+Z153 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv
+Z154 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z155 !s108 1574381841.000000
+Z156 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv|
+Z157 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/register.sv|
+!i113 1
+R5
+R6
+R7
+vregister_testbench
+R1
+R151
+!i10b 1
+!s100 Q]?SnclfQ@V]e0UZ7WXI83
+IPT]H1cbNGoV:YPif@^SUo0
+R2
+R152
+S1
+R0
+R131
+R153
+R154
+R23
+R4
+r1
+!s85 0
+31
+R155
+R156
+R157
+!i113 1
+R5
+R6
+R7
+vregstim
+R1
+R144
+!i10b 1
+!s100 5H:G3llKeOV_[R08ljFIZ3
+I5Q_e<^f79hmb?ZhdBLmNm2
+R2
+R145
+S1
+R0
+R131
 R146
 R147
+L0 42
+R4
+r1
+!s85 0
+31
 R148
+R149
+R150
 !i113 1
+R5
+R6
 R7
-R8
-R9
+vshift_left
+R1
+Z158 !s110 1574381826
+!i10b 1
+!s100 RLX[O6l<;FaZl:0M4IJnz2
+I41ZhfjMFi4konGH;fO>QO2
+R2
+Z159 !s105 shift_left_sv_unit
+S1
+R0
+Z160 w1574378957
+Z161 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv
+Z162 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z163 !s108 1574381825.000000
+Z164 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv|
+Z165 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/shift_left.sv|
+!i113 1
+R5
+R6
+R7
+vshift_left_testbench
+R1
+R158
+!i10b 1
+!s100 4lG6P7[Ag8a0`A`a@[`W^1
+ICK3Y^4>chn]P>z6h<D81H0
+R2
+R159
+S1
+R0
+R160
+R161
+R162
+L0 12
+R4
+r1
+!s85 0
+31
+R163
+R164
+R165
+!i113 1
+R5
+R6
+R7
+vsign_extend
+R1
+Z166 !s110 1574381825
+!i10b 1
+!s100 6OUNBX83g2^6od]aZQY>V0
+IDgGJ2g0d7[XWc]RQmO^=k1
+R2
+Z167 !s105 sign_extend_sv_unit
+S1
+R0
+R160
+Z168 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv
+Z169 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R163
+Z170 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv|
+Z171 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/sign_extend.sv|
+!i113 1
+R5
+R6
+R7
+vsign_extend_testbench
+R1
+R166
+!i10b 1
+!s100 `CzkWdDD?RPo>B820HB7d2
+IhjAF]76Q29UjP?DRkW2GU0
+R2
+R167
+S1
+R0
+R160
+R168
+R169
+R70
+R4
+r1
+!s85 0
+31
+R163
+R170
+R171
+!i113 1
+R5
+R6
+R7
+vzero_flag
+R1
+Z172 !s110 1574381824
+!i10b 1
+!s100 [5o3ZibJZlSP82=?=F;Xo1
+I?WJj0ia9SN:m6ck3`g0^E3
+R2
+Z173 !s105 zero_flag_sv_unit
+S1
+R0
+Z174 w1574378958
+Z175 8U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv
+Z176 FU:/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv
+L0 4
+R4
+r1
+!s85 0
+31
+Z177 !s108 1574381824.000000
+Z178 !s107 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv|
+Z179 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/EE469_ComputerArchitecture/EE469_lab4_pipelined|U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/zero_flag.sv|
+!i113 1
+R5
+R6
+R7
+vzero_flag_testbench
+R1
+R172
+!i10b 1
+!s100 [[K:>TDAGCB54_ilAz^m51
+InEdEKcof5kS04k[=CPE8<2
+R2
+R173
+S1
+R0
+R174
+R175
+R176
+L0 45
+R4
+r1
+!s85 0
+31
+R177
+R178
+R179
+!i113 1
+R5
+R6
+R7

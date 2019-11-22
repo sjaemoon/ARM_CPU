@@ -1,217 +1,250 @@
 # Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
-vlog branch_accel.sv
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:19:20 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# ** Error: (vlog-13069) branch_accel.sv(3): near "flag_neg": syntax error, unexpected IDENTIFIER, expecting ')'.
-# End time: 21:19:20 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog branch_accel.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:19:43 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# ** Error: (vlog-13069) branch_accel.sv(3): near "flag_neg": syntax error, unexpected IDENTIFIER, expecting ')'.
-# End time: 21:19:43 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog branch_accel.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:19:58 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# ** Error: (vlog-13069) branch_accel.sv(3): near "flag_neg": syntax error, unexpected IDENTIFIER, expecting ')'.
-# End time: 21:19:58 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog branch_accel.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:20:13 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
+# Start time: 16:25:12 on Nov 21,2019
+# vlog -reportprogress 300 ./D_FF.sv ./D_FF_en.sv ./alu.sv ./branch_accel.sv ./control.sv ./datamem.sv ./datapath.sv ./de_1_2.sv ./de_2_4.sv ./de_4_16.sv ./de_5_32.sv ./flag_register.sv ./forwarding_unit.sv ./full_adder.sv ./instructmem.sv ./mux16_1.sv ./mux2_1.sv ./mux32_1.sv ./mux4_1.sv ./mux8_1.sv ./n_bit_adder.sv ./nth_alu.sv ./processor.sv ./processorstim.sv ./program_counter.sv ./regfile.sv ./register.sv ./shift_left.sv ./sign_extend.sv ./zero_flag.sv 
+# -- Compiling module D_FF
+# -- Compiling module D_FF_en
+# -- Compiling module D_FF_en_testbench
+# -- Compiling module alu
 # -- Compiling module branch_accel
 # -- Compiling module accel_stim
-# ** Warning: branch_accel.sv(120): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Error: branch_accel.sv(140): (vlog-2730) Undefined variable: 'flags_overf'.
-# ** Error: branch_accel.sv(140): (vlog-2730) Undefined variable: 'flags_cOut'.
-# ** Warning: branch_accel.sv(147): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# End time: 21:20:13 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 2
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog branch_accel.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:20:33 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# -- Compiling module accel_stim
-# ** Warning: branch_accel.sv(120): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: branch_accel.sv(147): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# Top level modules:
-# 	accel_stim
-# End time: 21:20:33 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-vlog branch_accel.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:21:09 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# -- Compiling module accel_stim
-# 
-# Top level modules:
-# 	accel_stim
-# End time: 21:21:09 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog branch_accel.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:57:04 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# -- Compiling module accel_stim
-# 
-# Top level modules:
-# 	accel_stim
-# End time: 21:57:04 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog control.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:57:09 on Nov 20,2019
-# vlog -reportprogress 300 control.sv 
-# -- Compiling module control
-# ** Error: control.sv(3): (vlog-2730) Undefined variable: 'flag_neg'.
-# ** Error: control.sv(3): Identifier must be declared with a port mode: flag_neg.
-# ** Error: control.sv(3): (vlog-2730) Undefined variable: 'flag_zero'.
-# ** Error: control.sv(3): Identifier must be declared with a port mode: flag_zero.
-# ** Error: control.sv(3): (vlog-2730) Undefined variable: 'flag_overf'.
-# ** Error: control.sv(3): Identifier must be declared with a port mode: flag_overf.
-# ** Error: control.sv(3): (vlog-2730) Undefined variable: 'flag_cOut'.
-# ** Error: control.sv(3): Identifier must be declared with a port mode: flag_cOut.
-# ** Error: control.sv(3): (vlog-2730) Undefined variable: 'aluFlag_zero'.
-# ** Error: control.sv(3): Identifier must be declared with a port mode: aluFlag_zero.
-# -- Compiling module control_testbench
-# End time: 21:57:09 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 10, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog control.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:57:37 on Nov 20,2019
-# vlog -reportprogress 300 control.sv 
 # -- Compiling module control
 # -- Compiling module control_testbench
+# -- Compiling module datamem
+# -- Compiling module datamem_testbench
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# -- Compiling module de_1_2
+# -- Compiling module de_1_2_testbench
+# -- Compiling module de_2_4
+# -- Compiling module de_2_4_testbench
+# -- Compiling module de_4_16
+# -- Compiling module de_4_16_testbench
+# -- Compiling module de_5_32
+# -- Compiling module de_5_32_testbench
+# -- Compiling module flag_register
+# -- Compiling module flag_register_testbench
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# -- Compiling module full_adder
+# -- Compiling module full_adder_testbench
+# -- Compiling module instructmem
+# -- Compiling module instructmem_testbench
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# -- Compiling module mux32_1
+# -- Compiling module mux32_1_testbench
+# -- Compiling module mux4_1
+# -- Compiling module mux4_1_testbench
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# -- Compiling module n_bit_adder
+# -- Compiling module nth_alu
+# -- Compiling module nth_alu_testbench
+# -- Compiling module processor
+# -- Compiling module processorstim
+# -- Compiling module program_counter
+# -- Compiling module program_counter_testbench
+# -- Compiling module regfile
+# -- Compiling module regstim
+# -- Compiling module register
+# -- Compiling module register_testbench
+# -- Compiling module shift_left
+# -- Compiling module shift_left_testbench
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
 # 
 # Top level modules:
+# 	D_FF_en_testbench
+# 	accel_stim
 # 	control_testbench
-# End time: 21:57:37 on Nov 20,2019, Elapsed time: 0:00:00
+# 	datamem_testbench
+# 	datapath_testbench
+# 	de_1_2_testbench
+# 	de_2_4_testbench
+# 	de_4_16_testbench
+# 	de_5_32_testbench
+# 	flag_register_testbench
+# 	forwarding_unit_testbench
+# 	full_adder_testbench
+# 	instructmem_testbench
+# 	mux16_1_testbench
+# 	mux2_1_testbench
+# 	mux32_1_testbench
+# 	mux4_1_testbench
+# 	mux8_1_testbench
+# 	nth_alu_testbench
+# 	processorstim
+# 	program_counter_testbench
+# 	regstim
+# 	register_testbench
+# 	shift_left_testbench
+# 	sign_extend_testbench
+# 	zero_flag_testbench
+# End time: 16:25:16 on Nov 21,2019, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0
-vsim work.branch_accel
-# vsim work.branch_accel 
-# Start time: 21:58:48 on Nov 20,2019
+# vsim -voptargs=""+acc"" -t 1ps -lib work forwarding_unit_testbench 
+# Start time: 16:25:16 on Nov 21,2019
 # Loading sv_std.std
-# Loading work.branch_accel
+# Loading work.forwarding_unit_testbench
+# Loading work.forwarding_unit
 # Loading work.register
-# Loading work.mux2_1
-# Loading work.zero_flag
+# Loading work.mux4_1
 # Loading work.D_FF_en
-# Loading work.D_FF
-# ** Warning: (vsim-3015) branch_accel.sv(29): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_neg File: ./mux2_1.sv
-# ** Warning: (vsim-3015) branch_accel.sv(30): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_zero File: ./mux2_1.sv
-# ** Warning: (vsim-3015) branch_accel.sv(31): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_overf File: ./mux2_1.sv
-# ** Warning: (vsim-3015) branch_accel.sv(32): [PCDPC] - Port size (2) does not match connection size (1) for port 'in'. The port definition is at: ./mux2_1.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /branch_accel/flags_cOut File: ./mux2_1.sv
-vsim quit
-# End time: 22:00:18 on Nov 20,2019, Elapsed time: 0:01:30
-# Errors: 0, Warnings: 4
-# vsim quit 
-# Start time: 22:00:18 on Nov 20,2019
-# ** Error: (vsim-3170) Could not find 'quit'.
-#         Searched libraries:
-#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
-# Error loading design
-# End time: 22:00:18 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# Break key hit
-vlog branch_accel.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:00:37 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# -- Compiling module accel_stim
-# 
-# Top level modules:
-# 	accel_stim
-# End time: 22:00:37 on Nov 20,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vsim work.branch_stim
-# vsim work.branch_stim 
-# Start time: 22:00:43 on Nov 20,2019
-# ** Error: (vsim-3170) Could not find 'branch_stim'.
-#         Searched libraries:
-#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
-# Error loading design
-# End time: 22:00:44 on Nov 20,2019, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-vsim work.accel_stim
-# vsim work.accel_stim 
-# Start time: 22:00:52 on Nov 20,2019
-# Loading sv_std.std
-# Loading work.accel_stim
-# Loading work.branch_accel
-# Loading work.register
 # Loading work.mux2_1
-# Loading work.zero_flag
-# Loading work.D_FF_en
 # Loading work.D_FF
-add wave -position end  sim:/accel_stim/clk
-add wave -position end  sim:/accel_stim/opcode
-add wave -position end  sim:/accel_stim/regVal_in
-add wave -position end  sim:/accel_stim/flag_wr_en
-add wave -position end  sim:/accel_stim/flag_neg
-add wave -position end  sim:/accel_stim/flag_zero
-add wave -position end  sim:/accel_stim/flag_overf
-add wave -position end  sim:/accel_stim/flag_cOut
-add wave -position end  sim:/accel_stim/alu_neg
-add wave -position end  sim:/accel_stim/alu_zero
-add wave -position end  sim:/accel_stim/alu_overf
-add wave -position end  sim:/accel_stim/alu_cOut
-add wave -position end  sim:/accel_stim/BrTaken
-add wave -position end  sim:/accel_stim/UncondBr
-add wave -position end  sim:/accel_stim/pc_rd
-run -all
-# ** Note: $stop    : branch_accel.sv(178)
-#    Time: 11500 ns  Iteration: 1  Instance: /accel_stim
-# Break in Module accel_stim at branch_accel.sv line 178
-add wave -position 15  sim:/accel_stim/dut/zero_internal
-add wave -position 15  sim:/accel_stim/dut/setFlag_reg
-restart -f
-run -all
-# ** Note: $stop    : branch_accel.sv(178)
-#    Time: 11500 ns  Iteration: 1  Instance: /accel_stim
-# Break in Module accel_stim at branch_accel.sv line 178
-vlog control.sv
+# ** Warning: (vsim-3015) ./forwarding_unit.sv(14): [PCDPC] - Port size (5) does not match connection size (1) for port 'in'. The port definition is at: ./register.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/r2 File: ./register.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Error: Assertion error.
+#    Time: 50 ns  Scope: forwarding_unit_testbench File: ./forwarding_unit.sv Line: 60
+# ** Error: Assertion error.
+#    Time: 350 ns  Scope: forwarding_unit_testbench File: ./forwarding_unit.sv Line: 66
+# ** Note: $stop    : ./forwarding_unit.sv(71)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at ./forwarding_unit.sv line 71
+restart -f; run -all
+# ** Warning: (vsim-3015) ./forwarding_unit.sv(14): [PCDPC] - Port size (5) does not match connection size (1) for port 'in'. The port definition is at: ./register.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/r2 File: ./register.sv
+# ** Error: Assertion error.
+#    Time: 50 ns  Scope: forwarding_unit_testbench File: ./forwarding_unit.sv Line: 60
+# ** Error: Assertion error.
+#    Time: 350 ns  Scope: forwarding_unit_testbench File: ./forwarding_unit.sv Line: 66
+# ** Note: $stop    : ./forwarding_unit.sv(71)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at ./forwarding_unit.sv line 71
+vlog forwarding_unit.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:05:33 on Nov 20,2019
-# vlog -reportprogress 300 control.sv 
-# -- Compiling module control
-# -- Compiling module control_testbench
+# Start time: 16:35:49 on Nov 21,2019
+# vlog -reportprogress 300 forwarding_unit.sv 
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
 # 
 # Top level modules:
-# 	control_testbench
-# End time: 22:05:33 on Nov 20,2019, Elapsed time: 0:00:00
+# 	forwarding_unit_testbench
+# End time: 16:35:52 on Nov 21,2019, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
-vlog branch_accel.sv
+restart -f; run -all
+# Loading work.forwarding_unit_testbench
+# Loading work.forwarding_unit
+# ** Warning: (vsim-3015) forwarding_unit.sv(14): [PCDPC] - Port size (5) does not match connection size (1) for port 'in'. The port definition is at: ./register.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/r2 File: ./register.sv
+# ** Error: Assertion error.
+#    Time: 50 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 72
+# ** Error: Assertion error.
+#    Time: 150 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 74
+# ** Error: Assertion error.
+#    Time: 250 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 76
+# ** Error: Assertion error.
+#    Time: 350 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 78
+# ** Error: Assertion error.
+#    Time: 450 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 80
+# ** Error: Assertion error.
+#    Time: 550 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 82
+# ** Note: $stop    : forwarding_unit.sv(83)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at forwarding_unit.sv line 83
+vlog forwarding_unit.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:05:39 on Nov 20,2019
-# vlog -reportprogress 300 branch_accel.sv 
-# -- Compiling module branch_accel
-# -- Compiling module accel_stim
+# Start time: 16:36:54 on Nov 21,2019
+# vlog -reportprogress 300 forwarding_unit.sv 
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
 # 
 # Top level modules:
-# 	accel_stim
-# End time: 22:05:39 on Nov 20,2019, Elapsed time: 0:00:00
+# 	forwarding_unit_testbench
+# End time: 16:36:55 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# End time: 22:07:32 on Nov 20,2019, Elapsed time: 0:06:40
+restart -f; run -all
+# Loading work.forwarding_unit_testbench
+# Loading work.forwarding_unit
+# ** Warning: (vsim-3015) forwarding_unit.sv(14): [PCDPC] - Port size (5) does not match connection size (1) for port 'in'. The port definition is at: ./register.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/r2 File: ./register.sv
+# ** Error: Assertion error.
+#    Time: 350 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 78
+# ** Note: $stop    : forwarding_unit.sv(83)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at forwarding_unit.sv line 83
+restart -f; run -all
+# ** Warning: (vsim-3015) forwarding_unit.sv(14): [PCDPC] - Port size (5) does not match connection size (1) for port 'in'. The port definition is at: ./register.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/r2 File: ./register.sv
+# ** Error: Assertion error.
+#    Time: 350 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 78
+# ** Note: $stop    : forwarding_unit.sv(83)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at forwarding_unit.sv line 83
+add wave -position end  sim:/forwarding_unit_testbench/dut/Aw_1cyc
+add wave -position end  sim:/forwarding_unit_testbench/dut/Aw_2cyc
+restart -f; run -all
+# ** Warning: (vsim-3015) forwarding_unit.sv(14): [PCDPC] - Port size (5) does not match connection size (1) for port 'in'. The port definition is at: ./register.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/r2 File: ./register.sv
+# ** Error: Assertion error.
+#    Time: 350 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 78
+# ** Note: $stop    : forwarding_unit.sv(83)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at forwarding_unit.sv line 83
+vlog forwarding_unit.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:42:45 on Nov 21,2019
+# vlog -reportprogress 300 forwarding_unit.sv 
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# 
+# Top level modules:
+# 	forwarding_unit_testbench
+# End time: 16:42:46 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+restart -f; run -all
+# Loading work.forwarding_unit_testbench
+# Loading work.forwarding_unit
+# ** Warning: (vsim-3015) forwarding_unit.sv(14): [PCDPC] - Port size (5) does not match connection size (1) for port 'in'. The port definition is at: ./register.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /forwarding_unit_testbench/dut/r2 File: ./register.sv
+# ** Error: Assertion error.
+#    Time: 350 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 78
+# ** Note: $stop    : forwarding_unit.sv(83)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at forwarding_unit.sv line 83
+vlog forwarding_unit.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:45:57 on Nov 21,2019
+# vlog -reportprogress 300 forwarding_unit.sv 
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# 
+# Top level modules:
+# 	forwarding_unit_testbench
+# End time: 16:45:57 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f; run -all
+# Loading work.forwarding_unit_testbench
+# Loading work.forwarding_unit
+# ** Error: Assertion error.
+#    Time: 150 ns  Scope: forwarding_unit_testbench File: forwarding_unit.sv Line: 74
+# ** Note: $stop    : forwarding_unit.sv(83)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at forwarding_unit.sv line 83
+vlog forwarding_unit.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:49:56 on Nov 21,2019
+# vlog -reportprogress 300 forwarding_unit.sv 
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# 
+# Top level modules:
+# 	forwarding_unit_testbench
+# End time: 16:49:57 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+restart -f; run -all
+# Loading work.forwarding_unit_testbench
+# Loading work.forwarding_unit
+# ** Note: $stop    : forwarding_unit.sv(87)
+#    Time: 550 ns  Iteration: 1  Instance: /forwarding_unit_testbench
+# Break in Module forwarding_unit_testbench at forwarding_unit.sv line 87

@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module alu_staged   (clk,
                      reg1, reg2, ALU_op, flag_wr_en, //Used Signals
                      PCPlusFour_in, Aw_in, MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in, //Passthru Sig inputs
@@ -45,5 +46,46 @@ module alu_staged   (clk,
     register #(.WIDTH(1)) Rd_X30 (.in(Rd_X30_in), .enable(1'b1), .clk, .out(Rd_X30_out));
 endmodule
 
+module ALU_staged_stim();
+    logic clk, flag_wr_en;
+    logic [63:0] reg1, reg2, PCPlusFour_in;
+    logic [4:0] Aw_in;
+    logic [2:0] ALU_op;
+    logic MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in;
 
+    logic [63:0] ALU_out, ALU_fw, PCPlusFour_out;
+    logic [4:0] Aw_out;
+    logic MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out;
+    logic alu_neg, alu_zero, alu_overf, alu_cOut,
+                 flag_neg, flag_zero, flag_overf, flag_cOut;
+
+    alu_staged dut (.*);
+
+    parameter CLOCK_DELAY = 100;
+
+    initial begin
+        clk <= 0;
+        forever #(CLOCK_DELAY/2) clk <= ~clk;
+    end
+
+    initial begin
+        flag_wr_en <= 0; reg1 <= 0; reg2 <= 0; PCPlusFour_in <= 0;
+        Aw_in <= 0; ALU_op <= 0; MemToReg_in <= 0; RegWrite_in <= 0; MemWrite_in <= 0; Rd_X30_in <= 0; @(posedge clk);
+
+        //ADDS Instr
+        flag_wr_en <= 1; reg1 <= 64'd10; reg2 <= 64'd20; PCPlusFour_in <= 64'd128;
+        Aw_in <= 5'd5; ALU_op <= 3'b010; MemToReg_in <= 0; RegWrite_in <= 1; MemWrite_in <= 0; Rd_X30_in <= 0; @(posedge clk); //ADDS Executed
+        
+
+        //ADDI Instr
+        flag_wr_en <= 0; reg1 <= 64'd20; reg2 <= 64'd1; PCPlusFour_in <= 64'd132;
+        Aw_in <= 5'd6; ALU_op <= 3'b010; MemToReg_in <= 0; RegWrite_in <= 1; MemWrite_in <= 0; Rd_X30_in <= 0; @(posedge clk);
+        assert(ALU_out == 64'd30 && Aw_out == 5'd5 && PCPlusFour_out == 64'd128);
+        
+        $stop;
+    end
+endmodule
+        
+
+        
 

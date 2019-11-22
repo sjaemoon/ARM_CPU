@@ -118,3 +118,164 @@ vlog alu_staged.sv
 # 	alu_staged
 # End time: 19:42:40 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+vlog alu_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:57:31 on Nov 21,2019
+# vlog -reportprogress 300 alu_staged.sv 
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# ** Error: (vlog-13069) alu_staged.sv(75): near "'1": syntax error, unexpected UNSIZED_BIT.
+# End time: 19:57:31 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog alu_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:57:43 on Nov 21,2019
+# vlog -reportprogress 300 alu_staged.sv 
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# 
+# Top level modules:
+# 	alu_staged
+# 	ALU_staged_stim
+# End time: 19:57:44 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.ALU_staged_stim
+# vsim work.ALU_staged_stim 
+# Start time: 19:57:53 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.ALU_staged_stim
+add wave -position end  sim:/ALU_staged_stim/clk
+add wave -position 1  sim:/ALU_staged_stim/flag_wr_en
+add wave -position 1  sim:/ALU_staged_stim/reg1
+add wave -position 1  sim:/ALU_staged_stim/reg2
+add wave -position 1  sim:/ALU_staged_stim/PCPlusFour_in
+add wave -position 1  sim:/ALU_staged_stim/Aw_in
+add wave -position 1  sim:/ALU_staged_stim/ALU_op
+add wave -position 1  sim:/ALU_staged_stim/MemToReg_in
+add wave -position 1  sim:/ALU_staged_stim/RegWrite_in
+add wave -position 1  sim:/ALU_staged_stim/MemWrite_in
+add wave -position 1  sim:/ALU_staged_stim/Rd_X30_in
+add wave -position end  sim:/ALU_staged_stim/ALU_out
+add wave -position end  sim:/ALU_staged_stim/ALU_fw
+add wave -position end  sim:/ALU_staged_stim/PCPlusFour_out
+add wave -position end  sim:/ALU_staged_stim/Aw_out
+add wave -position end  sim:/ALU_staged_stim/MemToReg_out
+add wave -position end  sim:/ALU_staged_stim/RegWrite_out
+add wave -position end  sim:/ALU_staged_stim/MemWrite_out
+add wave -position end  sim:/ALU_staged_stim/Rd_X30_out
+add wave -position end  sim:/ALU_staged_stim/alu_neg
+add wave -position end  sim:/ALU_staged_stim/alu_zero
+add wave -position end  sim:/ALU_staged_stim/alu_overf
+add wave -position end  sim:/ALU_staged_stim/alu_cOut
+add wave -position end  sim:/ALU_staged_stim/flag_neg
+add wave -position end  sim:/ALU_staged_stim/flag_zero
+add wave -position end  sim:/ALU_staged_stim/flag_overf
+add wave -position end  sim:/ALU_staged_stim/flag_cOut
+run -all
+# ** Error: Assertion error.
+#    Time: 150 ps  Scope: ALU_staged_stim File: alu_staged.sv Line: 75
+# ** Note: $stop    : alu_staged.sv(81)
+#    Time: 250 ps  Iteration: 1  Instance: /ALU_staged_stim
+# Break in Module ALU_staged_stim at alu_staged.sv line 81
+vlog alu_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:00:31 on Nov 21,2019
+# vlog -reportprogress 300 alu_staged.sv 
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# 
+# Top level modules:
+# 	ALU_staged_stim
+# End time: 20:00:32 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+restart -f; run -all
+# Loading work.ALU_staged_stim
+# Loading work.alu_staged
+# Loading work.alu
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'ALU_staged_stim' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
+# Loading work.nth_alu
+# Loading work.mux2_1
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.flag_register
+# Loading work.D_FF_en
+# Loading work.D_FF
+# Loading work.register
+# No Design Loaded!
+vsim work.ALU_staged_stim
+# vsim work.ALU_staged_stim 
+# Start time: 19:57:53 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.ALU_staged_stim
+# Loading work.alu_staged
+# Loading work.alu
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'ALU_staged_stim' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
+# Loading work.nth_alu
+# Loading work.mux2_1
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.flag_register
+# Loading work.D_FF_en
+# Loading work.D_FF
+# Loading work.register
+# Error loading design
+# End time: 20:00:51 on Nov 21,2019, Elapsed time: 0:02:58
+# Errors: 3, Warnings: 0
+vlog alu_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:01:16 on Nov 21,2019
+# vlog -reportprogress 300 alu_staged.sv 
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# 
+# Top level modules:
+# 	ALU_staged_stim
+# End time: 20:01:17 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.ALU_staged_stim
+# vsim work.ALU_staged_stim 
+# Start time: 20:01:20 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.ALU_staged_stim
+# Loading work.alu_staged
+# Loading work.alu
+# Loading work.nth_alu
+# Loading work.mux2_1
+# Loading work.full_adder
+# Loading work.mux8_1
+# Loading work.mux4_1
+# Loading work.zero_flag
+# Loading work.flag_register
+# Loading work.D_FF_en
+# Loading work.D_FF
+# Loading work.register
+restart -f; run -all
+# ** Error: Assertion error.
+#    Time: 150 ns  Scope: ALU_staged_stim File: alu_staged.sv Line: 78
+# ** Note: $stop    : alu_staged.sv(84)
+#    Time: 250 ns  Iteration: 1  Instance: /ALU_staged_stim
+# Break in Module ALU_staged_stim at alu_staged.sv line 84
+vlog alu_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:06:03 on Nov 21,2019
+# vlog -reportprogress 300 alu_staged.sv 
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# 
+# Top level modules:
+# 	ALU_staged_stim
+# End time: 20:06:04 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+restart -f; run -all
+# Loading work.ALU_staged_stim
+# Loading work.alu_staged
+# ** Note: $stop    : alu_staged.sv(85)
+#    Time: 250 ns  Iteration: 1  Instance: /ALU_staged_stim
+# Break in Module ALU_staged_stim at alu_staged.sv line 85

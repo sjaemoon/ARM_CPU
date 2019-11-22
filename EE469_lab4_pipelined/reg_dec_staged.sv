@@ -1,14 +1,15 @@
 `timescale 1ns/10ps
-module reg_dec_staged (clk, opcode, Rd, Rn, Rm, PCPlusFour, X30,
+module reg_dec_staged (clk, opcode, Rd, Rn, Rm, PCPlusFour_IF, X30,
 								DAddr9, ALUImm12, ALU_out, Mem_out, 
 								flag_neg, flag_zero, flag_overf, flag_cOut, 
 								alu_neg, alu_zero, alu_overf, alu_cOut, 
 								BrTaken, UncondBr, pc_rd, reg1, reg2, PCPlusFour_out, Aw_out, 
-								MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out);
+								MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out, // signals for RF
+								PCPlusFour_WB, Aw_in, RegWrite_in, Rd_X30_in); // singals for WB
 
 	input logic clk;
 	input logic [10:0] opcode;
-	input logic [4:0] Rd, Rn, Rm, PCPlusFour, X30;
+	input logic [4:0] Rd, Rn, Rm, PCPlusFour_IF, X30;
 	input logic [8:0] DAddr9;
 	input logic [11:0] ALUImm12;
 	input logic [63:0] ALU_out, Mem_out;
@@ -17,6 +18,9 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, PCPlusFour, X30,
 	output logic [63:0] reg1, reg2, PCPlusFour_out;
 	output logic [4:0] Aw_out;
 	output logic MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out;
+	input logic [4:0] PCPlusFour_WB;
+	input logic [4:0] Aw_in;
+	input logic RegWrite_in, Rd_X30_in;
 	
 	// inputs/outputs of control
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite;
@@ -89,4 +93,37 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, PCPlusFour, X30,
 	register #(.WIDTH(1)) Rd_X30_reg (.in(Rd_X30), .enable(1'b1), .clk, .out(Rd_X30_out));
 	
 endmodule
+
+module reg_dec_staged_testbench ();
+	logic clk;
+	logic [10:0] opcode;
+	logic [4:0] Rd, Rn, Rm, PCPlusFour, X30;
+	logic [8:0] DAddr9;
+	logic [11:0] ALUImm12;
+	logic [63:0] ALU_out, Mem_out;
+	logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut; 
+	logic BrTaken, UncondBr, pc_rd;
+	logic [63:0] reg1, reg2, PCPlusFour_out;
+	logic [4:0] Aw_out;
+	logic MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out;
 	
+	parameter ClockDelay = 100;
+	initial begin // Set up the clock
+		clk <= 0;
+		forever #(ClockDelay/2) clk <= ~clk;
+	end
+
+	reg_dec_staged dut (.*);
+	
+	int i;
+
+	initial begin
+		Rd <= 0; Rn <= 0; Rm <= 0; PCPlusFour <= 0; X30 <= 5'd30; 
+		DAddr9 <= 0; ALUIMm12 <= 0; ALU_out <= 0; Mem_out <= 0; 
+		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
+		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0; 
+		opcode <= 0;
+		
+		$stop;
+	end
+endmodule

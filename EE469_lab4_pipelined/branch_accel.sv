@@ -18,7 +18,7 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
     logic setFlag_reg;
     logic [1:0] neg_in, zero_in, overf_in, cOut_in; 
     logic neg_o, zer_o, overf_o, cOut_o;
-    logic zero_internal, CBZ;
+    logic zero_internal;
 
     assign neg_in = {alu_neg, flag_neg};
     assign zero_in = {alu_zero, flag_zero};
@@ -91,7 +91,7 @@ module accel_stim();
 
    branch_accel dut (.*);
 
-   parameter CLOCK_PERIOD = 1000;
+   parameter CLOCK_PERIOD = 100;
 
    initial begin
       clk <= 0;

@@ -686,3 +686,57 @@ run -all
 # ** Note: $stop    : ./alu_staged.sv(87)
 #    Time: 250 ns  Iteration: 1  Instance: /ALU_staged_stim
 # Break in Module ALU_staged_stim at ./alu_staged.sv line 87
+quit -sim
+# End time: 21:49:08 on Nov 21,2019, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 0
+vlog branch_accel.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:49:23 on Nov 21,2019
+# vlog -reportprogress 300 branch_accel.sv 
+# -- Compiling module branch_accel
+# -- Compiling module accel_stim
+# 
+# Top level modules:
+# 	accel_stim
+# End time: 21:49:23 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.accel_stim
+# vsim work.accel_stim 
+# Start time: 21:49:46 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.accel_stim
+# Loading work.branch_accel
+# Loading work.register
+# Loading work.mux2_1
+# Loading work.zero_flag
+# Loading work.D_FF_en
+# Loading work.D_FF
+do branch_accel_wave.do
+run -all
+# ** Note: $stop    : branch_accel.sv(178)
+#    Time: 1150 ns  Iteration: 1  Instance: /accel_stim
+# Break in Module accel_stim at branch_accel.sv line 178
+quit -sim
+# End time: 21:51:58 on Nov 21,2019, Elapsed time: 0:02:12
+# Errors: 0, Warnings: 0
+vlog mem_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:13:46 on Nov 21,2019
+# vlog -reportprogress 300 mem_staged.sv 
+# -- Compiling module mem_staged
+# 
+# Top level modules:
+# 	mem_staged
+# End time: 22:13:46 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mem_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:32:20 on Nov 21,2019
+# vlog -reportprogress 300 mem_staged.sv 
+# -- Compiling module mem_staged
+# -- Compiling module mem_staged_stim
+# 
+# Top level modules:
+# 	mem_staged_stim
+# End time: 22:32:20 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

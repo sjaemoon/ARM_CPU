@@ -1,14 +1,15 @@
 # Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
-vlog "./*.sv"
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:39:55 on Nov 21,2019
-# vlog -reportprogress 300 ./D_FF.sv ./D_FF_en.sv ./alu.sv ./alu_staged.sv ./branch_accel.sv ./control.sv ./datamem.sv ./datapath.sv ./de_1_2.sv ./de_2_4.sv ./de_4_16.sv ./de_5_32.sv ./flag_register.sv ./forwarding_unit.sv ./full_adder.sv ./instructmem.sv ./mux16_1.sv ./mux2_1.sv ./mux32_1.sv ./mux4_1.sv ./mux8_1.sv ./n_bit_adder.sv ./nth_alu.sv ./processor.sv ./processorstim.sv ./program_counter.sv ./program_counter_staged.sv ./reg_dec_staged.sv ./regfile.sv ./register.sv ./shift_left.sv ./sign_extend.sv ./zero_flag.sv 
+# Start time: 21:38:12 on Nov 21,2019
+# vlog -reportprogress 300 ./D_FF.sv ./D_FF_en.sv ./alu.sv ./alu_staged.sv ./branch_accel.sv ./control.sv ./datamem.sv ./datapath.sv ./de_1_2.sv ./de_2_4.sv ./de_4_16.sv ./de_5_32.sv ./flag_register.sv ./forwarding_unit.sv ./full_adder.sv ./instructmem.sv ./mem_staged.sv ./mux16_1.sv ./mux2_1.sv ./mux32_1.sv ./mux4_1.sv ./mux8_1.sv ./n_bit_adder.sv ./nth_alu.sv ./processor.sv ./processorstim.sv ./program_counter.sv ./program_counter_staged.sv ./reg_dec_staged.sv ./regfile.sv ./register.sv ./shift_left.sv ./sign_extend.sv ./zero_flag.sv 
 # -- Compiling module D_FF
 # -- Compiling module D_FF_en
 # -- Compiling module D_FF_en_testbench
 # -- Compiling module alu
 # -- Compiling module alu_staged
-# ** Error: (vlog-13069) ./alu_staged.sv(5): near "ALU_out": syntax error, unexpected IDENTIFIER, expecting ')'.
+# -- Compiling module ALU_staged_stim
 # -- Compiling module branch_accel
 # -- Compiling module accel_stim
 # -- Compiling module control
@@ -33,6 +34,7 @@ vlog "./*.sv"
 # -- Compiling module full_adder_testbench
 # -- Compiling module instructmem
 # -- Compiling module instructmem_testbench
+# -- Compiling module mem_staged
 # -- Compiling module mux16_1
 # -- Compiling module mux16_1_testbench
 # -- Compiling module mux2_1
@@ -65,183 +67,606 @@ vlog "./*.sv"
 # -- Compiling module sign_extend_testbench
 # -- Compiling module zero_flag
 # -- Compiling module zero_flag_testbench
-# End time: 19:39:57 on Nov 21,2019, Elapsed time: 0:00:02
+# ** Error: (vlog-13069) ./zero_flag.sv(56): near "EOF": syntax error, unexpected end of source code.
+# End time: 21:38:13 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./*.sv""
+vlog zero_flag.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:38:21 on Nov 21,2019
+# vlog -reportprogress 300 zero_flag.sv 
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# 
+# Top level modules:
+# 	zero_flag_testbench
+# End time: 21:38:21 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.de_1_2_testbench
+# vsim work.de_1_2_testbench 
+# Start time: 21:39:05 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.de_1_2_testbench
+# Loading work.de_1_2
+vsim quit
+# End time: 21:39:12 on Nov 21,2019, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
+# vsim quit 
+# Start time: 21:39:12 on Nov 21,2019
+# ** Error: (vsim-3170) Could not find 'quit'.
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Error loading design
+# End time: 21:39:13 on Nov 21,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.datamem_testbench
+# vsim work.datamem_testbench 
+# Start time: 21:39:20 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.datamem_testbench
+# Loading work.datamem
+# ** Warning: (vsim-3017) ./datamem.sv(82): [TFMPC] - Too few port connections. Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /datamem_testbench/dut File: ./datamem.sv
+# ** Warning: (vsim-3722) ./datamem.sv(82): [TFMPC] - Missing connection for port 'read_enable'.
+quit -sim
+# End time: 21:39:25 on Nov 21,2019, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 2
+vsim work.ALU_staged_stim
+# vsim work.ALU_staged_stim 
+# Start time: 21:39:33 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.ALU_staged_stim
+# Loading work.alu_staged
+# Loading work.alu
+# doVOpenFlatFile(): INTERNAL ERROR: page load failed for file C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work/nth_alu/verilog.psm (12:12 1:1 1033 0 0 14248 0x0:0x5dd72aeb)
+# ** Error: (vsim-3171) Could not find machine code for 'C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work.nth_alu'.
+# Result too large. (errno = ERANGE)
+# Error loading design
+# End time: 21:39:33 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vlog alu_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:40:10 on Nov 21,2019
+# vlog -reportprogress 300 alu_staged.sv 
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# 
+# Top level modules:
+# 	ALU_staged_stim
+# End time: 21:40:10 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog nth_alu.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:40:18 on Nov 21,2019
+# vlog -reportprogress 300 nth_alu.sv 
+# -- Compiling module nth_alu
+# -- Compiling module nth_alu_testbench
+# 
+# Top level modules:
+# 	nth_alu_testbench
+# End time: 21:40:18 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:40:41 on Nov 21,2019
+# vlog -reportprogress 300 ./D_FF.sv ./D_FF_en.sv ./alu.sv ./alu_staged.sv ./branch_accel.sv ./control.sv ./datamem.sv ./datapath.sv ./de_1_2.sv ./de_2_4.sv ./de_4_16.sv ./de_5_32.sv ./flag_register.sv ./forwarding_unit.sv ./full_adder.sv ./instructmem.sv ./mem_staged.sv ./mux16_1.sv ./mux2_1.sv ./mux32_1.sv ./mux4_1.sv ./mux8_1.sv ./n_bit_adder.sv ./nth_alu.sv ./processor.sv ./processorstim.sv ./program_counter.sv ./program_counter_staged.sv ./reg_dec_staged.sv ./regfile.sv ./register.sv ./shift_left.sv ./sign_extend.sv ./zero_flag.sv 
+# -- Compiling module D_FF
+# -- Compiling module D_FF_en
+# -- Compiling module D_FF_en_testbench
+# -- Compiling module alu
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# -- Compiling module branch_accel
+# -- Compiling module accel_stim
+# -- Compiling module control
+# -- Compiling module control_testbench
+# -- Compiling module datamem
+# -- Compiling module datamem_testbench
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# -- Compiling module de_1_2
+# -- Compiling module de_1_2_testbench
+# -- Compiling module de_2_4
+# -- Compiling module de_2_4_testbench
+# -- Compiling module de_4_16
+# -- Compiling module de_4_16_testbench
+# -- Compiling module de_5_32
+# -- Compiling module de_5_32_testbench
+# -- Compiling module flag_register
+# -- Compiling module flag_register_testbench
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# -- Compiling module full_adder
+# -- Compiling module full_adder_testbench
+# -- Compiling module instructmem
+# -- Compiling module instructmem_testbench
+# -- Compiling module mem_staged
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# -- Compiling module mux32_1
+# -- Compiling module mux32_1_testbench
+# -- Compiling module mux4_1
+# -- Compiling module mux4_1_testbench
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# -- Compiling module n_bit_adder
+# -- Compiling module nth_alu
+# -- Compiling module nth_alu_testbench
+# -- Compiling module processor
+# -- Compiling module processorstim
+# -- Compiling module program_counter
+# -- Compiling module program_counter_testbench
+# -- Compiling module program_counter_staged
+# -- Compiling module pc_staged_stim
+# -- Compiling module reg_dec_staged
+# -- Compiling module reg_dec_staged_testbench
+# ** Error: ./reg_dec_staged.sv(122): (vlog-2730) Undefined variable: 'ALUIMm12'.
+# -- Compiling module regfile
+# -- Compiling module regstim
+# -- Compiling module register
+# -- Compiling module register_testbench
+# -- Compiling module shift_left
+# -- Compiling module shift_left_testbench
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# ** Error: (vlog-13069) ./zero_flag.sv(56): near "EOF": syntax error, unexpected end of source code.
+# End time: 21:40:41 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./*.sv""
+vlog U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:41:23 on Nov 21,2019
+# vlog -reportprogress 300 U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/reg_dec_staged.sv 
+# ** Error: (vlog-7) Failed to open design unit file "U:/EE469_ComputerArchitecture/EE469_lab4_pipelined/reg_dec_staged.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 21:41:23 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vsim work
+# vsim work 
+# Start time: 21:41:34 on Nov 21,2019
+# ** Error: (vsim-3170) Could not find 'work'.
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Error loading design
+# End time: 21:41:34 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work
+# vsim work 
+# Start time: 21:42:55 on Nov 21,2019
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 21:42:55 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vlib work
+vlog ./*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:43:32 on Nov 21,2019
+# vlog -reportprogress 300 ./D_FF.sv ./D_FF_en.sv ./alu.sv ./alu_staged.sv ./branch_accel.sv ./control.sv ./datamem.sv ./datapath.sv ./de_1_2.sv ./de_2_4.sv ./de_4_16.sv ./de_5_32.sv ./flag_register.sv ./forwarding_unit.sv ./full_adder.sv ./instructmem.sv ./mem_staged.sv ./mux16_1.sv ./mux2_1.sv ./mux32_1.sv ./mux4_1.sv ./mux8_1.sv ./n_bit_adder.sv ./nth_alu.sv ./processor.sv ./processorstim.sv ./program_counter.sv ./program_counter_staged.sv ./reg_dec_staged.sv ./regfile.sv ./register.sv ./shift_left.sv ./sign_extend.sv ./zero_flag.sv 
+# -- Compiling module D_FF
+# -- Compiling module D_FF_en
+# -- Compiling module D_FF_en_testbench
+# -- Compiling module alu
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# -- Compiling module branch_accel
+# -- Compiling module accel_stim
+# -- Compiling module control
+# -- Compiling module control_testbench
+# -- Compiling module datamem
+# -- Compiling module datamem_testbench
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# -- Compiling module de_1_2
+# -- Compiling module de_1_2_testbench
+# -- Compiling module de_2_4
+# -- Compiling module de_2_4_testbench
+# -- Compiling module de_4_16
+# -- Compiling module de_4_16_testbench
+# -- Compiling module de_5_32
+# -- Compiling module de_5_32_testbench
+# -- Compiling module flag_register
+# -- Compiling module flag_register_testbench
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# -- Compiling module full_adder
+# -- Compiling module full_adder_testbench
+# -- Compiling module instructmem
+# -- Compiling module instructmem_testbench
+# -- Compiling module mem_staged
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# -- Compiling module mux32_1
+# -- Compiling module mux32_1_testbench
+# -- Compiling module mux4_1
+# -- Compiling module mux4_1_testbench
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# -- Compiling module n_bit_adder
+# -- Compiling module nth_alu
+# -- Compiling module nth_alu_testbench
+# -- Compiling module processor
+# -- Compiling module processorstim
+# -- Compiling module program_counter
+# -- Compiling module program_counter_testbench
+# -- Compiling module program_counter_staged
+# -- Compiling module pc_staged_stim
+# -- Compiling module reg_dec_staged
+# -- Compiling module reg_dec_staged_testbench
+# ** Error: ./reg_dec_staged.sv(122): (vlog-2730) Undefined variable: 'ALUIMm12'.
+# -- Compiling module regfile
+# -- Compiling module regstim
+# -- Compiling module register
+# -- Compiling module register_testbench
+# -- Compiling module shift_left
+# -- Compiling module shift_left_testbench
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# ** Error: (vlog-13069) ./zero_flag.sv(56): near "EOF": syntax error, unexpected end of source code.
+# End time: 21:43:33 on Nov 21,2019, Elapsed time: 0:00:01
 # Errors: 2, Warnings: 0
 # C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:40:15 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# ** Error: (vlog-13069) alu_staged.sv(5): near "ALU_out": syntax error, unexpected IDENTIFIER, expecting ')'.
-# End time: 19:40:16 on Nov 21,2019, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:40:29 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# ** Error: (vlog-13069) alu_staged.sv(25): near ".": syntax error, unexpected '.', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '*'.
-# ** Error: alu_staged.sv(5): Identifier must be declared with a port mode: ALU_fw.
-# ** Error: alu_staged.sv(5): Identifier must be declared with a port mode: alu_neg.
-# ** Error: alu_staged.sv(5): Identifier must be declared with a port mode: alu_zero.
-# ** Error: alu_staged.sv(5): Identifier must be declared with a port mode: alu_overf.
-# ** Error: alu_staged.sv(5): Identifier must be declared with a port mode: alu_cOut.
-# ** Error: alu_staged.sv(6): (vlog-2730) Undefined variable: 'flag_neg'.
-# ** Error: alu_staged.sv(6): Identifier must be declared with a port mode: flag_neg.
-# ** Error: alu_staged.sv(6): (vlog-2730) Undefined variable: 'flag_zero'.
-# ** Error: alu_staged.sv(6): Identifier must be declared with a port mode: flag_zero.
-# ** Error: alu_staged.sv(6): (vlog-2730) Undefined variable: 'flag_overf'.
-# ** Error: alu_staged.sv(6): Identifier must be declared with a port mode: flag_overf.
-# ** Error: alu_staged.sv(6): (vlog-2730) Undefined variable: 'flag_cOut'.
-# ** Error: alu_staged.sv(6): Identifier must be declared with a port mode: flag_cOut.
-# End time: 19:40:31 on Nov 21,2019, Elapsed time: 0:00:02
-# Errors: 14, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:42:26 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# ** Error: (vlog-13069) alu_staged.sv(28): near ".": syntax error, unexpected '.', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '*'.
-# End time: 19:42:27 on Nov 21,2019, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:42:39 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# 
-# Top level modules:
-# 	alu_staged
-# End time: 19:42:40 on Nov 21,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:57:31 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# -- Compiling module ALU_staged_stim
-# ** Error: (vlog-13069) alu_staged.sv(75): near "'1": syntax error, unexpected UNSIZED_BIT.
-# End time: 19:57:31 on Nov 21,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:57:43 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# -- Compiling module ALU_staged_stim
-# 
-# Top level modules:
-# 	alu_staged
-# 	ALU_staged_stim
-# End time: 19:57:44 on Nov 21,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
 vsim work.ALU_staged_stim
 # vsim work.ALU_staged_stim 
-# Start time: 19:57:53 on Nov 21,2019
-# Loading sv_std.std
-# Loading work.ALU_staged_stim
-add wave -position end  sim:/ALU_staged_stim/clk
-add wave -position 1  sim:/ALU_staged_stim/flag_wr_en
-add wave -position 1  sim:/ALU_staged_stim/reg1
-add wave -position 1  sim:/ALU_staged_stim/reg2
-add wave -position 1  sim:/ALU_staged_stim/PCPlusFour_in
-add wave -position 1  sim:/ALU_staged_stim/Aw_in
-add wave -position 1  sim:/ALU_staged_stim/ALU_op
-add wave -position 1  sim:/ALU_staged_stim/MemToReg_in
-add wave -position 1  sim:/ALU_staged_stim/RegWrite_in
-add wave -position 1  sim:/ALU_staged_stim/MemWrite_in
-add wave -position 1  sim:/ALU_staged_stim/Rd_X30_in
-add wave -position end  sim:/ALU_staged_stim/ALU_out
-add wave -position end  sim:/ALU_staged_stim/ALU_fw
-add wave -position end  sim:/ALU_staged_stim/PCPlusFour_out
-add wave -position end  sim:/ALU_staged_stim/Aw_out
-add wave -position end  sim:/ALU_staged_stim/MemToReg_out
-add wave -position end  sim:/ALU_staged_stim/RegWrite_out
-add wave -position end  sim:/ALU_staged_stim/MemWrite_out
-add wave -position end  sim:/ALU_staged_stim/Rd_X30_out
-add wave -position end  sim:/ALU_staged_stim/alu_neg
-add wave -position end  sim:/ALU_staged_stim/alu_zero
-add wave -position end  sim:/ALU_staged_stim/alu_overf
-add wave -position end  sim:/ALU_staged_stim/alu_cOut
-add wave -position end  sim:/ALU_staged_stim/flag_neg
-add wave -position end  sim:/ALU_staged_stim/flag_zero
-add wave -position end  sim:/ALU_staged_stim/flag_overf
-add wave -position end  sim:/ALU_staged_stim/flag_cOut
-run -all
-# ** Error: Assertion error.
-#    Time: 150 ps  Scope: ALU_staged_stim File: alu_staged.sv Line: 75
-# ** Note: $stop    : alu_staged.sv(81)
-#    Time: 250 ps  Iteration: 1  Instance: /ALU_staged_stim
-# Break in Module ALU_staged_stim at alu_staged.sv line 81
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:00:31 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# -- Compiling module ALU_staged_stim
-# 
-# Top level modules:
-# 	ALU_staged_stim
-# End time: 20:00:32 on Nov 21,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-restart -f; run -all
-# Loading work.ALU_staged_stim
-# Loading work.alu_staged
-# Loading work.alu
-# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'ALU_staged_stim' does not have a timeunit/timeprecision specification in effect, but other modules do.
-#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
-# Loading work.nth_alu
-# Loading work.mux2_1
-# Loading work.full_adder
-# Loading work.mux8_1
-# Loading work.mux4_1
-# Loading work.zero_flag
-# Loading work.flag_register
-# Loading work.D_FF_en
-# Loading work.D_FF
-# Loading work.register
-# No Design Loaded!
-vsim work.ALU_staged_stim
-# vsim work.ALU_staged_stim 
-# Start time: 19:57:53 on Nov 21,2019
+# Start time: 21:43:50 on Nov 21,2019
 # Loading sv_std.std
 # Loading work.ALU_staged_stim
 # Loading work.alu_staged
 # Loading work.alu
-# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'ALU_staged_stim' does not have a timeunit/timeprecision specification in effect, but other modules do.
+# ** Error: (vsim-3033) ./alu.sv(20): Instantiation of 'nth_alu' failed. The design unit was not found.
 #    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
-# Loading work.nth_alu
-# Loading work.mux2_1
-# Loading work.full_adder
-# Loading work.mux8_1
-# Loading work.mux4_1
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu.sv(36): Instantiation of 'nth_alu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu.sv(49): Instantiation of 'zero_flag' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Loading work.flag_register
+# Loading work.D_FF_en
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/neg_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Loading work.D_FF
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/zero_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/over_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/carry_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(41): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(42): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(43): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(44): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(45): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(46): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(47): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu_staged.sv(48): Instantiation of 'register' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut File: ./alu_staged.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Error loading design
+# End time: 21:43:50 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 0
+vlog register.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:44:33 on Nov 21,2019
+# vlog -reportprogress 300 register.sv 
+# -- Compiling module register
+# -- Compiling module register_testbench
+# 
+# Top level modules:
+# 	register_testbench
+# End time: 21:44:33 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog zero_flag.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:44:50 on Nov 21,2019
+# vlog -reportprogress 300 zero_flag.sv 
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# 
+# Top level modules:
+# 	zero_flag_testbench
+# End time: 21:44:50 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog ./*.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:44:58 on Nov 21,2019
+# vlog -reportprogress 300 ./D_FF.sv ./D_FF_en.sv ./alu.sv ./alu_staged.sv ./branch_accel.sv ./control.sv ./datamem.sv ./datapath.sv ./de_1_2.sv ./de_2_4.sv ./de_4_16.sv ./de_5_32.sv ./flag_register.sv ./forwarding_unit.sv ./full_adder.sv ./instructmem.sv ./mem_staged.sv ./mux16_1.sv ./mux2_1.sv ./mux32_1.sv ./mux4_1.sv ./mux8_1.sv ./n_bit_adder.sv ./nth_alu.sv ./processor.sv ./processorstim.sv ./program_counter.sv ./program_counter_staged.sv ./reg_dec_staged.sv ./regfile.sv ./register.sv ./shift_left.sv ./sign_extend.sv ./zero_flag.sv 
+# -- Compiling module D_FF
+# -- Compiling module D_FF_en
+# -- Compiling module D_FF_en_testbench
+# -- Compiling module alu
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# -- Compiling module branch_accel
+# -- Compiling module accel_stim
+# -- Compiling module control
+# -- Compiling module control_testbench
+# -- Compiling module datamem
+# -- Compiling module datamem_testbench
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# -- Compiling module de_1_2
+# -- Compiling module de_1_2_testbench
+# -- Compiling module de_2_4
+# -- Compiling module de_2_4_testbench
+# -- Compiling module de_4_16
+# -- Compiling module de_4_16_testbench
+# -- Compiling module de_5_32
+# -- Compiling module de_5_32_testbench
+# -- Compiling module flag_register
+# -- Compiling module flag_register_testbench
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# -- Compiling module full_adder
+# -- Compiling module full_adder_testbench
+# -- Compiling module instructmem
+# -- Compiling module instructmem_testbench
+# -- Compiling module mem_staged
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# -- Compiling module mux32_1
+# -- Compiling module mux32_1_testbench
+# -- Compiling module mux4_1
+# -- Compiling module mux4_1_testbench
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# -- Compiling module n_bit_adder
+# -- Compiling module nth_alu
+# -- Compiling module nth_alu_testbench
+# -- Compiling module processor
+# -- Compiling module processorstim
+# -- Compiling module program_counter
+# -- Compiling module program_counter_testbench
+# -- Compiling module program_counter_staged
+# -- Compiling module pc_staged_stim
+# -- Compiling module reg_dec_staged
+# -- Compiling module reg_dec_staged_testbench
+# ** Error: ./reg_dec_staged.sv(122): (vlog-2730) Undefined variable: 'ALUIMm12'.
+# -- Compiling module regfile
+# -- Compiling module regstim
+# -- Compiling module register
+# -- Compiling module register_testbench
+# -- Compiling module shift_left
+# -- Compiling module shift_left_testbench
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# ** Error: (vlog-13069) ./zero_flag.sv(56): near "EOF": syntax error, unexpected end of source code.
+# End time: 21:44:58 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+vsim work.ALU_stage_stim
+# vsim work.ALU_stage_stim 
+# Start time: 21:45:26 on Nov 21,2019
+# ** Error: (vsim-3170) Could not find 'ALU_stage_stim'.
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Error loading design
+# End time: 21:45:26 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.ALU_staged_stim
+# vsim work.ALU_staged_stim 
+# Start time: 21:45:37 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.ALU_staged_stim
+# Loading work.alu_staged
+# Loading work.alu
+# ** Error: (vsim-3033) ./alu.sv(20): Instantiation of 'nth_alu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./alu.sv(36): Instantiation of 'nth_alu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: ./alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
 # Loading work.zero_flag
 # Loading work.flag_register
 # Loading work.D_FF_en
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/neg_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
 # Loading work.D_FF
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/zero_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/over_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) ./D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/carry_ff File: ./D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
 # Loading work.register
 # Error loading design
-# End time: 20:00:51 on Nov 21,2019, Elapsed time: 0:02:58
-# Errors: 3, Warnings: 0
-vlog alu_staged.sv
+# End time: 21:45:37 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+vlog alu.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:01:16 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# -- Compiling module ALU_staged_stim
+# Start time: 21:45:42 on Nov 21,2019
+# vlog -reportprogress 300 alu.sv 
+# -- Compiling module alu
 # 
 # Top level modules:
-# 	ALU_staged_stim
-# End time: 20:01:17 on Nov 21,2019, Elapsed time: 0:00:01
+# 	alu
+# End time: 21:45:42 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog D_FF_en.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:45:51 on Nov 21,2019
+# vlog -reportprogress 300 D_FF_en.sv 
+# -- Compiling module D_FF_en
+# -- Compiling module D_FF_en_testbench
+# 
+# Top level modules:
+# 	D_FF_en_testbench
+# End time: 21:45:51 on Nov 21,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vsim work.ALU_staged_stim
 # vsim work.ALU_staged_stim 
-# Start time: 20:01:20 on Nov 21,2019
+# Start time: 21:46:07 on Nov 21,2019
+# Loading sv_std.std
+# Loading work.ALU_staged_stim
+# Loading work.alu_staged
+# Loading work.alu
+# ** Error: (vsim-3033) alu.sv(20): Instantiation of 'nth_alu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) alu.sv(36): Instantiation of 'nth_alu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/ALU_unit File: alu.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Loading work.zero_flag
+# Loading work.flag_register
+# Loading work.D_FF_en
+# ** Error: (vsim-3033) D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/neg_ff File: D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Loading work.D_FF
+# ** Error: (vsim-3033) D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/zero_ff File: D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/over_ff File: D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# ** Error: (vsim-3033) D_FF_en.sv(11): Instantiation of 'mux2_1' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_staged_stim/dut/flagreg/carry_ff File: D_FF_en.sv
+#         Searched libraries:
+#             C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/work
+# Loading work.register
+# Error loading design
+# End time: 21:46:07 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+vlog nth_alu.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:14 on Nov 21,2019
+# vlog -reportprogress 300 nth_alu.sv 
+# -- Compiling module nth_alu
+# -- Compiling module nth_alu_testbench
+# 
+# Top level modules:
+# 	nth_alu_testbench
+# End time: 21:46:14 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mux2_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:24 on Nov 21,2019
+# vlog -reportprogress 300 mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 21:46:24 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mux4_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:28 on Nov 21,2019
+# vlog -reportprogress 300 mux4_1.sv 
+# -- Compiling module mux4_1
+# -- Compiling module mux4_1_testbench
+# 
+# Top level modules:
+# 	mux4_1_testbench
+# End time: 21:46:28 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mux8_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:33 on Nov 21,2019
+# vlog -reportprogress 300 mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 21:46:33 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mux16_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:37 on Nov 21,2019
+# vlog -reportprogress 300 mux16_1.sv 
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# 
+# Top level modules:
+# 	mux16_1_testbench
+# End time: 21:46:37 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog mux32_1.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:40 on Nov 21,2019
+# vlog -reportprogress 300 mux32_1.sv 
+# -- Compiling module mux32_1
+# -- Compiling module mux32_1_testbench
+# 
+# Top level modules:
+# 	mux32_1_testbench
+# End time: 21:46:40 on Nov 21,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.ALU_staged_stim
+# vsim work.ALU_staged_stim 
+# Start time: 21:46:48 on Nov 21,2019
 # Loading sv_std.std
 # Loading work.ALU_staged_stim
 # Loading work.alu_staged
@@ -256,29 +681,8 @@ vsim work.ALU_staged_stim
 # Loading work.D_FF_en
 # Loading work.D_FF
 # Loading work.register
-restart -f; run -all
-# ** Error: Assertion error.
-#    Time: 150 ns  Scope: ALU_staged_stim File: alu_staged.sv Line: 78
-# ** Note: $stop    : alu_staged.sv(84)
+do ALUstaged_wave.do
+run -all
+# ** Note: $stop    : ./alu_staged.sv(87)
 #    Time: 250 ns  Iteration: 1  Instance: /ALU_staged_stim
-# Break in Module ALU_staged_stim at alu_staged.sv line 84
-vlog alu_staged.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:06:03 on Nov 21,2019
-# vlog -reportprogress 300 alu_staged.sv 
-# -- Compiling module alu_staged
-# -- Compiling module ALU_staged_stim
-# 
-# Top level modules:
-# 	ALU_staged_stim
-# End time: 20:06:04 on Nov 21,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-restart -f; run -all
-# Loading work.ALU_staged_stim
-# Loading work.alu_staged
-# ** Note: $stop    : alu_staged.sv(85)
-#    Time: 250 ns  Iteration: 1  Instance: /ALU_staged_stim
-# Break in Module ALU_staged_stim at alu_staged.sv line 85
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {U:/EE469 Lab Files/EE469_ComputerArchitecture/EE469_lab4_pipelined/ALUstaged_wave.do}
-# End time: 20:11:39 on Nov 21,2019, Elapsed time: 0:10:19
-# Errors: 1, Warnings: 0
+# Break in Module ALU_staged_stim at ./alu_staged.sv line 87

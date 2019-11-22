@@ -4,7 +4,7 @@ module mem_staged(clk,
                   MemToReg, MemWrite, ALU_in, reg2mem_in, //Used signals
                   PCPlusFour_in, Aw_in, RegWrite_in, Rd_X30_in, //Passthru Signals in
                   PCPlusFour_out, Aw_out, RegWrite_out, Rd_X30_out, //Passthru Signals out
-                  mem_stage_out); //Output from MemToReg Mux
+                  mem_to_forward, mem_stage_out); //Output from MemToReg Mux
 
     input logic clk;
     input logic [63:0] ALU_in, PCPlusFour_in, reg2mem_in;
@@ -20,6 +20,7 @@ module mem_staged(clk,
 
     assign mux_in[1] = datamem_out;
     assign mux_in[0] = ALU_in;
+    assign mem_to_forward = mux_out;
 
     //Memory itself
     datamem memory (.address(ALU_in), .write_enable(MemWrite), .read_enable(MemToReg),

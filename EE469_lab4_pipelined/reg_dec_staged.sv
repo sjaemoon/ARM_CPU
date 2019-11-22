@@ -8,20 +8,21 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, PCPlusFour_IF, X30,
 								PCPlusFour_WB, Aw_in, RegWrite_in, Rd_X30_in); // singals for WB
 
 	input logic clk;
-	input logic [10:0] opcode;
-	input logic [4:0] Rd, Rn, Rm, PCPlusFour_IF, X30;
-	input logic [8:0] DAddr9;
-	input logic [11:0] ALUImm12;
-	input logic [63:0] ALU_out, Mem_out;
-	input logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut; 
-	output logic BrTaken, UncondBr, pc_rd;
-	output logic [63:0] reg1, reg2, PCPlusFour_out;
-	output logic [4:0] Aw_out;
-	output logic MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out;
-	input logic [4:0] PCPlusFour_WB;
-	input logic [4:0] Aw_in;
-	input logic RegWrite_in, Rd_X30_in;
-	
+	input logic [10:0] opcode; //input from instr
+	input logic [4:0] Rd, Rn, Rm, X30; //input from instr
+	input logic [8:0] DAddr9; //Input from instr
+	input logic [11:0] ALUImm12; //Input fron instr
+	input logic [63:0] ALU_out, PCPlusFour_IF, PCPlusFour_WB, Mem_out; //Input from ALU for forwarding unit, IF stage, and mem_staged
+	input logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut; //Input from alu_staged
+	input logic [4:0] PCPlusFour_WB; //Input from mem_staged
+	input logic [4:0] Aw_in; //Input from mem_staged
+	input logic RegWrite_in, Rd_X30_in; //Input from mem_staged
+
+	output logic BrTaken, UncondBr, pc_rd; //output to PC counter calculator
+	output logic [63:0] reg1, reg2, PCPlusFour_out; //output to alu_staged
+	output logic [4:0] Aw_out; //output to alu_staged
+	output logic MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out; //output to alu_staged
+
 	// inputs/outputs of control
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite;
 	logic [2:0] ALUOp;
@@ -97,11 +98,15 @@ endmodule
 module reg_dec_staged_testbench ();
 	logic clk;
 	logic [10:0] opcode;
-	logic [4:0] Rd, Rn, Rm, PCPlusFour, X30;
+	logic [4:0] Rd, Rn, Rm, X30;
 	logic [8:0] DAddr9;
 	logic [11:0] ALUImm12;
-	logic [63:0] ALU_out, Mem_out;
+	logic [63:0] ALU_out, PCPlusFour_IF, Mem_out;
 	logic flag_neg, flag_zero, flag_overf, flag_cOut, alu_neg, alu_zero, alu_overf, alu_cOut; 
+	logic [4:0] PCPlusFour_WB;
+	logic [4:0] Aw_in;
+	logic RegWrite_in, Rd_X30_in;
+
 	logic BrTaken, UncondBr, pc_rd;
 	logic [63:0] reg1, reg2, PCPlusFour_out;
 	logic [4:0] Aw_out;
@@ -118,8 +123,8 @@ module reg_dec_staged_testbench ();
 	int i;
 
 	initial begin
-		Rd <= 0; Rn <= 0; Rm <= 0; PCPlusFour <= 0; X30 <= 5'd30; 
-		DAddr9 <= 0; ALUIMm12 <= 0; ALU_out <= 0; Mem_out <= 0; 
+		Rd <= 0; Rn <= 0; Rm <= 0; PCPlusFour_IF <= 0; PCPlusFour_WB <= 0; X30 <= 5'd30; 
+		DAddr9 <= 0; ALUImm12 <= 0; ALU_out <= 0; Mem_out <= 0; 
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0; 
 		opcode <= 0;

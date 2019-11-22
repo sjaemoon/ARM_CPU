@@ -58,15 +58,17 @@ module mem_staged_stim();
     initial begin
         ALU_in <= 64'd0; PCPlusFour_in <= 0; reg2mem_in <= 64'd25; Aw_in <= 5'd10;
         MemToReg <= 0; MemWrite <= 1; RegWrite_in <= 0; Rd_X30_in <= 1; @(posedge clk);
-
-        ALU_in <= 64'd1; reg2mem_in <= 64'd26; @(posedge clk);
-        ALU_in <= 64'd2; reg2mem_in <= 64'd27; @(posedge clk);
-        ALU_in <= 64'd3; reg2mem_in <= 64'd28; @(posedge clk);
-
         ALU_in <= 64'd0; MemToReg <= 1; MemWrite <= 0; @(posedge clk);
-        ALU_in <= 64'd1;                               @(posedge clk);
-        ALU_in <= 64'd2;                               @(posedge clk);
-        ALU_in <= 64'd3;                               @(posedge clk);
+        
+
+        ALU_in <= 64'd1; reg2mem_in <= 64'd26; MemWrite <= 1; MemToReg <= 0; @(posedge clk);
+        ALU_in <= 64'd1; MemWrite <= 0; MemToReg <= 1;                       @(posedge clk);
+
+        ALU_in <= 64'd2; reg2mem_in <= 64'd27; MemWrite <= 1; MemToReg <= 0; @(posedge clk);
+        ALU_in <= 64'd2; MemWrite <= 0; MemToReg <= 1;                       @(posedge clk);
+
+        ALU_in <= 64'd3; reg2mem_in <= 64'd28; MemWrite <= 1; MemToReg <= 0; @(posedge clk);
+        ALU_in <= 64'd3; MemWrite <= 0; MemToReg <= 1;                       @(posedge clk);
 
         ALU_in <= 64'd200; MemToReg <= 0;              @(posedge clk);
 

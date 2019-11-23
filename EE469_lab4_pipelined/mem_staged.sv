@@ -11,7 +11,7 @@ module mem_staged(clk,
     input logic [4:0] Aw_in;
     input logic MemToReg, MemWrite, RegWrite_in, Rd_X30_in;
 
-    output logic [63:0] mem_stage_out, PCPlusFour_out;
+    output logic [63:0] mem_to_forward, mem_stage_out, PCPlusFour_out;
     output logic [4:0] Aw_out;
     output logic RegWrite_out, Rd_X30_out;
 
@@ -43,7 +43,7 @@ module mem_staged_stim();
     logic [4:0] Aw_in;
     logic MemToReg, MemWrite, RegWrite_in, Rd_X30_in;
 
-    logic [63:0] mem_stage_out, PCPlusFour_out;
+    logic [63:0] mem_stage_out, mem_to_forward, PCPlusFour_out;
     logic [4:0] Aw_out;
     logic RegWrite_out, Rd_X30_out;
 

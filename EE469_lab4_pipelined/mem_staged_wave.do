@@ -10,6 +10,7 @@ add wave -noupdate -expand -group Inputs /mem_staged_stim/MemWrite
 add wave -noupdate -expand -group Inputs /mem_staged_stim/RegWrite_in
 add wave -noupdate -expand -group Inputs /mem_staged_stim/Rd_X30_in
 add wave -noupdate -expand -group Outputs -radix decimal /mem_staged_stim/mem_stage_out
+add wave -noupdate -expand -group Outputs -radix unsigned /mem_staged_stim/mem_to_forward
 add wave -noupdate -expand -group Outputs -radix decimal /mem_staged_stim/PCPlusFour_out
 add wave -noupdate -expand -group Outputs -radix unsigned /mem_staged_stim/Aw_out
 add wave -noupdate -expand -group Outputs /mem_staged_stim/RegWrite_out
@@ -20,7 +21,7 @@ add wave -noupdate -expand -group Internals -radix decimal /mem_staged_stim/dut/
 add wave -noupdate -expand -group Internals /mem_staged_stim/dut/memory/write_enable
 add wave -noupdate -expand -group Internals /mem_staged_stim/dut/memory/read_enable
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {41050 ps} 0}
+WaveRestoreCursors {{Cursor 1} {494900 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100

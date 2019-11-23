@@ -13,7 +13,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	input logic [4:0] Rd, Rn, Rm, X30; 
 	input logic [8:0] DAddr9; 
 	input logic [11:0] ALUImm12; 
-	input logic [31:0] PCPlusFour_IF 
+	input logic [31:0] PCPlusFour_IF; 
 	// input from ALU and mem_staged for forwarding unit
 	input logic [63:0] ALU_out, Mem_out; 
 	// input from alu_staged
@@ -21,7 +21,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	//input from mem_staged
 	input logic [63:0] PCPlusFour_WB, MemStage_in; 
 	input logic [4:0] Aw_in; 
-	input logic RegWrite_in, Rd_X30_in; 
+	input logic Rd_X30_WB, RegWrite_in; 
 
 	//output to PC counter calculator
 	output logic BrTaken, UncondBr, pc_rd; 
@@ -113,13 +113,13 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 endmodule
 
 module reg_dec_staged_testbench ();
-input logic clk;
+	logic clk;
 	//input from instr
 	logic [10:0] opcode;
 	logic [4:0] Rd, Rn, Rm, X30; 
 	logic [8:0] DAddr9; 
 	logic [11:0] ALUImm12; 
-	logic [63:0] PCPlusFour_IF 
+	logic [63:0] PCPlusFour_IF; 
 	// input from ALU and mem_staged for forwarding unit
 	logic [63:0] ALU_out, Mem_out; 
 	// input from alu_staged
@@ -127,7 +127,7 @@ input logic clk;
 	//input from mem_staged
 	logic [63:0] PCPlusFour_WB, MemStage_in; 
 	logic [4:0] Aw_in; 
-	logic RegWrite_in, Rd_X30_in; 
+	logic Rd_X30_WB, RegWrite_in; 
 
 	//output to PC counter calculator
 	logic BrTaken, UncondBr, pc_rd; 

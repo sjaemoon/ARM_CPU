@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module datapath_staged(clk, PCPlusFour, instruction, BrTaken, UncondBr, pc_rd, Reg2);
 
     input logic clk;
@@ -47,7 +48,7 @@ module datapath_staged(clk, PCPlusFour, instruction, BrTaken, UncondBr, pc_rd, R
     //Register Decode Stage
     reg_dec_staged RegisterStage (.clk, .opcode, .Rd, .Rn, .Rm, .X30,
                                 
-                                  .DAddr9, .ALUImm12, .PCPlusFour_IF(PCPlusFour), .ALU_out(ALU_EX_DEC), .Mem_out(Mem_EX_DEC),
+                                  .DAddr9, .ALUImm12, .PCPlusFour_IF(PCPlusFour), .ALU_out(ALU_EX_DEC), .Mem_out(Mem_MEM_DEC),
                                   
                                   .flag_neg, .flag_zero, .flag_overf, .flag_cOut, .alu_neg, .alu_zero, .alu_overf, .alu_cOut,
                                   

@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3
 vaccel_stim
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1574586957
+Z2 !s110 1574590584
 !i10b 1
 !s100 1`UZ?BVh`1[_@KBY^XYO43
 I:jGVVg^6Xbl@]h=1[2B8d2
@@ -26,7 +26,7 @@ Z9 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z10 !s108 1574586957.000000
+Z10 !s108 1574590584.000000
 Z11 !s107 zero_flag.sv|sign_extend.sv|shift_left.sv|register.sv|regfile.sv|reg_dec_staged.sv|program_counter_staged.sv|program_counter.sv|processorstim.sv|processor_pipelined.sv|processor.sv|pipelinedstim.sv|nth_alu.sv|n_bit_adder.sv|mux8_1.sv|mux4_1.sv|mux32_1.sv|mux2_1.sv|mux16_1.sv|mem_staged.sv|instructmem.sv|full_adder.sv|forwarding_unit.sv|flag_register.sv|de_5_32.sv|de_4_16.sv|de_2_4.sv|de_1_2.sv|datapath_staged.sv|datapath.sv|datamem.sv|control.sv|branch_accel.sv|alu_staged.sv|alu.sv|D_FF_en.sv|D_FF.sv|
 Z12 !s90 -reportprogress|300|D_FF.sv|D_FF_en.sv|alu.sv|alu_staged.sv|branch_accel.sv|control.sv|datamem.sv|datapath.sv|datapath_staged.sv|de_1_2.sv|de_2_4.sv|de_4_16.sv|de_5_32.sv|flag_register.sv|forwarding_unit.sv|full_adder.sv|instructmem.sv|mem_staged.sv|mux16_1.sv|mux2_1.sv|mux32_1.sv|mux4_1.sv|mux8_1.sv|n_bit_adder.sv|nth_alu.sv|pipelinedstim.sv|processor.sv|processor_pipelined.sv|processorstim.sv|program_counter.sv|program_counter_staged.sv|reg_dec_staged.sv|regfile.sv|register.sv|shift_left.sv|sign_extend.sv|zero_flag.sv|
 !i113 1
@@ -591,13 +591,13 @@ vforwarding_unit
 R1
 R2
 !i10b 1
-!s100 >J@fQjK^g52OcNLQGKbIV1
-I4Q_f9;I<fHR:?LT`kUjfI3
+!s100 ^0dAFJGA8TENW8P`H9Q8i2
+I1zIQ4oo@;87j;9`JLFTEC3
 R3
 Z54 !s105 forwarding_unit_sv_unit
 S1
 R5
-Z55 w1574586950
+Z55 w1574590536
 Z56 8forwarding_unit.sv
 Z57 Fforwarding_unit.sv
 L0 2
@@ -614,8 +614,8 @@ vforwarding_unit_testbench
 R1
 R2
 !i10b 1
-!s100 V1PhAn9Nz7RhK9lfR0Wzo0
-IT>=m=m7^?A^U=o57RLO:n1
+!s100 XIc:]WV=Z;X]X0PZZ^H6I3
+I>>83k@AJ>jP3D@BW[D^983
 R3
 R54
 S1
@@ -623,7 +623,7 @@ R5
 R55
 R56
 R57
-L0 76
+L0 102
 R9
 r1
 !s85 0
@@ -683,13 +683,13 @@ vinstructmem
 R1
 R2
 !i10b 1
-!s100 Sn[H;AAlgnnZi=BBJLz_L2
-Iag7`YW<;j0RzzO39zBP<T2
+!s100 E4DBXc_;jTeB:99PBSV_61
+IbUW]fJXTDla4I1ggU<3UE1
 R3
 Z61 !s105 instructmem_sv_unit
 S1
 R5
-Z62 w1574583993
+Z62 w1574587060
 Z63 8instructmem.sv
 Z64 Finstructmem.sv
 L0 23
@@ -1281,13 +1281,13 @@ vreg_dec_staged
 R1
 R2
 !i10b 1
-!s100 m@Fm;7ZmF0>gFXNTA1P=Q1
-IW0R]1FodTKd49:cbB?RFf0
+!s100 O4MVPdZ^S;dgkbD3XYlQY2
+ImOaMMh5ESbO9_cMJ3J^k[2
 R3
 Z95 !s105 reg_dec_staged_sv_unit
 S1
 R5
-Z96 w1574586602
+Z96 w1574590578
 Z97 8reg_dec_staged.sv
 Z98 Freg_dec_staged.sv
 L0 2
@@ -1304,8 +1304,8 @@ vreg_dec_staged_testbench
 R1
 R2
 !i10b 1
-!s100 J=BCUz`>;8]0@AZ]A8Sn_3
-I?9AI09U_bV`NlDTNacAY51
+!s100 =^aZBMP]`?L5hG7oJCQ;83
+IT58NBL3CggUdkhiZ0A2hC3
 R3
 R95
 S1
@@ -1313,7 +1313,7 @@ R5
 R96
 R97
 R98
-L0 133
+L0 134
 R9
 r1
 !s85 0

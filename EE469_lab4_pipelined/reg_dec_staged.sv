@@ -50,7 +50,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	logic [1:0][63:0] Reg2Loc_in1, ALUSrc_in, Rd_X30_in1;
 	
 	logic [4:0] Reg2Loc_out0, Rd_X30_out0;
-	logic [63:0] Reg2Loc_out1, Rd_X30_out1, ALUSrc_out, reg1_internal, reg2_internal;
+	logic [63:0] Reg2Loc_out1, Rd_X30_out1, ALUSrc_out, reg1_internal, reg2_internal, Dbmem_out_fw;
 	
 	// instantiation of control
 	control ctrl (.opcode, .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, 
@@ -107,7 +107,8 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 					
 	// instantiation of forwarding unit
 	forwarding_unit fu (.clk, .Aw(Rd_X30_out0), .Aa, .Ab, .Da, .Db(ALUSrc_out), 
-		.ALUSrc, .ALU_out, .Mem_out, .reg1(reg1_internal), .reg2(reg2_internal),
+		.ALUSrc, .RegWrite, .ALU_out, .Mem_out, .reg1(reg1_internal), .reg2(reg2_internal),
+		.opcode(opcode), .Dbmem_in(Db), .Dbmem_out(Dbmem_out_fw),
 		.Rd_X30_sel1(Rd_X30_out), .Rd_X30_sel2(Rd_X30_2cyc), .PCPlusFour1(PCPlusFour_out), .PCPlusFour2(PCPlusFour_2cyc));
 		
 	// instantiation of branch accelerator
@@ -124,7 +125,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	register #(.WIDTH(3)) ALUOp_reg (.in(ALUOp), .enable(1'b1), .clk, .out(ALUOp_out));
 	register #(.WIDTH(1)) flag_wr_en_reg (.in(flag_wr_en), .enable(1'b1), .clk, .out(flag_wr_en_out));
 	register #(.WIDTH(1)) Rd_X30_reg (.in(Rd_X30), .enable(1'b1), .clk, .out(Rd_X30_out));
-	register #(.WIDTH(64)) db_mem (.in(Db), .enable(1'b1), .clk, .out(Dbmem_out));
+	register #(.WIDTH(64)) db_mem (.in(Dbmem_out_fw), .enable(1'b1), .clk, .out(Dbmem_out));
 	register #(.WIDTH(64)) reg1_out (.in(reg1_internal), .enable(1'b1), .clk, .out(reg1));
 	register #(.WIDTH(64)) reg2_out (.in(reg2_internal), .enable(1'b1), .clk, .out(reg2));
 	

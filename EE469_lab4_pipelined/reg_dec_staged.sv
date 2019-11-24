@@ -1,11 +1,16 @@
 `timescale 1ns/10ps
 module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
-								DAddr9, ALUImm12, PCPlusFour_IF, ALU_out, Mem_out, 
-								flag_neg, flag_zero, flag_overf, flag_cOut, 
-								alu_neg, alu_zero, alu_overf, alu_cOut, 
-								BrTaken, UncondBr, pc_rd, reg1, reg2, PCPlusFour_out, Aw_out, 
-								MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out, // signals for RF
-								PCPlusFour_WB, MemStage_in, Aw_in, Rd_X30_WB, RegWrite_in); // singals for WB
+
+						DAddr9, ALUImm12, PCPlusFour_IF, ALU_out, Mem_out, 
+
+						flag_neg, flag_zero, flag_overf, flag_cOut, 
+						alu_neg, alu_zero, alu_overf, alu_cOut, 
+
+						BrTaken, UncondBr, pc_rd, reg1, reg2, reg2_IF, PCPlusFour_out, Aw_out, 
+
+						MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out, // signals for RF
+
+						PCPlusFour_WB, MemStage_in, Aw_in, Rd_X30_WB, RegWrite_in); // singals for WB
 
 	input logic clk;
 	//input from instr
@@ -26,7 +31,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	//output to PC counter calculator
 	output logic BrTaken, UncondBr, pc_rd; 
 	//output to alu_staged
-	output logic [63:0] reg1, reg2, PCPlusFour_out; 
+	output logic [63:0] reg1, reg2, reg2_IF, PCPlusFour_out; 
 	output logic [4:0] Aw_out; 
 	output logic MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out; 
 
@@ -42,7 +47,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	logic [1:0][63:0] Reg2Loc_in1, ALUSrc_in, Rd_X30_in1;
 	
 	logic [4:0] Reg2Loc_out0, Rd_X30_out0;
-	logic [63:0] Reg2Loc_out1, Rd_X30_out1, ALUSrc_out;
+	logic [63:0] Reg2Loc_out1, Rd_X30_out1, ALUSrc_out, reg1_internal, reg2_internal;
 	
 	// instantiation of control
 	control ctrl (.opcode, .Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, 
@@ -88,13 +93,16 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	assign Aa = Rn;
 	assign Ab = Reg2Loc_out0;
 	assign Dw = Rd_X30_out1;
+
+	assign reg2_IF = reg2_internal;
+
 	regfile rf (.ReadData1(Da), .ReadData2(Db), .WriteData(Dw), 
 					.ReadRegister1(Aa), .ReadRegister2(Ab), 
 					.WriteRegister(Aw), .RegWrite, .clk);
 					
 	// instantiation of forwarding unit
 	forwarding_unit fu (.clk, .Aw(Rd_X30_out0), .Aa, .Ab, .Da, .Db(ALUSrc_out), 
-		.ALU_out(ALUOp_out), .Mem_out(Dout), .reg1, .reg2);
+		.ALU_out(ALUOp_out), .Mem_out(Dout), .reg1(reg1_internal), .reg2(reg2_internal));
 		
 	// instantiation of branch accelerator
 	branch_accel ba (.clk, .opcode, .flag_wr_en, .BrTaken, .UncondBr, .pc_rd, .regVal_in(reg2),
@@ -109,6 +117,8 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	register #(.WIDTH(1)) ALUOp_reg (.in(ALUOp), .enable(1'b1), .clk, .out(ALUOp_out));
 	register #(.WIDTH(1)) flag_wr_en_reg (.in(flag_wr_en), .enable(1'b1), .clk, .out(flag_wr_en_out));
 	register #(.WIDTH(1)) Rd_X30_reg (.in(Rd_X30), .enable(1'b1), .clk, .out(Rd_X30_out));
+	register #(.WIDTH(64)) reg1_out (.in(reg1_internal), .enable(1'b1), .clk, .out(reg1));
+	register #(.WIDTH(64)) reg2_out (.in(reg2_internal), .enable(1'b1), .clk, .out(reg2));
 	
 endmodule
 
@@ -165,7 +175,7 @@ module reg_dec_staged_testbench ();
 		
 		// ADDI X3 X31 #8 and take in PC+4
 		// 244 -> 10 0100 0100 0
-		opcode <= 11'h10010001000; Rd <= 5'd3; Rn <= 5'd31; Rm <= 5'd2; 
+		opcode <= 11'b10010001000; Rd <= 5'd3; Rn <= 5'd31; Rm <= 5'd2; 
 		DAddr9 <= 9'd10; ALUImm12 <= 12'd8; PCPlusFour_IF <= 64'd108; ALU_out <= 64'd1; Mem_out <= 64'd81;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	

@@ -1,8 +1,8 @@
-# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
-vlog ./*.sv
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+vlog *.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:28:45 on Nov 23,2019
-# vlog -reportprogress 300 ./D_FF.sv ./D_FF_en.sv ./alu.sv ./alu_staged.sv ./branch_accel.sv ./control.sv ./datamem.sv ./datapath.sv ./de_1_2.sv ./de_2_4.sv ./de_4_16.sv ./de_5_32.sv ./flag_register.sv ./forwarding_unit.sv ./full_adder.sv ./instructmem.sv ./mem_staged.sv ./mux16_1.sv ./mux2_1.sv ./mux32_1.sv ./mux4_1.sv ./mux8_1.sv ./n_bit_adder.sv ./nth_alu.sv ./processor.sv ./processorstim.sv ./program_counter.sv ./program_counter_staged.sv ./reg_dec_staged.sv ./regfile.sv ./register.sv ./shift_left.sv ./sign_extend.sv ./zero_flag.sv 
+# Start time: 17:55:03 on Nov 23,2019
+# vlog -reportprogress 300 D_FF.sv D_FF_en.sv alu.sv alu_staged.sv branch_accel.sv control.sv datamem.sv datapath.sv datapath_staged.sv de_1_2.sv de_2_4.sv de_4_16.sv de_5_32.sv flag_register.sv forwarding_unit.sv full_adder.sv instructmem.sv mem_staged.sv mux16_1.sv mux2_1.sv mux32_1.sv mux4_1.sv mux8_1.sv n_bit_adder.sv nth_alu.sv processor.sv processorstim.sv program_counter.sv program_counter_staged.sv reg_dec_staged.sv regfile.sv register.sv shift_left.sv sign_extend.sv zero_flag.sv 
 # -- Compiling module D_FF
 # -- Compiling module D_FF_en
 # -- Compiling module D_FF_en_testbench
@@ -17,6 +17,11 @@ vlog ./*.sv
 # -- Compiling module datamem_testbench
 # -- Compiling module datapath
 # -- Compiling module datapath_testbench
+# -- Compiling module datapath_staged
+# ** Error: datapath_staged.sv(3): In, out, or inout does not appear in port list: clk.
+# ** Error: datapath_staged.sv(3): In, out, or inout does not appear in port list: reset.
+# ** Error: datapath_staged.sv(4): In, out, or inout does not appear in port list: PCPlusFour.
+# ** Error: datapath_staged.sv(5): In, out, or inout does not appear in port list: Instr_in.
 # -- Compiling module de_1_2
 # -- Compiling module de_1_2_testbench
 # -- Compiling module de_2_4
@@ -34,7 +39,6 @@ vlog ./*.sv
 # -- Compiling module instructmem
 # -- Compiling module instructmem_testbench
 # -- Compiling module mem_staged
-# ** Error: ./mem_staged.sv(7): Identifier must be declared with a port mode: mem_to_forward.
 # -- Compiling module mem_staged_stim
 # -- Compiling module mux16_1
 # -- Compiling module mux16_1_testbench
@@ -56,18 +60,7 @@ vlog ./*.sv
 # -- Compiling module program_counter_staged
 # -- Compiling module pc_staged_stim
 # -- Compiling module reg_dec_staged
-# ** Error: (vlog-13069) ./reg_dec_staged.sv(18): near "input": syntax error, unexpected input, expecting ';'.
-# ** Error: ./reg_dec_staged.sv(3): (vlog-2730) Undefined variable: 'ALU_out'.
-# ** Error: ./reg_dec_staged.sv(3): Identifier must be declared with a port mode: ALU_out.
-# ** Error: ./reg_dec_staged.sv(3): (vlog-2730) Undefined variable: 'Mem_out'.
-# ** Error: ./reg_dec_staged.sv(3): Identifier must be declared with a port mode: Mem_out.
-# ** Error: ./reg_dec_staged.sv(8): Identifier must be declared with a port mode: Rd_X30_WB.
 # -- Compiling module reg_dec_staged_testbench
-# ** Error: (vlog-13069) ./reg_dec_staged.sv(124): near "logic": syntax error, unexpected "SystemVerilog keyword 'logic'", expecting ';' or ','.
-# ** Error: ./reg_dec_staged.sv(152): (vlog-2730) Undefined variable: 'ALU_out'.
-# ** Error: ./reg_dec_staged.sv(152): (vlog-2730) Undefined variable: 'Mem_out'.
-# ** Error: ./reg_dec_staged.sv(155): (vlog-2730) Undefined variable: 'Rd_X30_WB'.
-# ** Warning: ./reg_dec_staged.sv(168): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # -- Compiling module regfile
 # -- Compiling module regstim
 # -- Compiling module register
@@ -78,75 +71,221 @@ vlog ./*.sv
 # -- Compiling module sign_extend_testbench
 # -- Compiling module zero_flag
 # -- Compiling module zero_flag_testbench
-# End time: 14:28:45 on Nov 23,2019, Elapsed time: 0:00:00
-# Errors: 11, Warnings: 1
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog mem_staged.sv
+# End time: 17:55:03 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog *.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:29:09 on Nov 23,2019
-# vlog -reportprogress 300 mem_staged.sv 
+# Start time: 17:55:23 on Nov 23,2019
+# vlog -reportprogress 300 D_FF.sv D_FF_en.sv alu.sv alu_staged.sv branch_accel.sv control.sv datamem.sv datapath.sv datapath_staged.sv de_1_2.sv de_2_4.sv de_4_16.sv de_5_32.sv flag_register.sv forwarding_unit.sv full_adder.sv instructmem.sv mem_staged.sv mux16_1.sv mux2_1.sv mux32_1.sv mux4_1.sv mux8_1.sv n_bit_adder.sv nth_alu.sv processor.sv processorstim.sv program_counter.sv program_counter_staged.sv reg_dec_staged.sv regfile.sv register.sv shift_left.sv sign_extend.sv zero_flag.sv 
+# -- Compiling module D_FF
+# -- Compiling module D_FF_en
+# -- Compiling module D_FF_en_testbench
+# -- Compiling module alu
+# -- Compiling module alu_staged
+# -- Compiling module ALU_staged_stim
+# -- Compiling module branch_accel
+# -- Compiling module accel_stim
+# -- Compiling module control
+# -- Compiling module control_testbench
+# -- Compiling module datamem
+# -- Compiling module datamem_testbench
+# -- Compiling module datapath
+# -- Compiling module datapath_testbench
+# -- Compiling module datapath_staged
+# -- Compiling module de_1_2
+# -- Compiling module de_1_2_testbench
+# -- Compiling module de_2_4
+# -- Compiling module de_2_4_testbench
+# -- Compiling module de_4_16
+# -- Compiling module de_4_16_testbench
+# -- Compiling module de_5_32
+# -- Compiling module de_5_32_testbench
+# -- Compiling module flag_register
+# -- Compiling module flag_register_testbench
+# -- Compiling module forwarding_unit
+# -- Compiling module forwarding_unit_testbench
+# -- Compiling module full_adder
+# -- Compiling module full_adder_testbench
+# -- Compiling module instructmem
+# -- Compiling module instructmem_testbench
 # -- Compiling module mem_staged
-# ** Error: mem_staged.sv(7): Identifier must be declared with a port mode: mem_to_forward.
 # -- Compiling module mem_staged_stim
-# End time: 14:29:09 on Nov 23,2019, Elapsed time: 0:00:00
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# -- Compiling module mux32_1
+# -- Compiling module mux32_1_testbench
+# -- Compiling module mux4_1
+# -- Compiling module mux4_1_testbench
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# -- Compiling module n_bit_adder
+# -- Compiling module nth_alu
+# -- Compiling module nth_alu_testbench
+# -- Compiling module processor
+# -- Compiling module processorstim
+# -- Compiling module program_counter
+# -- Compiling module program_counter_testbench
+# -- Compiling module program_counter_staged
+# -- Compiling module pc_staged_stim
+# -- Compiling module reg_dec_staged
+# -- Compiling module reg_dec_staged_testbench
+# -- Compiling module regfile
+# -- Compiling module regstim
+# -- Compiling module register
+# -- Compiling module register_testbench
+# -- Compiling module shift_left
+# -- Compiling module shift_left_testbench
+# -- Compiling module sign_extend
+# -- Compiling module sign_extend_testbench
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# 
+# Top level modules:
+# 	D_FF_en_testbench
+# 	ALU_staged_stim
+# 	accel_stim
+# 	control_testbench
+# 	datamem_testbench
+# 	datapath_testbench
+# 	datapath_staged
+# 	de_1_2_testbench
+# 	de_2_4_testbench
+# 	de_4_16_testbench
+# 	de_5_32_testbench
+# 	flag_register_testbench
+# 	forwarding_unit_testbench
+# 	full_adder_testbench
+# 	instructmem_testbench
+# 	mem_staged_stim
+# 	mux16_1_testbench
+# 	mux2_1_testbench
+# 	mux32_1_testbench
+# 	mux4_1_testbench
+# 	mux8_1_testbench
+# 	nth_alu_testbench
+# 	processorstim
+# 	program_counter_testbench
+# 	pc_staged_stim
+# 	reg_dec_staged_testbench
+# 	regstim
+# 	register_testbench
+# 	shift_left_testbench
+# 	sign_extend_testbench
+# 	zero_flag_testbench
+# End time: 17:55:23 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog datapath_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:45:27 on Nov 23,2019
+# vlog -reportprogress 300 datapath_staged.sv 
+# -- Compiling module datapath_staged
+# ** Error: datapath_staged.sv(39): (vlog-2730) Undefined variable: 'instruction'.
+# ** Error: (vlog-13069) datapath_staged.sv(56): near "PCPlusFour_out": syntax error, unexpected IDENTIFIER, expecting .* or '.'.
+# ** Error (suppressible): datapath_staged.sv(75): (vlog-2367) Multiple connections to the same port: MemWrite_in.
+# End time: 18:45:27 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog datapath_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:46:04 on Nov 23,2019
+# vlog -reportprogress 300 datapath_staged.sv 
+# -- Compiling module datapath_staged
+# ** Error (suppressible): datapath_staged.sv(75): (vlog-2367) Multiple connections to the same port: MemWrite_in.
+# End time: 18:46:04 on Nov 23,2019, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
-# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
-vlog mem_staged.sv
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog datapath_staged.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:29:51 on Nov 23,2019
-# vlog -reportprogress 300 mem_staged.sv 
-# -- Compiling module mem_staged
-# -- Compiling module mem_staged_stim
+# Start time: 18:46:25 on Nov 23,2019
+# vlog -reportprogress 300 datapath_staged.sv 
+# -- Compiling module datapath_staged
 # 
 # Top level modules:
-# 	mem_staged_stim
-# End time: 14:29:51 on Nov 23,2019, Elapsed time: 0:00:00
+# 	datapath_staged
+# End time: 18:46:25 on Nov 23,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog mem_staged.sv
+vlog reg_dec_staged.sv
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:30:29 on Nov 23,2019
-# vlog -reportprogress 300 mem_staged.sv 
-# -- Compiling module mem_staged
-# -- Compiling module mem_staged_stim
+# Start time: 18:46:32 on Nov 23,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# -- Compiling module reg_dec_staged_testbench
 # 
 # Top level modules:
-# 	mem_staged_stim
-# End time: 14:30:29 on Nov 23,2019, Elapsed time: 0:00:00
+# 	reg_dec_staged_testbench
+# End time: 18:46:32 on Nov 23,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vsim work.mem_staged_stim
-# vsim work.mem_staged_stim 
-# Start time: 14:30:37 on Nov 23,2019
-# Loading sv_std.std
-# Loading work.mem_staged_stim
-# Loading work.mem_staged
-# Loading work.datamem
-# Loading work.mux2_1
-# Loading work.register
-# Loading work.D_FF_en
-# Loading work.D_FF
-do mem_stage_wave.do
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: izfan  Hostname: DESKTOP-RN00175  ProcessID: 15536
-#           Attempting to use alternate WLF file "./wlftyki62b".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftyki62b
-add wave -position 12  sim:/mem_staged_stim/mem_to_forward
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/wave.do}
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/mem_staged_wave.do}
-run -all
-# ** Error: Assertion error.
-#    Time: 250 ns  Scope: mem_staged_stim.dut.memory File: ./datamem.sv Line: 31
-# ** Error: Assertion error.
-#    Time: 350 ns  Scope: mem_staged_stim.dut.memory File: ./datamem.sv Line: 31
-# ** Error: Assertion error.
-#    Time: 450 ns  Scope: mem_staged_stim.dut.memory File: ./datamem.sv Line: 31
-# ** Error: Assertion error.
-#    Time: 550 ns  Scope: mem_staged_stim.dut.memory File: ./datamem.sv Line: 31
-# ** Error: Assertion error.
-#    Time: 650 ns  Scope: mem_staged_stim.dut.memory File: ./datamem.sv Line: 31
-# ** Error: Assertion error.
-#    Time: 750 ns  Scope: mem_staged_stim.dut.memory File: ./datamem.sv Line: 31
-# ** Note: $stop    : mem_staged.sv(76)
-#    Time: 850 ns  Iteration: 1  Instance: /mem_staged_stim
-# Break in Module mem_staged_stim at mem_staged.sv line 76
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab4_pipelined/mem_staged_wave.do}
+vlog datapath_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:48:38 on Nov 23,2019
+# vlog -reportprogress 300 datapath_staged.sv 
+# -- Compiling module datapath_staged
+# 
+# Top level modules:
+# 	datapath_staged
+# End time: 18:48:38 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:55:49 on Nov 23,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# -- Compiling module reg_dec_staged_testbench
+# 
+# Top level modules:
+# 	reg_dec_staged_testbench
+# End time: 18:55:49 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:56:31 on Nov 23,2019
+# vlog -reportprogress 300 vlog reg_dec_staged.sv 
+# ** Error: (vlog-7) Failed to open design unit file "vlog" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:56:31 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+vlog reg_dec_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:56:37 on Nov 23,2019
+# vlog -reportprogress 300 reg_dec_staged.sv 
+# -- Compiling module reg_dec_staged
+# -- Compiling module reg_dec_staged_testbench
+# 
+# Top level modules:
+# 	reg_dec_staged_testbench
+# End time: 18:56:37 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog datapath_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:56:40 on Nov 23,2019
+# vlog -reportprogress 300 datapath_staged.sv 
+# -- Compiling module datapath_staged
+# 
+# Top level modules:
+# 	datapath_staged
+# End time: 18:56:40 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog datapath_staged.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:57:23 on Nov 23,2019
+# vlog -reportprogress 300 datapath_staged.sv 
+# -- Compiling module datapath_staged
+# 
+# Top level modules:
+# 	datapath_staged
+# End time: 18:57:23 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog processor_pipelined.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:14 on Nov 23,2019
+# vlog -reportprogress 300 processor_pipelined.sv 
+# -- Compiling module processor_pipelined
+# 
+# Top level modules:
+# 	processor_pipelined
+# End time: 19:01:14 on Nov 23,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

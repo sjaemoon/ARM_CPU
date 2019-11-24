@@ -4,7 +4,7 @@ vlib work
 # Compile Verilog
 #     All Verilog files that are part of this design should have
 #     their own "vlog" line below.
-vlog "./*.sv"
+vlog "*.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the

@@ -18,7 +18,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	input logic [4:0] Rd, Rn, Rm, X30; 
 	input logic [8:0] DAddr9; 
 	input logic [11:0] ALUImm12; 
-	input logic [31:0] PCPlusFour_IF; 
+	input logic [63:0] PCPlusFour_IF; 
 	// input from ALU and mem_staged for forwarding unit
 	input logic [63:0] ALU_out, Mem_out; 
 	// input from alu_staged
@@ -31,9 +31,10 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	//output to PC counter calculator
 	output logic BrTaken, UncondBr, pc_rd; 
 	//output to alu_staged
-	output logic [63:0] reg1, reg2, reg2_IF, PCPlusFour_out; 
+	output logic [63:0] reg1, reg2, reg2_IF PCPlusFour_out; 
+	output logic [2:0] ALUOp_out;
 	output logic [4:0] Aw_out; 
-	output logic MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out; 
+	output logic MemToReg_out, RegWrite_out, MemWrite_out, flag_wr_en_out, Rd_X30_out; 
 
 	// inputs/outputs of control
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite;
@@ -102,7 +103,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 					
 	// instantiation of forwarding unit
 	forwarding_unit fu (.clk, .Aw(Rd_X30_out0), .Aa, .Ab, .Da, .Db(ALUSrc_out), 
-		.ALU_out(ALUOp_out), .Mem_out(Dout), .reg1(reg1_internal), .reg2(reg2_internal));
+		.ALU_out, .Mem_out, .reg1, .reg2);
 		
 	// instantiation of branch accelerator
 	branch_accel ba (.clk, .opcode, .flag_wr_en, .BrTaken, .UncondBr, .pc_rd, .regVal_in(reg2),
@@ -110,11 +111,11 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 					  .alu_neg, .alu_zero, .alu_overf, .alu_cOut);
 	
 	// instantiation of registers
-	register #(.WIDTH(1)) PCPlusFour_reg (.in(PCPlusFour), .enable(1'b1), .clk, .out(PCPlusFour_out));
+	register #(.WIDTH(64)) PCPlusFour_reg (.in(PCPlusFour_IF), .enable(1'b1), .clk, .out(PCPlusFour_out));
 	register #(.WIDTH(5)) Aw_reg (.in(Aw), .enable(1'b1), .clk, .out(Aw_out));
 	register #(.WIDTH(1)) MemToReg_reg (.in(MemToReg), .enable(1'b1), .clk, .out(MemToReg_out));
 	register #(.WIDTH(1)) RegWrite_reg (.in(RegWrite), .enable(1'b1), .clk, .out(RegWrite_out));
-	register #(.WIDTH(1)) ALUOp_reg (.in(ALUOp), .enable(1'b1), .clk, .out(ALUOp_out));
+	register #(.WIDTH(3)) ALUOp_reg (.in(ALUOp), .enable(1'b1), .clk, .out(ALUOp_out));
 	register #(.WIDTH(1)) flag_wr_en_reg (.in(flag_wr_en), .enable(1'b1), .clk, .out(flag_wr_en_out));
 	register #(.WIDTH(1)) Rd_X30_reg (.in(Rd_X30), .enable(1'b1), .clk, .out(Rd_X30_out));
 	register #(.WIDTH(64)) reg1_out (.in(reg1_internal), .enable(1'b1), .clk, .out(reg1));
@@ -143,8 +144,10 @@ module reg_dec_staged_testbench ();
 	logic BrTaken, UncondBr, pc_rd; 
 	//output to alu_staged
 	logic [63:0] reg1, reg2, PCPlusFour_out; 
+	logic [2:0] ALUOp_out;
 	logic [4:0] Aw_out; 
-	logic MemToReg_out, RegWrite_out, MemWrite_out, ALU_op_out, flag_wr_en_out, Rd_X30_out; 
+	logic MemToReg_out, RegWrite_out, MemWrite_out, flag_wr_en_out, Rd_X30_out; 
+
 	
 	parameter ClockDelay = 100;
 	initial begin // Set up the clock
@@ -158,7 +161,7 @@ module reg_dec_staged_testbench ();
 
 	initial begin
 		// ADDS X0 X1 X2 and write 50 to X5
-		opcode <= 11'h558; Rd <= 5'd0; Rn <= 5'd1; Rm <= 5'd2; 
+		opcode <= 11'h558; Rd <= 5'd0; Rn <= 5'd1; Rm <= 5'd2; X30 <= 5'b30;
 		DAddr9 <= 9'd10; ALUImm12 <= 12'd5; PCPlusFour_IF <= 64'd100; ALU_out <= 64'd16; Mem_out <= 64'd32;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	
@@ -166,7 +169,7 @@ module reg_dec_staged_testbench ();
 		@(posedge clk);
 		
 		// SUBS X10 X1 X2 and don't write
-		opcode <= 11'h758; Rd <= 5'd10; Rn <= 5'd1; Rm <= 5'd2; 
+		opcode <= 11'h758; Rd <= 5'd10; Rn <= 5'd1; Rm <= 5'd2; X30 <= 5'b30;
 		DAddr9 <= 9'd10; ALUImm12 <= 12'd5; PCPlusFour_IF <= 64'd104; ALU_out <= 64'd81; Mem_out <= 64'd16;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	
@@ -175,7 +178,7 @@ module reg_dec_staged_testbench ();
 		
 		// ADDI X3 X31 #8 and take in PC+4
 		// 244 -> 10 0100 0100 0
-		opcode <= 11'b10010001000; Rd <= 5'd3; Rn <= 5'd31; Rm <= 5'd2; 
+		opcode <= 11'h10010001000; Rd <= 5'd3; Rn <= 5'd31; Rm <= 5'd2; X30 <= 5'b30;
 		DAddr9 <= 9'd10; ALUImm12 <= 12'd8; PCPlusFour_IF <= 64'd108; ALU_out <= 64'd1; Mem_out <= 64'd81;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	
@@ -183,7 +186,7 @@ module reg_dec_staged_testbench ();
 		@(posedge clk);
 		
 		// ADDS X4 X3 X10, requires forwarding unit, write 99 to 1
-		opcode <= 11'h558; Rd <= 5'd4; Rn <= 5'd31; Rm <= 5'd10; 
+		opcode <= 11'h558; Rd <= 5'd4; Rn <= 5'd31; Rm <= 5'd10; X30 <= 5'b30;
 		DAddr9 <= 9'd10; ALUImm12 <= 12'd8; PCPlusFour_IF <= 64'd112; ALU_out <= 64'd100; Mem_out <= 64'd1;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	
@@ -192,7 +195,7 @@ module reg_dec_staged_testbench ();
 		
 		// LDUR X3 [X0, #4], don't write
 		// ->
-		opcode <= 11'h7C2; Rd <= 5'd3; Rn <= 5'd0; Rm <= 5'd2; 
+		opcode <= 11'h7C2; Rd <= 5'd3; Rn <= 5'd0; Rm <= 5'd2; X30 <= 5'b30;
 		DAddr9 <= 9'd4; ALUImm12 <= 12'd8; PCPlusFour_IF <= 64'd116; ALU_out <= 64'd18; Mem_out <= 64'd100;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	
@@ -201,7 +204,7 @@ module reg_dec_staged_testbench ();
 		
 		// CBZ X4 4, requires forwarding unit, don't write
 		// -> B4 = 1011 0100 000
-		opcode <= 11'b10110100000; Rd <= 5'd4; Rn <= 5'd31; Rm <= 5'd2; 
+		opcode <= 11'b10110100000; Rd <= 5'd4; Rn <= 5'd31; Rm <= 5'd2; X30 <= 5'b30;
 		DAddr9 <= 9'd10; ALUImm12 <= 12'd8; PCPlusFour_IF <= 64'd120; ALU_out <= 64'd2; Mem_out <= 64'd18;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	
@@ -209,7 +212,7 @@ module reg_dec_staged_testbench ();
 		@(posedge clk);
 		
 		// BR X5, don't write
-		opcode <= 11'b11010110000; Rd <= 5'd5; Rn <= 5'd31; Rm <= 5'd2; 
+		opcode <= 11'b11010110000; Rd <= 5'd5; Rn <= 5'd31; Rm <= 5'd2; X30 <= 5'b30;
 		DAddr9 <= 9'd10; ALUImm12 <= 12'd8; PCPlusFour_IF <= 64'd124; ALU_out <= 64'd0; Mem_out <= 64'd2;
 		flag_neg <= 0;  flag_zero <= 0; flag_overf <= 0; flag_cOut <= 0;
 		alu_neg <= 0;  alu_zero <= 0; alu_overf <= 0; alu_cOut <= 0;	

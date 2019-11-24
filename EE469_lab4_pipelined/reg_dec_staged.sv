@@ -10,6 +10,8 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 
 						MemToReg_out, RegWrite_out, MemWrite_out, ALUOp_out, flag_wr_en_out, Rd_X30_out, // signals for RF
 
+						Rd_X30_2cyc, PCPlusFour_2cyc,
+
 						PCPlusFour_WB, MemStage_in, Aw_in, Rd_X30_WB, RegWrite_in); // singals for WB
 
 	input logic clk;
@@ -18,7 +20,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	input logic [4:0] Rd, Rn, Rm, X30; 
 	input logic [8:0] DAddr9; 
 	input logic [11:0] ALUImm12; 
-	input logic [63:0] PCPlusFour_IF; 
+	input logic [63:0] PCPlusFour_IF, PCPlusFour_2cyc; 
 	// input from ALU and mem_staged for forwarding unit
 	input logic [63:0] ALU_out, Mem_out; 
 	// input from alu_staged
@@ -26,7 +28,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	//input from mem_staged
 	input logic [63:0] PCPlusFour_WB, MemStage_in; 
 	input logic [4:0] Aw_in; 
-	input logic Rd_X30_WB, RegWrite_in; 
+	input logic Rd_X30_WB, RegWrite_in, Rd_X30_2cyc; 
 
 	//output to PC counter calculator
 	output logic BrTaken, UncondBr, pc_rd; 
@@ -105,7 +107,8 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 					
 	// instantiation of forwarding unit
 	forwarding_unit fu (.clk, .Aw(Rd_X30_out0), .Aa, .Ab, .Da, .Db(ALUSrc_out), 
-		.ALUSrc, .ALU_out, .Mem_out, .reg1(reg1_internal), .reg2(reg2_internal));
+		.ALUSrc, .ALU_out, .Mem_out, .reg1(reg1_internal), .reg2(reg2_internal),
+		.Rd_X30_sel1(Rd_X30_out), .Rd_X30_sel2(Rd_X30_2cyc), .PCPlusFour1(PCPlusFour_out), .PCPlusFour2(PCPlusFour_2cyc));
 		
 	// instantiation of branch accelerator
 	branch_accel ba (.clk, .opcode, .flag_wr_en, .BrTaken, .UncondBr, .pc_rd, .regVal_in(reg2_internal),

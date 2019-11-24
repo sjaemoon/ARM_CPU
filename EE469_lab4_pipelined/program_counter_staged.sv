@@ -27,6 +27,7 @@ module program_counter_staged(clk, reset, Reg2, pc_rd,
 
     //register #(.WIDTH(64)) counter (.in(pcrd_mux), .enable(1'b1), .clk, .out(PC_internal));
     register #(.WIDTH(64)) one_cycle_hold (.in(PC_internal), .enable(1'b1), .clk, .out(PC_internal_delayed));
+    register #(.WIDTH(64)) PCPlusFour_reg (.in(brtaken_mux_sig[0]), .enable(1'b1), .clk, .out(PCPlusFour));
 
     //Stage register
     register #(.WIDTH(32)) stage_reg (.in(Stagereg_in), .enable(1'b1), .clk, .out(Stagereg_out));
@@ -53,7 +54,7 @@ module program_counter_staged(clk, reset, Reg2, pc_rd,
     assign CondAddr19 = Stagereg_out[23:5];
     assign BrAddr26 = Stagereg_out[25:0];
     assign Instr_out = Stagereg_out;
-    assign PCPlusFour = brtaken_mux_sig[0];
+
 endmodule
 
 module pc_staged_stim();

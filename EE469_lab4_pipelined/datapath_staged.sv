@@ -55,7 +55,7 @@ module datapath_staged(clk, PCPlusFour, instruction, BrTaken, UncondBr, pc_rd, R
                                   .BrTaken, .UncondBr, .pc_rd, .reg1(reg1_DEC_EX), .reg2(reg2_DEC_EX), .reg2_IF(Reg2), .PCPlusFour_out(PCPlusFour_DEC_EX), .Aw_out(Aw_DEC_EX),
                                   
                                   .MemToReg_out(MemToReg_DEC_EX), .RegWrite_out(RegWrite_DEC_EX), .MemWrite_out(MemWrite_DEC_EX), 
-                                  .ALU_op_out(ALU_op_DEC_EX), .flag_wr_en_out(flag_wr_en_DEC_EX), .Rd_X30_out(Rd_X30_DEC_EX), 
+                                  .ALUOp_out(ALU_op_DEC_EX), .flag_wr_en_out(flag_wr_en_DEC_EX), .Rd_X30_out(Rd_X30_DEC_EX), 
                                   
                                   .PCPlusFour_WB, .MemStage_in, .Aw_in, .Rd_X30_WB, .RegWrite_in);
 

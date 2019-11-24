@@ -1,7 +1,7 @@
 `timescale 1ns/10ps
-module forwarding_unit (clk, Aw, Aa, Ab, Da, Db, ALU_out, Mem_out, reg1, reg2);
+module forwarding_unit (clk, Aw, Aa, Ab, Da, Db, ALUSrc, ALU_out, Mem_out, reg1, reg2);
 
-	input logic clk;
+	input logic clk, ALUSrc;
 	input logic [4:0] Aw, Aa, Ab;
 	input logic [63:0] Da, Db, ALU_out, Mem_out;
 	output logic [63:0] reg1, reg2;
@@ -22,6 +22,8 @@ module forwarding_unit (clk, Aw, Aa, Ab, Da, Db, ALU_out, Mem_out, reg1, reg2);
 				2'b01: reg1_sel = 2'b01;
 				2'b10: reg1_sel = 2'b10;
 				2'b11: reg1_sel = 2'b01;
+				2'bx0: reg1_sel = 2'b00;
+				2'b0x: reg1_sel = 2'b00;
 				2'bx1: reg1_sel = 2'b01;
 				2'b1x: reg1_sel = 2'b10;
 				default: reg1_sel = 2'b00;
@@ -29,11 +31,13 @@ module forwarding_unit (clk, Aw, Aa, Ab, Da, Db, ALU_out, Mem_out, reg1, reg2);
 		if (Ab == 5'd31)
 			reg2_sel = 2'b00;
 		else
-			casex({(Ab == Aw_2cyc), (Ab == Aw_1cyc)})
+			casex({(Ab == Aw_2cyc && ~(ALUSrc == 1)), (Ab == Aw_1cyc && ~(ALUSrc == 1))})
 				2'b00: reg2_sel = 2'b00;
 				2'b01: reg2_sel = 2'b01;
 				2'b10: reg2_sel = 2'b10;
 				2'b11: reg2_sel = 2'b01;
+				2'b0x: reg2_sel = 2'b00;
+				2'bx0: reg2_sel = 2'b00;
 				2'bx1: reg2_sel = 2'b01;
 				2'b1x: reg2_sel = 2'b10;
 				default: reg2_sel = 2'b00;

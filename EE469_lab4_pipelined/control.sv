@@ -33,6 +33,12 @@ module control (
 	// control signals logic based on table
 	always_comb begin
 		casex (opcode)
+		11'b00000000000: begin
+							ctrl = 8'b00000000;
+							Rd_X30 = 0;
+							flag_wr_en = 0;
+						 end
+
 		//Another mux that inputs into ALUSrc Mux
 		//Takes in DAddr9 or ALUImm12, controlled by
 		//Reg2Loc as ADDI adds Rn + ALUImm12, therefore

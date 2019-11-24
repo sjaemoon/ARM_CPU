@@ -14,12 +14,13 @@ module pipelinedstim();
     int i;
 
     initial begin
-        reset <= 1;     @(posedge clk);
-        reset <= 0;     @(posedge clk);
+        reset <= 1;         @(posedge clk);
+        reset <= 0; i = 0;  @(posedge clk);
 
-        for(i = 0; i < 1200; i++) begin
+        for(i = 1; i < 300; i++) begin
             @(posedge clk);
         end
+
         $stop;
     end
 endmodule

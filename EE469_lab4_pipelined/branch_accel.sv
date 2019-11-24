@@ -36,6 +36,14 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
 
     always_comb begin
         casex (opcode)
+
+        //Garbage case to filter 11'bxxxxxxxxxxx
+        11'b11111111111: begin
+                    BrTaken = 0;
+                    UncondBr = 0;
+                    pc_rd = 0;
+                 end
+
         
         // B - 0x05 (6bit)
         11'b000101xxxxx: begin
@@ -73,10 +81,11 @@ module branch_accel(clk, opcode, flag_wr_en, BrTaken, UncondBr, pc_rd, regVal_in
                          end
 
         default: begin
-                    BrTaken = 0;
-                    UncondBr = 0;
-                    pc_rd = 0;
-                 end
+                  BrTaken = 0;
+                  UncondBr = 0;
+                  pc_rd = 0;
+        end
+        
         endcase
     end
 endmodule
@@ -105,6 +114,10 @@ module accel_stim();
       regVal_in <= 64'd100;
 
       @(posedge clk);
+
+      // B instr
+      opcode <= 11'b00010100000;
+      flag_wr_en <= 0; @(posedge clk);
 
       // ADDI instr
       opcode <= 11'b1001000100x;
@@ -174,6 +187,9 @@ module accel_stim();
       @(posedge clk);
 
       assert (pc_rd == 1);
+
+      opcode <= 11'b00010100000;
+      flag_wr_en <= 0; @(posedge clk);
 
       $stop;
    end

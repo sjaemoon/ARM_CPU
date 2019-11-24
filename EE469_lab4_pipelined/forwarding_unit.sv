@@ -21,7 +21,7 @@ module forwarding_unit (clk, Aw, Aa, Ab, Da, Db, ALUSrc, RegWrite, ALU_out, Mem_
 	register #(.WIDTH(1)) wr_reg (.in(RegWrite), .enable(1'b1), .clk, .out(RegWrite_1cyc));
 
 	always_comb begin 
-		if (Aa == 5'd31 || ~RegWrite_1cyc)
+		if (Aa == 5'd31 || (~RegWrite_1cyc && ~(opcode == 11'b11111000000)))
 			reg1_sel = 2'b00;
 		else
 			casex({(Aa == Aw_2cyc), (Aa == Aw_1cyc)})
@@ -36,7 +36,7 @@ module forwarding_unit (clk, Aw, Aa, Ab, Da, Db, ALUSrc, RegWrite, ALU_out, Mem_
 				default: reg1_sel = 2'b00;
 			endcase
 			
-		if (Ab == 5'd31 || ~RegWrite_1cyc)
+		if (Ab == 5'd31 || (~RegWrite_1cyc && ~(opcode == 11'b11111000000)))
 			reg2_sel = 2'b00;
 		else begin
 			casex({(Ab == Aw_2cyc && ~(ALUSrc == 1)), (Ab == Aw_1cyc && ~(ALUSrc == 1))})

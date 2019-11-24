@@ -9,12 +9,12 @@ vlog "*.sv"
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-vsim -voptargs="+acc" -t 1ps -lib work reg_dec_staged_testbench
+vsim -voptargs="+acc" -t 1ps -lib work pipelinedstim
 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do processorstim_wave.do
+do pipelined_wave.do
 
 # Set the window types
 view wave

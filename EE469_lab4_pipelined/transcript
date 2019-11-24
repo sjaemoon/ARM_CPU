@@ -1283,3 +1283,6 @@ restart -f; run -a
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
 # Running benchmark: ./benchmarks/test05_Blt.arm
+# ** Note: $stop    : pipelinedstim.sv(24)
+#    Time: 150250 ns  Iteration: 1  Instance: /pipelinedstim
+# Break in Module pipelinedstim at pipelinedstim.sv line 24

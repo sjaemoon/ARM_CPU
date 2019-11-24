@@ -6,7 +6,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 						flag_neg, flag_zero, flag_overf, flag_cOut, 
 						alu_neg, alu_zero, alu_overf, alu_cOut, 
 
-						BrTaken, UncondBr, pc_rd, reg1, reg2, reg2_IF, PCPlusFour_out, Aw_out, 
+						BrTaken, UncondBr, pc_rd, reg1, reg2, reg2_IF, PCPlusFour_out, Aw_out, Dbmem_out, 
 
 						MemToReg_out, RegWrite_out, MemWrite_out, ALUOp_out, flag_wr_en_out, Rd_X30_out, // signals for RF
 
@@ -31,7 +31,7 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	//output to PC counter calculator
 	output logic BrTaken, UncondBr, pc_rd; 
 	//output to alu_staged
-	output logic [63:0] reg1, reg2, reg2_IF, PCPlusFour_out; 
+	output logic [63:0] reg1, reg2, reg2_IF, PCPlusFour_out, Dbmem_out; 
 	output logic [2:0] ALUOp_out;
 	output logic [4:0] Aw_out; 
 	output logic MemToReg_out, RegWrite_out, MemWrite_out, flag_wr_en_out, Rd_X30_out; 
@@ -90,12 +90,14 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	
 	// Requried units
 	// instantitation of regfile
-	assign Aw = Rd_X30_in0;
+	assign Aw = Rd_X30_out0;
 	assign Aa = Rn;
 	assign Ab = Reg2Loc_out0;
 	assign Dw = Rd_X30_out1;
 
 	assign reg2_IF = reg2_internal;
+
+	//assign Dbmem_out = Db;
 
 	regfile rf (.ReadData1(Da), .ReadData2(Db), .WriteData(Dw), 
 					.ReadRegister1(Aa), .ReadRegister2(Ab), 
@@ -115,9 +117,11 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 	register #(.WIDTH(5)) Aw_reg (.in(Aw), .enable(1'b1), .clk, .out(Aw_out));
 	register #(.WIDTH(1)) MemToReg_reg (.in(MemToReg), .enable(1'b1), .clk, .out(MemToReg_out));
 	register #(.WIDTH(1)) RegWrite_reg (.in(RegWrite), .enable(1'b1), .clk, .out(RegWrite_out));
+	register #(.WIDTH(1)) MemWrite_reg (.in(MemWrite), .enable(1'b1), .clk, .out(MemWrite_out));
 	register #(.WIDTH(3)) ALUOp_reg (.in(ALUOp), .enable(1'b1), .clk, .out(ALUOp_out));
 	register #(.WIDTH(1)) flag_wr_en_reg (.in(flag_wr_en), .enable(1'b1), .clk, .out(flag_wr_en_out));
 	register #(.WIDTH(1)) Rd_X30_reg (.in(Rd_X30), .enable(1'b1), .clk, .out(Rd_X30_out));
+	register #(.WIDTH(64)) db_mem (.in(Db), .enable(1'b1), .clk, .out(Dbmem_out));
 	register #(.WIDTH(64)) reg1_out (.in(reg1_internal), .enable(1'b1), .clk, .out(reg1));
 	register #(.WIDTH(64)) reg2_out (.in(reg2_internal), .enable(1'b1), .clk, .out(reg2));
 	

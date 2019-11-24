@@ -1,7 +1,7 @@
 `timescale 1ns/10ps
 
 module mem_staged(clk, 
-                  MemToReg, MemWrite, ALU_in, reg2mem_in, //Used signals
+                  MemToReg, MemWrite, ALU_in, reg2mem_in, Dbmem_in,//Used signals
                   
                   PCPlusFour_in, Aw_in, RegWrite_in, Rd_X30_in, //Passthru Signals in
                   
@@ -9,7 +9,7 @@ module mem_staged(clk,
                   mem_to_forward, mem_stage_out); //Output from MemToReg Mux
 
     input logic clk;
-    input logic [63:0] ALU_in, PCPlusFour_in, reg2mem_in;
+    input logic [63:0] ALU_in, PCPlusFour_in, reg2mem_in, Dbmem_in;
     input logic [4:0] Aw_in;
     input logic MemToReg, MemWrite, RegWrite_in, Rd_X30_in;
 
@@ -26,7 +26,7 @@ module mem_staged(clk,
 
     //Memory itself
     datamem memory (.address(ALU_in), .write_enable(MemWrite), .read_enable(MemToReg),
-                    .write_data(reg2mem_in), .clk, .xfer_size(4'd8), .read_data(datamem_out));
+                    .write_data(Dbmem_in), .clk, .xfer_size(4'd8), .read_data(datamem_out));
     
     //MemToReg Mux
     mux2_1 #(.WIDTH(64)) memtoregMux (.in(mux_in), .sel(MemToReg), .out(mux_out));

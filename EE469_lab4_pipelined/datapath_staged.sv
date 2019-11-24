@@ -19,7 +19,7 @@ module datapath_staged(clk, PCPlusFour, instruction, BrTaken, UncondBr, pc_rd, R
                  Mem_MEM_DEC, //Value from Memory to Forwarding unit 
                  MemStage_in, //Value for Writeback from MEM
                  reg1_DEC_EX, //Value of reg1 for EX from DEC
-                 reg2_DEC_EX, reg2_EX_MEM; //Values of reg2 for DEC_EX and EX_MEM
+                 reg2_DEC_EX, reg2_EX_MEM, db_DEC_EX, db_EX_MEM; //Values of reg2 for DEC_EX and EX_MEM
                  
 
     logic [4:0] Aw_DEC_EX, Aw_EX_MEM, Aw_in; //Pass thru logic for Aw
@@ -52,7 +52,7 @@ module datapath_staged(clk, PCPlusFour, instruction, BrTaken, UncondBr, pc_rd, R
                                   
                                   .flag_neg, .flag_zero, .flag_overf, .flag_cOut, .alu_neg, .alu_zero, .alu_overf, .alu_cOut,
                                   
-                                  .BrTaken, .UncondBr, .pc_rd, .reg1(reg1_DEC_EX), .reg2(reg2_DEC_EX), .reg2_IF(Reg2), .PCPlusFour_out(PCPlusFour_DEC_EX), .Aw_out(Aw_DEC_EX),
+                                  .BrTaken, .UncondBr, .pc_rd, .reg1(reg1_DEC_EX), .reg2(reg2_DEC_EX), .reg2_IF(Reg2), .PCPlusFour_out(PCPlusFour_DEC_EX), .Aw_out(Aw_DEC_EX), .Dbmem_out(db_DEC_EX),
                                   
                                   .MemToReg_out(MemToReg_DEC_EX), .RegWrite_out(RegWrite_DEC_EX), .MemWrite_out(MemWrite_DEC_EX), 
                                   .ALUOp_out(ALU_op_DEC_EX), .flag_wr_en_out(flag_wr_en_DEC_EX), .Rd_X30_out(Rd_X30_DEC_EX), 
@@ -64,19 +64,17 @@ module datapath_staged(clk, PCPlusFour, instruction, BrTaken, UncondBr, pc_rd, R
     
                          .reg1(reg1_DEC_EX), .reg2(reg2_DEC_EX), .ALU_op(ALU_op_DEC_EX), .flag_wr_en(flag_wr_en_DEC_EX),
                          
-                         .PCPlusFour_in(PCPlusFour_DEC_EX), .Aw_in(Aw_DEC_EX), .MemToReg_in(MemToReg_DEC_EX), .RegWrite_in(RegWrite_DEC_EX), .MemWrite_in(MemWrite_DEC_EX), .Rd_X30_in(Rd_X30_DEC_EX),
+                         .PCPlusFour_in(PCPlusFour_DEC_EX), .Aw_in(Aw_DEC_EX), .MemToReg_in(MemToReg_DEC_EX), .RegWrite_in(RegWrite_DEC_EX), .MemWrite_in(MemWrite_DEC_EX), .Rd_X30_in(Rd_X30_DEC_EX), .Dbmem_in(db_DEC_EX),
                          
-                         .PCPlusFour_out(PCPlusFour_EX_MEM), .Aw_out(Aw_EX_MEM), .MemToReg_out(MemToReg_EX_MEM), .RegWrite_out(RegWrite_EX_MEM), .MemWrite_out(MemWrite_EX_MEM), .Rd_X30_out(Rd_X30_EX_MEM),
+                         .PCPlusFour_out(PCPlusFour_EX_MEM), .Aw_out(Aw_EX_MEM), .MemToReg_out(MemToReg_EX_MEM), .RegWrite_out(RegWrite_EX_MEM), .MemWrite_out(MemWrite_EX_MEM), .Rd_X30_out(Rd_X30_EX_MEM), .Dbmem_out(db_EX_MEM),
                          
                          .ALU_out(ALU_EX_MEM), .ALU_fw(ALU_EX_DEC), .alu_neg, .alu_zero, .alu_overf, .alu_cOut,
-                         .flag_neg, .flag_zero, .flag_overf, .flag_cOut,
-                         
-                         .reg2mem(reg2_EX_MEM));
+                         .flag_neg, .flag_zero, .flag_overf, .flag_cOut);
 
     //Memory Stage
     mem_staged MemoryStage (.clk,
     
-                            .MemToReg(MemToReg_EX_MEM), .MemWrite(MemWrite_EX_MEM), .ALU_in(ALU_EX_MEM), .reg2mem_in(reg2_EX_MEM),
+                            .MemToReg(MemToReg_EX_MEM), .MemWrite(MemWrite_EX_MEM), .ALU_in(ALU_EX_MEM), .reg2mem_in(reg2_EX_MEM), .Dbmem_in(db_EX_MEM),
                             
                             .PCPlusFour_in(PCPlusFour_EX_MEM), .Aw_in(Aw_EX_MEM), .RegWrite_in(RegWrite_EX_MEM), .Rd_X30_in(Rd_X30_EX_MEM),
                             

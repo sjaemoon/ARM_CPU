@@ -17,7 +17,7 @@ module pipelinedstim();
         reset <= 1;         @(posedge clk);
         reset <= 0; i = 0;  @(posedge clk);
 
-        for(i = 1; i < 700; i++) begin
+        for(i = 1; i < 660; i++) begin
             @(posedge clk);
         end
 

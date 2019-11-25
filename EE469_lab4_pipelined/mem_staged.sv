@@ -31,18 +31,18 @@ module mem_staged(clk,
     //MemToReg Mux
     mux2_1 #(.WIDTH(64)) memtoregMux (.in(mux_in), .sel(MemToReg), .out(mux_out));
 
-    assign mem_stage_out = mux_out;
-    assign PCPlusFour_out = PCPlusFour_in;
-    assign Aw_out = Aw_in;
-    assign RegWrite_out = RegWrite_in;
-    assign Rd_X30_out = Rd_X30_in;
+    //assign mem_stage_out = mux_out;
+    //assign PCPlusFour_out = PCPlusFour_in;
+    //assign Aw_out = Aw_in;
+    //assign RegWrite_out = RegWrite_in;
+    //assign Rd_X30_out = Rd_X30_in;
 
     //Staged Registers
-    //register #(.WIDTH(64)) memReg (.in(mux_out), .enable(1'b1), .clk, .out(mem_stage_out));
-    //register #(.WIDTH(64)) pc4 (.in(PCPlusFour_in), .enable(1'b1), .clk, .out(PCPlusFour_out));
-    //register #(.WIDTH(5)) Aw_reg (.in(Aw_in), .enable(1'b1), .clk, .out(Aw_out));
-    //register #(.WIDTH(1)) regwr (.in(RegWrite_in), .enable(1'b1), .clk, .out(RegWrite_out));
-    //register #(.WIDTH(1)) rd_x30 (.in(Rd_X30_in), .enable(1'b1), .clk, .out(Rd_X30_out));
+    register #(.WIDTH(64)) memReg (.in(mux_out), .enable(1'b1), .clk, .out(mem_stage_out));
+    register #(.WIDTH(64)) pc4 (.in(PCPlusFour_in), .enable(1'b1), .clk, .out(PCPlusFour_out));
+    register #(.WIDTH(5)) Aw_reg (.in(Aw_in), .enable(1'b1), .clk, .out(Aw_out));
+    register #(.WIDTH(1)) regwr (.in(RegWrite_in), .enable(1'b1), .clk, .out(RegWrite_out));
+    register #(.WIDTH(1)) rd_x30 (.in(Rd_X30_in), .enable(1'b1), .clk, .out(Rd_X30_out));
 endmodule
 
 module mem_staged_stim();

@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/izfan/OneDrive/Documents/Quarter Documents/Fall 2019/EE469 Files/Labs/EE469_ComputerArchitecture/EE469_lab3
 vaccel_stim
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1574597852
+Z2 !s110 1574653463
 !i10b 1
 !s100 1`UZ?BVh`1[_@KBY^XYO43
 I:jGVVg^6Xbl@]h=1[2B8d2
@@ -26,7 +26,7 @@ Z9 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z10 !s108 1574597852.000000
+Z10 !s108 1574653463.000000
 Z11 !s107 zero_flag.sv|sign_extend.sv|shift_left.sv|register.sv|regfile.sv|reg_dec_staged.sv|program_counter_staged.sv|program_counter.sv|processorstim.sv|processor_pipelined.sv|processor.sv|pipelinedstim.sv|nth_alu.sv|n_bit_adder.sv|mux8_1.sv|mux4_1.sv|mux32_1.sv|mux2_1.sv|mux16_1.sv|mem_staged.sv|instructmem.sv|full_adder.sv|forwarding_unit.sv|flag_register.sv|de_5_32.sv|de_4_16.sv|de_2_4.sv|de_1_2.sv|datapath_staged.sv|datapath.sv|datamem.sv|control.sv|branch_accel.sv|alu_staged.sv|alu.sv|D_FF_en.sv|D_FF.sv|
 Z12 !s90 -reportprogress|300|D_FF.sv|D_FF_en.sv|alu.sv|alu_staged.sv|branch_accel.sv|control.sv|datamem.sv|datapath.sv|datapath_staged.sv|de_1_2.sv|de_2_4.sv|de_4_16.sv|de_5_32.sv|flag_register.sv|forwarding_unit.sv|full_adder.sv|instructmem.sv|mem_staged.sv|mux16_1.sv|mux2_1.sv|mux32_1.sv|mux4_1.sv|mux8_1.sv|n_bit_adder.sv|nth_alu.sv|pipelinedstim.sv|processor.sv|processor_pipelined.sv|processorstim.sv|program_counter.sv|program_counter_staged.sv|reg_dec_staged.sv|regfile.sv|register.sv|shift_left.sv|sign_extend.sv|zero_flag.sv|
 !i113 1
@@ -683,13 +683,13 @@ vinstructmem
 R1
 R2
 !i10b 1
-!s100 cS6bA?kgR2]<b:R<]L:c83
-I?[=_4C28J=Wb]3TAWn;7P2
+!s100 6Y[6njeUE6BO<Ij5YSX<@1
+IgGO>Zk>DFL:=2zGdSXmac3
 R3
 Z61 !s105 instructmem_sv_unit
 S1
 R5
-Z62 w1574597847
+Z62 w1574653444
 Z63 8instructmem.sv
 Z64 Finstructmem.sv
 L0 23
@@ -729,13 +729,13 @@ vmem_staged
 R1
 R2
 !i10b 1
-!s100 =X;^DAW?;a3AG3R5d;U8E0
-IVj:mjozb>lJinX]Wg=lQ;2
+!s100 0kfagCaWm22KPWb1FFEV72
+I7bG=MI=baWb^n@P=VB6901
 R3
 Z65 !s105 mem_staged_sv_unit
 S1
 R5
-Z66 w1574582479
+Z66 w1574650651
 Z67 8mem_staged.sv
 Z68 Fmem_staged.sv
 L0 3
@@ -1097,13 +1097,13 @@ vpipelinedstim
 R1
 R2
 !i10b 1
-!s100 nG[8gZkKoBOofH2a]`Zg83
-IWMk^_Hd=XR?QYB8V`z;[83
+!s100 Hmj`O3UfYV=<zeNnVKGbz3
+IzP^6W>fOPlDiEVG<TJNXn0
 R3
 !s105 pipelinedstim_sv_unit
 S1
 R5
-w1574596184
+w1574652152
 8pipelinedstim.sv
 Fpipelinedstim.sv
 L0 2
@@ -1281,13 +1281,13 @@ vreg_dec_staged
 R1
 R2
 !i10b 1
-!s100 O4MVPdZ^S;dgkbD3XYlQY2
-ImOaMMh5ESbO9_cMJ3J^k[2
+!s100 6ZId2H:^P^:lamUhQ`@FB1
+I8JXiVY<8aKPo@14^h3Ue[2
 R3
 Z95 !s105 reg_dec_staged_sv_unit
 S1
 R5
-Z96 w1574597228
+Z96 w1574650765
 Z97 8reg_dec_staged.sv
 Z98 Freg_dec_staged.sv
 L0 2
@@ -1304,8 +1304,8 @@ vreg_dec_staged_testbench
 R1
 R2
 !i10b 1
-!s100 =^aZBMP]`?L5hG7oJCQ;83
-IT58NBL3CggUdkhiZ0A2hC3
+!s100 <@kH`CH?17264BW44l0fN3
+Ie2:Wli_dEKP@W`g:DiQ`<1
 R3
 R95
 S1
@@ -1313,7 +1313,7 @@ R5
 R96
 R97
 R98
-L0 134
+L0 138
 R9
 r1
 !s85 0

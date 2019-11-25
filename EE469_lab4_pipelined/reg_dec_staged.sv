@@ -101,9 +101,13 @@ module reg_dec_staged (clk, opcode, Rd, Rn, Rm, X30,
 
 	//assign Dbmem_out = Db;
 
+	//Clock Inverter for Regfile
+	logic inv_clk;
+	not #0.05 clk_inverted (inv_clk, clk);
+
 	regfile rf (.ReadData1(Da), .ReadData2(Db), .WriteData(Dw), 
 					.ReadRegister1(Aa), .ReadRegister2(Ab), 
-					.WriteRegister(Aw_in), .RegWrite(RegWrite_in), .clk);
+					.WriteRegister(Aw_in), .RegWrite(RegWrite_in), .clk(inv_clk));
 					
 	// instantiation of forwarding unit
 	forwarding_unit fu (.clk, .Aw(Rd_X30_out0), .Aa, .Ab, .Da, .Db(ALUSrc_out), 

@@ -1,18 +1,19 @@
 `timescale 1ns/10ps
 module alu_staged   (clk,
                      reg1, reg2, ALU_op, flag_wr_en, //Used Signals
-                     PCPlusFour_in, Aw_in, MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in, //Passthru Sig inputs
-                     PCPlusFour_out, Aw_out, MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out, //Passthru Sig outs
+                     PCPlusFour_in, Aw_in, MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in, Dbmem_in, //Passthru Sig inputs
+                     PCPlusFour_out, Aw_out, MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out, Dbmem_out, //Passthru Sig outs
                      ALU_out, ALU_fw, alu_neg, alu_zero, alu_overf, alu_cOut, //ALU outputs
                      flag_neg, flag_zero, flag_overf, flag_cOut); //Flag register outputs
 
+
     input logic clk, flag_wr_en;
-    input logic [63:0] reg1, reg2, PCPlusFour_in;
+    input logic [63:0] reg1, reg2, PCPlusFour_in, Dbmem_in;
     input logic [4:0] Aw_in;
     input logic [2:0] ALU_op;
     input logic MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in;
 
-    output logic [63:0] ALU_out, ALU_fw, PCPlusFour_out;
+    output logic [63:0] ALU_out, ALU_fw, PCPlusFour_out, Dbmem_out;
     output logic [4:0] Aw_out;
     output logic MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out;
     output logic alu_neg, alu_zero, alu_overf, alu_cOut,
@@ -39,6 +40,7 @@ module alu_staged   (clk,
     //Stage Registers
     register #(.WIDTH(64)) ALUout (.in(ALU_internal), .enable(1'b1), .clk, .out(ALU_out));
     register #(.WIDTH(64)) pcplusfour_reg (.in(PCPlusFour_in), .enable(1'b1), .clk, .out(PCPlusFour_out));
+    register #(.WIDTH(64)) db_mem (.in(Dbmem_in), .enable(1'b1), .clk, .out(Dbmem_out));
     register #(.WIDTH(5)) Aw_reg (.in(Aw_in), .enable(1'b1), .clk, .out(Aw_out));
     register #(.WIDTH(1)) MemtoReg (.in(MemToReg_in), .enable(1'b1), .clk, .out(MemToReg_out));
     register #(.WIDTH(1)) RegWr (.in(RegWrite_in), .enable(1'b1), .clk, .out(RegWrite_out));
@@ -53,7 +55,7 @@ module ALU_staged_stim();
     logic [2:0] ALU_op;
     logic MemToReg_in, RegWrite_in, MemWrite_in, Rd_X30_in;
 
-    logic [63:0] ALU_out, ALU_fw, PCPlusFour_out;
+    logic [63:0] ALU_out, ALU_fw, PCPlusFour_out, reg2mem;
     logic [4:0] Aw_out;
     logic MemToReg_out, RegWrite_out, MemWrite_out, Rd_X30_out;
     logic alu_neg, alu_zero, alu_overf, alu_cOut,

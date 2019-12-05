@@ -89,7 +89,7 @@ endmodule
 module datapath_testbench();
 	logic clk;	
 	logic [4:0] Rd, Rm, Rn, X30;
-	logic [63:0] PCPlusFour, Db_ext;;
+	logic [63:0] PCPlusFour, Db_ext;
 	logic [8:0] DAddr9;
 	logic [11:0] ALUImm12;
 	logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, Rd_X30;

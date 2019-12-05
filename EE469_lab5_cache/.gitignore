@@ -1,0 +1,4 @@
+#ignore extensions
+*.bat
+*.pdf
+*.do

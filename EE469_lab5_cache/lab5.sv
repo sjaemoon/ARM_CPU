@@ -51,7 +51,7 @@ endmodule
 // Test the data memory, and figure out the settings.
 
 module lab5_testbench ();
-	localparam USERID = 1470460;  // Set to your student ID #
+	localparam USERID = 1662650;  // Set to your student ID #
 	localparam ADDRESS_WIDTH = 20;
 	localparam DATA_WIDTH = 8;
 	
@@ -263,9 +263,82 @@ module lab5_testbench ();
 		resetMem();
 		
 		// Read all of the first KB
-		readStride(0, 8, 1024/8, minval, maxval);
+		// readStride(0, 8, 512/8, minval, maxval); // to check USER_ID0
+		// readStride(0, 8, 512/8, minval, maxval);
+		readStride(0, 8, 512/8, minval, maxval);
 		$display("%t Reading the first KB took between %d and %d cycles each", $time, minval, maxval);
+		
+		//Last thing brought in is address 1023
+		//Back track to figure out the capacity of L1 and L2.
+		//readStride(1023, -8, 1024/8, minval, maxval); //L1 = 128B, L2 = 512B
 
+		
+		//resetMem();
+		//L1 Testing
+		//Load 128B (cap of L1), 16 byte blocks.
+		//
+		//readStride(0, 8, 128/8, minval, maxval);
+
+		//Load 144-159
+		//readStride(144, 8, 2, minval, maxval);
+
+		//Read 0-31
+		//16-31 should be miss
+		//Test done
+		//readStride(0, 16, 2, minval, maxval); //NOT FULLY ASSOCIATVE.
+
+		//Narrow down to DM 8Blocks, 2SA 4BLOCKS, or 4SA 2BLOCKS
+		/*
+		readStride(128, 1, 16, minval, maxval);
+		readStride(0, 16, 1, minval, maxval);
+		readStride(128, 16, 1, minval, maxval);
+		readStride(0, 16, 1, minval, maxval);
+		*/ //CONCLUSION 8 Block DM.
+
+		//Load 512B (cap of L2), At least 16 byte blocks.
+		//readStride(0, 8, 512/8, minval, maxval);
+
+		//L1 will be loaded with 384 - 511
+		//Load 512 - 543
+		//readStride(512, 8, 32/8, minval, maxval);
+
+		/*
+		//Read 0-63 and 256-319
+		for(int i = 0; i < 10; i++) begin
+			readStride(0, 8, 32/8, minval, maxval);
+			readStride(512, 8, 32/8, minval, maxval);
+		end
+		*/
+
+	/*
+		//Read the same 3 values over and over
+		//4, misses then all hits mean Cache is not DM or 2-way Set
+		for(int i = 0; i < 16; i++) begin;
+			readStride(0, 8, 32/8, minval, maxval);
+			readStride(128, 8, 32/8, minval, maxval);
+			readStride(256, 8, 32/8, minval, maxval);
+			readStride(384, 8, 32/8, minval, maxval);
+		end //Conclusion CACHE IS not DM, but 2 Way Set
+	*/
+	/*
+		//If hit at any point, replacement policy is Random
+		for(int i = 0; i < 32; i++) begin
+			readStride(0, 8, 32/8, minval, maxval);
+			readStride(256, 8, 32/8, minval, maxval);
+			readStride(512, 8, 32/8, minval, maxval);
+		end
+	*/
+
+		writeMem(0, 16'hFFFF, 8'hFF, delay); 
+		$display("%t Write took %d cycles", $time, delay);
+		readStride(384, 16, 1, minval, maxval);
+		$display("%t Reading took between %d and %d cycles each", $time, minval, maxval);
+		for (int i = 0; i < 30; i++) begin
+			noopMem();
+		end
+
+		readStride(0, 16, 1, minval, maxval);
+		$display("%t Reading took between %d and %d cycles each", $time, minval, maxval);
 		$stop();
 	end
 	
